@@ -1,0 +1,22 @@
+{
+  "name": "versta-project-template",
+  "version": "0.1.0",
+  "description": "Versta project template for a quick start",
+  "author": "Alexey Bogoslovskiy <bogoslovskiya@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bemto.pug": "^2.1.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-filter": "^5.0.0",
+    "gulp-jsbeautifier": "^2.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-plumber-error-handler": "^1.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "require-dir": "^0.3.1"
+  }
+}
