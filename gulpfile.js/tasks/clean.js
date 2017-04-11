@@ -1,4 +1,4 @@
-const gulp  = require('gulp')
-const del   = require('del')
+const gulp = require('gulp');
+const del = require('del');
 
-gulp.task('clean', () => del('dist'))
+gulp.task('clean', () => del('dist'));

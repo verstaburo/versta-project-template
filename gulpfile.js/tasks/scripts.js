@@ -1,11 +1,12 @@
-const gulp          = require('gulp');
-const plumber       = require('gulp-plumber');
-const errorHandler  = require('gulp-plumber-error-handler');
-const named         = require('vinyl-named');
-const webpack       = require('webpack');
+/* eslint-disable consistent-return */
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const errorHandler = require('gulp-plumber-error-handler');
+const named = require('vinyl-named');
+const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('../../webpack.config');
-const rename        = require('gulp-rename');
+const rename = require('gulp-rename');
 
 const isDebug = process.env.NODE_ENV !== 'production';
 
@@ -16,12 +17,12 @@ gulp.task('scripts', (cb) => {
     firstBuildReady = true;
 
     if (err) {
-      return;
+      return console.error(err); // eslint-disable-line no-console
     }
   };
 
   return gulp.src('app/scripts/*.js')
-    .pipe(plumber({ errorHandler: errorHandler(`Error in scripts task`) }))
+    .pipe(plumber({ errorHandler: errorHandler('Error in scripts task') }))
     .pipe(named())
     .pipe(webpackStream(webpackConfig, webpack, done))
     .pipe(rename({ suffix: '.min' }))
@@ -30,5 +31,5 @@ gulp.task('scripts', (cb) => {
       if (firstBuildReady && isDebug) {
         cb();
       }
-    })
+    });
 });
