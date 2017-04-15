@@ -28,7 +28,7 @@ gulp.task('scripts', (cb) => {
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/assets/scripts'))
     .on('data', () => {
-      if (firstBuildReady && isDebug) {
+      if (firstBuildReady && global.isWatching) {
         cb();
       }
     });

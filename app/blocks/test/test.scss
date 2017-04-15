@@ -4,5 +4,9 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  font-size: 6rem;
+  font-size: 1rem;
+
+  &_bg_red {
+    background-color: #123;
+  }
 }

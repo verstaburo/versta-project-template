@@ -6,14 +6,19 @@ const cached = require('gulp-cached');
 const prettify = require('gulp-jsbeautifier');
 const filter = require('gulp-filter');
 const rename = require('gulp-rename');
+const pugInheritance  = require('gulp-pug-inheritance');
 
-// TODO add pug inheritance in watch mode
+const changed = require('gulp-changed');
 // TODO add static hash to assets in production mode
 
 gulp.task('templates', () => (
   gulp.src('app/**/*.pug')
     .pipe(plumber({ errorHandler: errorHandler('Error in templates task') }))
-    .pipe(cached('pug'))
+    .pipe(changed('dist', { extension: '.html' }))
+    .pipe(pugInheritance({
+      basedir: 'app/pages',
+      extension: '.pug',
+    }))
     .pipe(filter(file => /app[\\\/]pages/.test(file.path))) // eslint-disable-line no-useless-escape
     .pipe(pug())
     .pipe(prettify({

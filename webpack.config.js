@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const isDebug = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  watch: isDebug,
+  watch: global.isWatching,
   devtool: isDebug ? 'cheap-module-inline-source-map' : false,
   module: {
     rules: [{

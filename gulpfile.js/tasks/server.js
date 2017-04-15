@@ -6,7 +6,6 @@ const bs = browserSync('server');
 
 gulp.task('server', () => (
   bs.init({
-    files: ['dist/**/*'],
     open: true,
     reloadOnRestart: true,
     port: 3000,
@@ -17,9 +16,8 @@ gulp.task('server', () => (
     },
     server: {
       baseDir: [
-        'app/static',
-        'dist',
-      ]
+        './dist',
+      ],
     },
     directory: false,
     middleware: [debuga()],
