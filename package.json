@@ -46,6 +46,7 @@
     "jquery": "^3.2.1",
     "del": "^2.2.2",
     "gulp-changed": "^2.0.0",
-    "gulp-imagemin": "^3.2.0"
+    "gulp-imagemin": "^3.2.0",
+    "gulp-svg-symbols": "^2.0.2"
   }
 }
