@@ -4,7 +4,7 @@ const gulp = require('gulp');
 
 const bs = browserSync('server');
 
-gulp.task('server', () => (
+gulp.task('server', () => {
   bs.init({
     open: true,
     reloadOnRestart: true,
@@ -21,5 +21,7 @@ gulp.task('server', () => (
     },
     directory: false,
     middleware: [debuga()],
-  })
-));
+  });
+
+  bs.watch('dist/**/*.*').on('change', bs.reload);
+});

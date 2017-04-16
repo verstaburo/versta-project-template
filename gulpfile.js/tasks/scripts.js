@@ -5,13 +5,11 @@ const errorHandler = require('gulp-plumber-error-handler');
 const named = require('vinyl-named');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-const webpackConfig = require('../../webpack.config');
 const rename = require('gulp-rename');
-
-const isDebug = process.env.NODE_ENV !== 'production';
 
 gulp.task('scripts', (cb) => {
   let firstBuildReady = false;
+  const webpackConfig = require('../../webpack.config')(global.isWatching); // eslint-disable-line global-require
 
   const done = (err) => {
     firstBuildReady = true;
@@ -28,7 +26,7 @@ gulp.task('scripts', (cb) => {
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/assets/scripts'))
     .on('data', () => {
-      if (firstBuildReady && global.isWatching) {
+      if (firstBuildReady && global.isWatching === false) {
         cb();
       }
     });

@@ -8,7 +8,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const bulkSass = require('gulp-sass-bulk-import');
 const rename = require('gulp-rename');
 const stylelint = require('stylelint');
-const syntax = require('postcss-scss');
 const isDebug = process.env.NODE_ENV !== 'production';
 
 /* eslint-disable global-require */
@@ -39,7 +38,7 @@ gulp.task('styles', () => {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/assets/styles'));
 
-  gulp.start('styles:lint');
+  // gulp.start('styles:lint');
 });
 
 gulp.task('styles:lint', () => (

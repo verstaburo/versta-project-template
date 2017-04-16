@@ -2,15 +2,18 @@ const webpack = require('webpack');
 
 const isDebug = process.env.NODE_ENV !== 'production';
 
-module.exports = {
-  watch: global.isWatching,
+module.exports = (watch = false) => ({
+  output: {
+    publicPath: '/assets/scripts/',
+  },
+  watch,
   devtool: isDebug ? 'cheap-module-inline-source-map' : false,
   module: {
     rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-    }]
+    }],
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -20,5 +23,5 @@ module.exports = {
     }),
     new webpack.NoErrorsPlugin(),
     !isDebug ? new webpack.optimize.UglifyJsPlugin() : f => f,
-  ]
-};
+  ],
+});
