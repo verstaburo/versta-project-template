@@ -1,6 +1,8 @@
 extends ../layouts/default
+include ../blocks/index/index
 
 block head
   - var pageTitle = 'Versta Project Template'
 
 block content
+  +index()
