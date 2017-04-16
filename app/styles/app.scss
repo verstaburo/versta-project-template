@@ -1,4 +1,22 @@
 @import 'helpers/variables';
 @import 'helpers/mixins';
 @import 'helpers/fonts';
+@import '../../node_modules/normalize.css/normalize.css';
 @import '../blocks/**/*';
+
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img {
+  box-sizing: content-box;
+}
