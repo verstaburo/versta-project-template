@@ -10,7 +10,7 @@
 
 `app/blocks/blockName/blockName.pug`
 
-[Почитать об миксинах](https://pugjs.org/language/mixins.html)
+[Почитать о миксинах](https://pugjs.org/language/mixins.html)
 
 [Что такое +b](https://github.com/kizu/bemto)
 
