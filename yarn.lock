@@ -2944,6 +2944,14 @@ gulp-changed@^2.0.0:
     gulp-util "^3.0.0"
     through2 "^2.0.0"
 
+gulp-data@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/gulp-data/-/gulp-data-1.2.1.tgz#a94b54de7d4f3b8ea1f40ef859749c24578cf12b"
+  dependencies:
+    gulp-util "^3.0.7"
+    through2 "^2.0.0"
+    util-extend "^1.0.1"
+
 gulp-debug@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/gulp-debug/-/gulp-debug-3.1.0.tgz#4da91568b54915be803696caaac10c895b2c0a71"
@@ -3780,6 +3788,10 @@ isobject@^2.0.0:
 isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
+
+jade-get-data@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/jade-get-data/-/jade-get-data-1.0.1.tgz#9358f754ee114ff99d79a7d4d85e7c3b1c4fbb64"
 
 jodid25519@^1.0.0:
   version "1.0.2"
@@ -6903,6 +6915,10 @@ user-home@^2.0.0:
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+
+util-extend@^1.0.1:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/util-extend/-/util-extend-1.0.3.tgz#a7c216d267545169637b3b6edc6ca9119e2ff93f"
 
 util@0.10.3, util@^0.10.3:
   version "0.10.3"

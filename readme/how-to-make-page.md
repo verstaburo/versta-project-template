@@ -1,21 +1,6 @@
 # Как добавить новую страницу?
 
-Создаем новый блок с названием страницы
-
-`pageName.pug` - Разаметка
-
-```jade
-mixin pageName()
-  +b.pageName
-    // код тут
-```
-
-`pageName.scss` - Стили
-```scss
-.pageName {
-  display: block;
-}
-```
+[Создаем новый блок с названием страницы](how-to-make-block.md)
 
 Создаем файл страницы `app/pages/pageName.pug` и подключаем созданный блок
 

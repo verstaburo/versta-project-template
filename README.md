@@ -5,4 +5,5 @@
 * [Структура проекта](readme/install-and-start.md)
 * [Как добавить страницу](readme/how-to-make-page.md)
 * [Как добавить блок (компонент)](readme/how-to-make-block.md)
+* [Как использовать JSON данные в шаблонах](readme/how-to-use-json-data.md)
 * [Как собираются SVG спрайты](readme/how-to-svg-sprite.md)

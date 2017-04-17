@@ -7,8 +7,9 @@ const prettify = require('gulp-jsbeautifier');
 const filter = require('gulp-filter');
 const rename = require('gulp-rename');
 const pugInheritance  = require('gulp-pug-inheritance');
-
 const changed = require('gulp-changed');
+const getData = require('jade-get-data')('app/data');
+
 // TODO add static hash to assets in production mode
 
 gulp.task('templates', () => (
@@ -20,7 +21,7 @@ gulp.task('templates', () => (
       extension: '.pug',
     }))
     .pipe(filter(file => /app[\\\/]pages/.test(file.path))) // eslint-disable-line no-useless-escape
-    .pipe(pug())
+    .pipe(pug({ data: { getData } }))
     .pipe(prettify({
       braceStyle: 'expand',
       indentWithTabs: true,
