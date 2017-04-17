@@ -69,8 +69,8 @@ blockName();
 const myBlock = blockName();
 ```
 Если вам нужно использовать jQuery, то, нужно импортировать
-```
-import $ from 'jquery;
+```js
+import $ from 'jquery';
 
 export default () => {
   $('div').hide();
