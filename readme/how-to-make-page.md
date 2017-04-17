@@ -16,7 +16,7 @@ block content
 
 ```
 ### block head
-Все, что написано в `block head`, попадает в `<head></head>`
+Все, что написано в `block head`, автоматически будет перенесено в `<head></head>`
 
 Блок head так же может содержать
 
@@ -28,4 +28,4 @@ block head
 ```
 
 ### block content
-Все, что написано в `block content`, попадает в `<body></body`
+Все, что написано в `block content`,  автоматически будет перенесено в `<body></body`
