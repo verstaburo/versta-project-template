@@ -40,7 +40,7 @@ mixin blockName()
 
 `app/blocks/blockName/blockName.js`
 
-[Почиать про ES6 модули](https://github.com/FrontenderMagazine/es6-modules/blob/master/rus.md)
+[Почитать про ES6 модули](https://github.com/FrontenderMagazine/es6-modules/blob/master/rus.md)
 
 Если блок - функция
 ```js
