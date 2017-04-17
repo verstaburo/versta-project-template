@@ -38,7 +38,7 @@ gulp.task('styles', () => {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/assets/styles'));
 
-  // gulp.start('styles:lint');
+  gulp.start('styles:lint');
 });
 
 gulp.task('styles:lint', () => (
