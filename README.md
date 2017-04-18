@@ -7,3 +7,4 @@
 * [Как добавить блок (компонент)](readme/how-to-make-block.md)
 * [Как использовать JSON данные в шаблонах](readme/how-to-use-json-data.md)
 * [Как собираются SVG спрайты](readme/how-to-svg-sprite.md)
+* [Как деплоить проект (показть заказчику)](readme/how-to-deploy.md)
