@@ -5,6 +5,10 @@ gulp.task('build', (cb) => (
   runSequence('clean', ['styles', 'scripts', 'images', 'icons', 'templates', 'copy'], cb)
 ));
 
+gulp.task('deploy', () => (
+  runSequence('build', 'deploy')
+));
+
 gulp.task('default', () => (
   runSequence('build', ['server', 'watch'])
 ));
