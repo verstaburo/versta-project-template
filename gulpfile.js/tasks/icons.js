@@ -4,7 +4,6 @@ const errorHandler = require('gulp-plumber-error-handler');
 const rename = require('gulp-rename');
 const svgSymbols = require('gulp-svg-symbols');
 const imagemin = require('gulp-imagemin');
-const svgo = require('gulp-svgo');
 
 gulp.task('icons', () => (
   gulp.src('app/static/icons/**/*.svg')
