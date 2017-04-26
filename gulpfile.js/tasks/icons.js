@@ -3,6 +3,8 @@ const plumber = require('gulp-plumber');
 const errorHandler = require('gulp-plumber-error-handler');
 const rename = require('gulp-rename');
 const svgSymbols = require('gulp-svg-symbols');
+const imagemin = require('gulp-imagemin');
+const svgo = require('gulp-svgo');
 
 gulp.task('icons', () => (
   gulp.src('app/static/icons/**/*.svg')
@@ -13,6 +15,22 @@ gulp.task('icons', () => (
       className: '%f',
       templates: ['default-svg'],
     }))
+    .pipe(imagemin([
+      imagemin.svgo({
+        plugins: [
+          { optimizationLevel: 3 },
+          { progessive: true },
+          { interlaced: true },
+          { removeViewBox: false },
+          { removeUselessStrokeAndFill: true },
+          { cleanupIDs: false },
+          { cleanupAttrs: true },
+          { removeMetadata: true },
+          { removeTitle: true },
+          { removeAttrs: { attrs: '(fill|stroke|data-name)' } },
+        ]
+      })
+    ]))
     .pipe(rename('icon.svg'))
     .pipe(gulp.dest('dist/assets/images/'))
 ));
