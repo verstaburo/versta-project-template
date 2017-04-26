@@ -4,6 +4,8 @@ const errorHandler = require('gulp-plumber-error-handler');
 const gulpIf = require('gulp-if');
 const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
+const cssnano = require('gulp-cssnano');
+const cssimport = require('gulp-cssimport');
 const sourcemaps = require('gulp-sourcemaps');
 const bulkSass = require('gulp-sass-bulk-import');
 const rename = require('gulp-rename');
@@ -13,7 +15,7 @@ const isDebug = process.env.NODE_ENV !== 'production';
 /* eslint-disable global-require */
 gulp.task('styles', () => {
   gulp.src('app/styles/*.scss')
-    .pipe(plumber({errorHandler: errorHandler('Error in styles task')}))
+  .pipe(plumber({ errorHandler: errorHandler('Error in styles task') }))
     .pipe(gulpIf(isDebug, sourcemaps.init()))
     .pipe(bulkSass())
     .pipe(sass())
@@ -21,7 +23,6 @@ gulp.task('styles', () => {
       require('autoprefixer'),
       require('postcss-autoreset')({
         reset: {
-          all: 'initial',
           'font-family': 'inherit',
           'font-size': 'inherit',
         },
@@ -32,10 +33,11 @@ gulp.task('styles', () => {
       require('postcss-discard-comments'),
       require('postcss-size'),
       require('css-mqpacker'),
-      !isDebug ? require('cssnano')({zIndex: false}) : f => f,
     ]))
+    .pipe(cssimport())
+    .pipe(cssnano({ zIndex: false }))
     .pipe(gulpIf(isDebug, sourcemaps.write()))
-    .pipe(rename({suffix: '.min'}))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/assets/styles'));
 
   gulp.start('styles:lint');
@@ -46,7 +48,7 @@ gulp.task('styles:lint', () => (
     .pipe(postcss([
       stylelint(),
       require('postcss-reporter')({
-        clearMessages: true
+        clearMessages: true,
       }),
     ], { syntax: require('postcss-scss') }))
 ));
