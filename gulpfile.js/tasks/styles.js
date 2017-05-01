@@ -21,17 +21,7 @@ gulp.task('styles', () => {
     .pipe(sass())
     .pipe(postcss([
       require('autoprefixer'),
-      require('postcss-autoreset')({
-        reset: {
-          'font-family': 'inherit',
-          'font-size': 'inherit',
-        },
-      }),
-      require('postcss-initial'),
-      require('postcss-center'),
-      require('postcss-clearfix'),
       require('postcss-discard-comments'),
-      require('postcss-size'),
       require('css-mqpacker'),
     ]))
     .pipe(cssimport())
