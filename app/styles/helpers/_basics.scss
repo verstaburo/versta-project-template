@@ -19,22 +19,12 @@ button::-moz-focus-inner {
   color: white;
 }
 
-::-moz-selection {
-  background: $color-main;
-  color: white;
-}
-
-::-webkit-selection {
-  background: $color-main;
-  color: white;
-}
-
 /* ##########
 Стандартный цвет плейсхолдера
 ########## */
 
 input, textarea {
-  @include input-placeholder {
+  &::placeholder {
     color: $color-placeholder;
   }
 }
