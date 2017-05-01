@@ -1,0 +1,128 @@
+/* ##########
+Убираем outline
+########## */
+
+button::-moz-focus-inner, input[type='reset']::-moz-focus-inner, input[type='button']::-moz-focus-inner, input[type='submit']::-moz-focus-inner, input[type='submit']::-moz-focus-inner, input[type='file'] > input[type='button']::-moz-focus-inner {
+  border: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* ##########
+Цвет выделения текста
+########## */
+
+::selection {
+  background: $color-main;
+  color: white;
+}
+
+::-moz-selection {
+  background: $color-main;
+  color: white;
+}
+
+::-webkit-selection {
+  background: $color-main;
+  color: white;
+}
+
+/* ##########
+Стандартный цвет плейсхолдера
+########## */
+
+::-webkit-input-placeholder {
+  color: $color-placeholder;
+}
+
+::-moz-placeholder {
+  color: $color-placeholder;
+}
+
+:-ms-input-placeholder {
+  color: $color-placeholder;
+}
+
+:-moz-placeholder {
+  color: $color-placeholder;
+}
+
+/* ##########
+Настройки для автозаполнения Chrome
+########## */
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $color-input !important; // Поменять цвет на аналогичный цвету input
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+  transition: background-color 50000000000s ease-in-out 0s !important;
+}
+
+/* ##########
+Основные стили
+########## */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; // Убираем горизонтальный скролл
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: $font-main; // Задаем основной шрифт
+  font-size: 0; // Убираем проблему с отступами между inline-элементами
+  box-sizing: border-box; // Задаем box-sizing: border-box по умолчанию
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img {
+  box-sizing: content-box;
+}
+
+header, section, footer {
+  width: 100%;
+  float: left; // float: left нужен, чтобы убрать пустое место под нижней секцией
+}
+
+/* ##########
+Сброс стандартных отступов для типографики и списков
+########## */
+
+h1, h2, h3, h4, h5, h6, p, span, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+span {
+  font-style: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+/* ##########
+Сброс стилей для активных элементов, добавляем стандарнтый transition
+########## */
+
+a, input, button, select, textarea {
+  transition: all .25s ease-in-out;
+}
+
+select, input, textarea, button {
+  color: $color-input;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0; // Убираем авто-закругление углов на iOS
+}
