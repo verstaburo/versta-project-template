@@ -7,7 +7,7 @@ gulp.task('watch', () => {
   watch('app/static/icons/**/*', () => runSequence('icons'));
   watch('app/static/images/**/*', () => runSequence('images'));
   watch('app/static/misc/**/*', () => runSequence('copy'));
-  watch(['app/{pages,blocks,components}/**/*.pug'], () => runSequence('templates'));
+  watch(['app/{pages,blocks,components,layouts}/**/*.pug'], () => runSequence('templates'));
   watch(['app/{styles,blocks,components,pages}/**/*.scss'], () => runSequence('styles'));
 
   gulp.start('scripts');
