@@ -9,6 +9,7 @@ gulp.task('watch', () => {
   watch('app/static/misc/**/*', () => runSequence('copy'));
   watch(['app/{pages,blocks,components,layouts}/**/*.pug'], () => runSequence('templates'));
   watch(['app/{styles,blocks,components,pages}/**/*.scss'], () => runSequence('styles'));
+  watch(['app/data/**/*.json'], () => runSequence('templates'));
 
   gulp.start('scripts:watch');
 });
