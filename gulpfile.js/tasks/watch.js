@@ -10,5 +10,5 @@ gulp.task('watch', () => {
   watch(['app/{pages,blocks,components,layouts}/**/*.pug'], () => runSequence('templates'));
   watch(['app/{styles,blocks,components,pages}/**/*.scss'], () => runSequence('styles'));
 
-  gulp.start('scripts');
+  gulp.start('scripts:watch');
 });

@@ -51,6 +51,7 @@
     "gulp-stylelint": "^3.9.0",
     "gulp-svg-symbols": "^2.0.2",
     "gulp-watch": "^4.3.11",
+    "gulplog": "^1.0.0",
     "jade-get-data": "^1.0.1",
     "jquery": "^3.2.1",
     "normalize.css": "^6.0.0",
@@ -63,6 +64,7 @@
     "stylelint-config-standard": "^16.0.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^2.3.2",
+    "webpack-stats-logger": "^1.0.1",
     "webpack-stream": "^3.2.0"
   }
 }
