@@ -1,39 +1,39 @@
-# Как добавить новый блок?
+# Как добавить новый компонент?
 
 Для создания блока, выполните команду
 
 _Если необходимо создать несколько блоков, то их имена нужно указывать через пробел_
 ```
-npm run make block [blockName]
+npm run make component [componentName]
 ```
 или
 ```
-yarn make block [blockName]
+yarn make component [componentName]
 ```
 Например, следующая команда сгенерирует такие файлы
 ```
-npm run make block button
+npm run make component button
 ```
 
 #### Файл разметки 
-`app/blocks/button/button.pug`
+`app/components/button/button.pug`
 ```jade
 mixin button()
   +b.button&attributes(attributes)
-    block
+    component
 ```
 
 [Почитать о миксинах](https://pugjs.org/language/mixins.html)
 
 [Что такое +b](https://github.com/kizu/bemto)
 
-Файл с разметкой блока подключается на страницу/в компонент `include path/to/blocks/button/button`
+Файл с разметкой блока подключается на страницу/в компонент `include path/to/components/button/button`
 
 Вызов данного блока `+button()`
 
 
 #### Файл стилей 
-`app/blocks/button/button.scss`
+`app/components/button/button.scss`
 
 ```scss
 .button {
@@ -44,11 +44,11 @@ mixin button()
 Данный файл импортируется в `app/styles/app.scss` автоматически
 
 #### Файл скриптов
-`app/blocks/button/button.js`
+`app/components/button/button.js`
 
 _Чтобы файл скрипов был сгенерирован, необходимо добавить флаг `--js` например:_
 ```
-npm run make block button -js
+npm run make component button -js
 ```
 
 [Почитать про ES6 модули](https://github.com/FrontenderMagazine/es6-modules/blob/master/rus.md)
@@ -63,7 +63,7 @@ export default function button() {
 }
 ```
 
-Если блок - класс (придется менять разметку самостоятельно)
+Если компонент - класс (придется менять разметку самостоятельно)
 ```js
 export class Button {
   constructor() {
@@ -72,14 +72,14 @@ export class Button {
 }
 ```
 
-Данный блок нужно импортировать в файл компонента или главный файл `app/scripts/app.js`
+Данный компонент нужно импортировать в файл компонента или главный файл `app/scripts/app.js`
 ```js
-import button from 'path/to/blocks/button/button';
+import button from 'path/to/components/button/button';
 
-// если блок - функция
+// если компонент - функция
 button();
 
-// если блок - класс
+// если компонент - класс
 const myButton = new Button();
 ```
 Если вам нужно использовать jQuery, то, нужно импортировать
