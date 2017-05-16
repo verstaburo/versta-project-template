@@ -51,7 +51,6 @@
     "gulp-stylelint": "^3.9.0",
     "gulp-svg-symbols": "^2.0.2",
     "gulp-watch": "^4.3.11",
-    "gulplog": "^1.0.0",
     "jade-get-data": "^1.0.1",
     "jquery": "^3.2.1",
     "normalize.css": "^6.0.0",
