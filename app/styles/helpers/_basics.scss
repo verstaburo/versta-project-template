@@ -24,6 +24,7 @@ button::-moz-focus-inner {
 ########## */
 
 input, textarea {
+
   &::placeholder {
     color: $color-placeholder;
   }
