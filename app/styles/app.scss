@@ -1,9 +1,13 @@
 @import '../../node_modules/normalize.css/normalize.css';
-@import 'helpers/mixins';
-@import 'helpers/fonts';
-@import 'helpers/variables';
-@import 'helpers/basics';
-
+@import 'helpers/mixins'; // Миксины
+@import 'helpers/fonts'; // Шрифты
+@import 'helpers/variables'; // Переменные
+@import 'helpers/basics'; // Основные общие стили
 @import '../blocks/**/*';
 @import '../components/**/*';
 @import '../pages/**/*';
+
+.container {
+  width: $container-width;
+  margin: 0 auto;
+}
