@@ -6,3 +6,8 @@
 @import '../blocks/**/*';
 @import '../components/**/*';
 @import '../pages/**/*';
+
+.container {
+  width: $container-width;
+  margin: 0 auto;
+}
