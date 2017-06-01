@@ -38,7 +38,7 @@ gulp.task('styles:lint', () => (
     .pipe(postcss([
       stylelint(),
       require('postcss-reporter')({
-        clearMessages: true,
+        clearAllMessages: true,
       }),
     ], { syntax: require('postcss-scss') }))
 ));
