@@ -200,6 +200,22 @@ div {
 }
 
 /*
+Миксин для быстрого выравнивания картинки по центру
+Пример использования:
+div {
+  @include center-image;
+}
+*/
+@mixin center-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/*
 Миксин для изображений.
 Нужен, чтобы картинка заполняла другой блок подобно background-size: cover
 Пример использования:
