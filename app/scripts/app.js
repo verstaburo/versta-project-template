@@ -1,5 +1,6 @@
 import $ from 'jquery';
+import svg4everybody from 'svg4everybody';
 
 $(() => {
-  // your code goes here
+  svg4everybody();
 });

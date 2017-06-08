@@ -63,6 +63,7 @@
     "run-sequence": "^1.2.2",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
+    "svg4everybody": "^2.1.8",
     "vinyl-named": "^1.1.0",
     "webpack": "^2.3.2",
     "webpack-stats-logger": "^1.0.1",
