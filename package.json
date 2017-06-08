@@ -56,6 +56,7 @@
     "jade-get-data": "^1.0.1",
     "jquery": "^3.2.1",
     "normalize.css": "^6.0.0",
+    "object-fit-images": "^3.2.3",
     "postcss-discard-comments": "^2.0.4",
     "postcss-reporter": "^3.0.0",
     "postcss-scss": "^0.4.1",
