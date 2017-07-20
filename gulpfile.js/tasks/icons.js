@@ -27,8 +27,8 @@ gulp.task('icons', () => (
           { removeMetadata: true },
           { removeTitle: true },
           { removeAttrs: { attrs: '(fill|stroke|data-name)' } },
-        ]
-      })
+        ],
+      }),
     ]))
     .pipe(rename('icon.svg'))
     .pipe(gulp.dest('dist/assets/images/'))
