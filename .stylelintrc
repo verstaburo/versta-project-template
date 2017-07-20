@@ -6,7 +6,7 @@
     "color-hex-case": "lower",
     "color-hex-length": "short",
     "selector-no-qualifying-type": true,
-    "selector-no-id": true,
+    "selector-max-id": 0,
     "selector-list-comma-newline-after": "never-multi-line",
     "selector-combinator-space-after": "always",
     "selector-attribute-quotes": "always",
