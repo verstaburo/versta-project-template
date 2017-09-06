@@ -9,5 +9,9 @@
 
 .container {
   width: $container-width;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
   margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }

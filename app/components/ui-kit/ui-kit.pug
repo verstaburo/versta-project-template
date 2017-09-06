@@ -1,0 +1,35 @@
+mixin ui-kit()
+  +b.ui-kit&attributes(attributes)
+    block
+
+mixin ui-kit-head()
+  +e.SECTION.head&attributes(attributes)
+    .container
+      block
+
+mixin ui-section()
+  +e.SECTION.section&attributes(attributes)
+    block
+
+mixin ui-color(color, colorvar, dark)
+  //- dark = true, если цвет темный. Сделает текст белым.
+  - var darkclass = '';
+  if dark
+    - darkclass = '_bg_dark';
+  +e.color(class=darkclass style='background-color: '+color)&attributes(attributes)
+    =color
+    | <br>
+    =colorvar
+
+mixin ui-section-head()
+  +e.section-head&attributes(attributes)
+    .container
+      block
+
+mixin ui-section-content(container)
+  +e.section-content
+    if !container
+      .container  
+        block
+    else
+      block

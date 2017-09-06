@@ -23,7 +23,7 @@ gulp.task('styles', () => {
     .pipe(postcss([
       require('autoprefixer'),
       require('postcss-discard-comments'),
-      require('css-mqpacker'),
+      //require('css-mqpacker'),
     ]))
     .pipe(cssimport())
     .pipe(cssnano({ zIndex: false }))

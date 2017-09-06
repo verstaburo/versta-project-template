@@ -1,0 +1,55 @@
+extends ../../layouts/default
+include ../../components/ui-kit/ui-kit
+
+block head
+  - var pageTitle = 'Versta Project Template'
+
+block content
+  +ui-kit
+    +ui-kit-head
+      +e.logo Логотип
+      +e.name Название проекта
+  
+    //- Сетка
+    +ui-section._grid
+      +ui-section-head
+        h2 Сетка
+        p Отступы слева и справа от экрана: 20px ($container-padding)
+        p Ширина контейнера: 960px ($container-width)
+        p Ширина контейнера сетки: 100% ($grid-container-width)
+        p Колонок: 12 ($grid-cols)
+        p Горизонтальное расстояние между колонками: 20px ($grid-gap)
+        p Вертикальное расстояние между колонками: 20px ($grid-vert-gap)
+        p Переменные: styles/helpers/_variables.scss
+        p Блок: blocks/grid/
+      +ui-section-content()
+        +grid
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(4)
+          +col(4)
+          +col(4)
+          +col(6)
+          +col(6)
+    
+    //- Цвета
+    +ui-section
+      +ui-section-head
+        h2 Цвета сайта
+        p Переменные находятся в файле styles/helpers/_variables.scss
+      +ui-section-content()
+        +ui-color('#f34c12', '$color-main', true)
+        +ui-color('#15a078', '$color-second', true)
+        +ui-color('#ccc', '$color-grey')
+        +ui-color('#2060bd', '$color-blue', true)
+        +ui-color('white', '$color-white')
