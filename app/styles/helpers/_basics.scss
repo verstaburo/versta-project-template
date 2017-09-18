@@ -57,27 +57,18 @@ html, body {
 body {
   font-family: $font-main; // Задаем основной шрифт
   font-size: 0; // Убираем проблему с отступами между inline-элементами
-  box-sizing: border-box; // Задаем box-sizing: border-box по умолчанию
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
+  color: $color-basic;
 }
 
 img {
   box-sizing: content-box;
 }
 
-header, section, footer {
-  width: 100%;
-  float: left; // float: left нужен, чтобы убрать пустое место под нижней секцией
-}
-
 /* ##########
-Сброс стандартных отступов для типографики и списков
+Сброс стандартных отступов для типографики, списков и таблиц
 ########## */
 
-h1, h2, h3, h4, h5, h6, p, span, ul, li {
+h1, h2, h3, h4, h5, h6, p, span, ul, li, tr, td, th, table {
   margin: 0;
   padding: 0;
 }
@@ -97,7 +88,7 @@ span {
 ########## */
 
 a, input, button, select, textarea {
-  transition: all .25s ease-in-out;
+  transition: color $ease-main, border-color $ease-main;
 }
 
 select, input, textarea, button {
@@ -106,4 +97,6 @@ select, input, textarea, button {
   padding: 0;
   border: 0;
   border-radius: 0; // Убираем авто-закругление углов на iOS
+  background-color: transparent;
+  font-family: $font-main;
 }

@@ -3,19 +3,25 @@
 // ##########
 // Базовые настройки сетки сайта
 // ##########
-$container-width: 960px; // Ширина контейнера контента
-$container-padding: 20px; // Отступы слева и справа от экрана
+$container-width: 960px; // Максимальная ширина контейнера контента
+$container-padding: 20px; // Отступы слева и справа у контейнера
 $grid-container-width: 100%; // Ширина контейнера сетки
 $grid-cols: 12; // Количество колонок в сетке
 $grid-gap: 20px; // Расстояние между колонками
-$grid-vert-gap: 20px; // Вертикальное расстояние между колонками
+$grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
 
 // ##########
 // Цвета
 // ##########
-$color-main: blue; // Основной цвет сайта
+$color-basic: black; // Основной цвет текста (применяется к body)
+$color-main: blue; // Основной фирменный цвет
 $color-placeholder: #777; // Основной цвет для placeholder
 $color-input: black; // Основной цвет input, select и textarea
+
+// ##########
+// Transitions
+// ##########
+$ease-main: .3s ease;
 
 // ##########
 // Шрифты

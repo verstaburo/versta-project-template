@@ -10,7 +10,7 @@
 //-     контент третьей колонки
 
 mixin grid()
-  +b.grid&attributes(attributes)
+  .grid&attributes(attributes)
     block
 
 mixin col(number)
@@ -46,5 +46,5 @@ mixin col(number)
   - if (number === 15)
     - colnumber = 'fifteen';
 
-  +b.grid__col(class="_" + colnumber)&attributes(attributes)
+  .grid__col(class="grid__col_" + colnumber)&attributes(attributes)
     block

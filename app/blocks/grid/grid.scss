@@ -1,5 +1,3 @@
-$grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
-
 .grid {
   font-size: 0;
   display: block; // fallback для старых браузеров
@@ -8,12 +6,12 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
   margin-left: -$grid-gap/2;
   margin-right: -$grid-gap/2;
 
-  &:first-of-type { margin-top: -$grid-vert-gap; }
+  &:first-of-type { margin-top: -$grid-gap; }
 
   &__col {
     display: inline-block; // fallback для старых браузеров
     box-sizing: border-box;
-    padding: $grid-vert-gap $grid-gap/2 0;
+    padding: $grid-gap $grid-gap/2 0;
     margin: 0;
 
     &_one { width: 1 * $grid-col-width; }

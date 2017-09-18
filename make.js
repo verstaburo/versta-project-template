@@ -7,7 +7,7 @@ const sources = {
   component: 'mixin {name}()\n  +b.{name}&attributes(attributes)\n    block\n',
   page: "extends ../../layouts/default\n\nblock head\n- var pageTitle = 'Versta Project Template'\n\nblock content\n  +b.{name}",
   scss: '.{name} {\n  display: block;\n}\n',
-  js: "import $ from 'jquery';\n\nexport default function {name}() {\n\n}\n",
+  js: "const $ = window.$;\n\nexport default function {name} () {\n\n}\n",
 };
 
 const dirPath = {
