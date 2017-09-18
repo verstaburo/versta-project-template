@@ -11,6 +11,27 @@ mixin ui-section()
   +e.SECTION.section&attributes(attributes)
     block
 
+//- Описание какого-то блока
+mixin ui-description()
+  +e.P.description&attributes(attributes)
+    block
+
+//- Рамка вокруг особой секции
+mixin ui-special()
+  +e.special&attributes(attributes)
+    block
+
+//- Блок для демонстрации шрифтов
+mixin ui-custom-text()
+  +e.custom-text&attributes(attributes)
+    block
+
+//- Блок для демонстрации шрифтов
+mixin ui-elements-list()
+  +e.elements-list&attributes(attributes)
+      block
+
+//- Демонстрация переменных цветов
 mixin ui-color(color, colorvar, dark)
   //- dark = true, если цвет темный. Сделает текст белым.
   - var darkclass = '';
@@ -20,6 +41,14 @@ mixin ui-color(color, colorvar, dark)
     =color
     | <br>
     =colorvar
+
+//- Демонстрация переменных цветов
+mixin ui-gradient(colorvar, dark)
+  //- dark = true, если цвет темный. Сделает текст белым.
+  - var darkclass = '';
+  if dark
+    - darkclass = '_bg_dark';
+  +e.color(class=darkclass style='background: '+color)&attributes(attributes)=colorvar
 
 mixin ui-section-head()
   +e.section-head&attributes(attributes)

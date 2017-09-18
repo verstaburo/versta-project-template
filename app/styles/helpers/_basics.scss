@@ -56,7 +56,7 @@ html, body {
 
 body {
   font-family: $font-main; // Задаем основной шрифт
-  font-size: 0; // Убираем проблему с отступами между inline-элементами
+  font-size: 16px; // Убираем проблему с отступами между inline-элементами
   color: $color-basic;
 }
 
@@ -68,12 +68,12 @@ img {
 Сброс стандартных отступов для типографики, списков и таблиц
 ########## */
 
-h1, h2, h3, h4, h5, h6, p, span, ul, li, tr, td, th, table {
+h1, h2, h3, h4, h5, h6, p, span, ul, ol, li, tr, td, th, table {
   margin: 0;
   padding: 0;
 }
 
-ul {
+ul, ol {
   list-style: none;
 }
 
@@ -81,6 +81,10 @@ span {
   font-style: inherit;
   font-family: inherit;
   font-weight: inherit;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* ##########

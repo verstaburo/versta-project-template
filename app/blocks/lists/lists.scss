@@ -1,0 +1,9 @@
+@import 'list-styles';
+
+.list {
+  @extend %list;
+}
+
+ol.list {
+  @extend %ollist;
+}

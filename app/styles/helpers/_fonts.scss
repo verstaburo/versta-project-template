@@ -4,12 +4,13 @@
   font-style: normal;
   font-weight: 400;
   src: url('webfont.eot');
-  src: url('webfont.eot?#iefix') format('embedded-opentype'),
-       url('webfont.woff2') format('woff2'),
-       url('webfont.woff') format('woff'),
-       url('webfont.otf')  format('opentype'),
-       url('webfont.ttf')  format('truetype'),
-       url('webfont.svg#svgFontName') format('svg');
+  src:
+    url('webfont.eot?#iefix') format('embedded-opentype'),
+    url('webfont.woff2') format('woff2'),
+    url('webfont.woff') format('woff'),
+    url('webfont.otf')  format('opentype'),
+    url('webfont.ttf')  format('truetype'),
+    url('webfont.svg#webfont') format('svg');
 }
 */
 

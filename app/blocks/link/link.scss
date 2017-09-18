@@ -1,0 +1,9 @@
+@import 'link-styles';
+
+.link {
+  @extend %link;
+
+  &_dashed {
+    @extend %link-dashed;
+  }
+}

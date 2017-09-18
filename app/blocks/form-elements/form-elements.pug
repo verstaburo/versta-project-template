@@ -1,0 +1,20 @@
+mixin input()
+  input.input&attributes(attributes)
+
+mixin select()
+  select.select&attributes(attributes)
+    block
+
+mixin checkbox(name, value, checked)
+  +b.LABEL.checkradio&attributes(attributes)
+    +e.INPUT.input(name=name, value=value, checked=checked, type="checkbox")
+    +e.SPAN.box
+    +e.SPAN.content
+      block
+      
+mixin radio(name, value, checked)
+  +b.LABEL.checkradio&attributes(attributes)
+    +e.INPUT.input(name=name, value=value, checked=checked, type="radio")
+    +e.SPAN.box
+    +e.SPAN.content
+      block

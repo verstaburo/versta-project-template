@@ -1,0 +1,6 @@
+mixin button(newtag)
+  - var tag = 'a';
+  if newtag
+    - var tag = newtag;
+  +b(tag).button&attributes(attributes)
+    block

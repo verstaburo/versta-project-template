@@ -1,0 +1,27 @@
+%list {
+  @extend %text;
+
+  ul, ol {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  ul li { padding-left: 20px; }
+}
+
+%ollist {
+  counter-reset: list1;
+
+  li {
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      counter-increment: list1;
+      content: counter(list1) '.';
+    }
+  }
+}

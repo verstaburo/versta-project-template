@@ -1,0 +1,64 @@
+.input {
+  padding: 0 10px;
+  height: 40px;
+  border: 1px solid $color-border;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.select {
+  @extend .input;
+}
+
+.checkradio {
+  position: relative;
+  padding-left: 25px;
+  display: inline-block;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    &:checked {
+      & + .checkradio__box {
+        &::before { opacity: 1; }
+
+        & + .checkradio__content {}
+      }
+    }
+  }
+
+  &__box {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $color-border;
+    left: 0;
+    top: 2px;
+
+    &::before {
+      content: '';
+      width: 9px;
+      height: 9px;
+      background-color: $color-main;
+      display: block;
+      opacity: 0;
+      transition: opacity $ease-main;
+
+      @include center-image;
+    }
+  }
+
+  &__content {
+    @extend %text;
+  }
+}

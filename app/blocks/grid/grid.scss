@@ -6,12 +6,12 @@
   margin-left: -$grid-gap/2;
   margin-right: -$grid-gap/2;
 
-  &:first-of-type { margin-top: -$grid-gap; }
+  &:first-of-type { margin-top: -$grid-gap-vertical; }
 
   &__col {
     display: inline-block; // fallback для старых браузеров
     box-sizing: border-box;
-    padding: $grid-gap $grid-gap/2 0;
+    padding: $grid-gap-vertical $grid-gap/2 0;
     margin: 0;
 
     &_one { width: 1 * $grid-col-width; }
