@@ -85,6 +85,7 @@ span {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 /* ##########
@@ -94,6 +95,8 @@ a {
 a, input, button, select, textarea {
   transition: color $ease-main, border-color $ease-main;
 }
+
+button { cursor: pointer; }
 
 select, input, textarea, button {
   color: $color-input;

@@ -1,3 +1,15 @@
 mixin tabs()
-  +b.tabs&attributes(attributes)
+  +b.UL.tabs&attributes(attributes)
+    block
+
+mixin tab()
+  +e.LI.tab&attributes(attributes)
+    block
+
+mixin tabs-content()
+  .tabs-content&attributes(attributes)
+    block
+
+mixin tab-wrapper()
+  .tabs-content__wrapper&attributes(attributes)
     block

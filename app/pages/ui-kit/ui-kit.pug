@@ -50,7 +50,7 @@ block content
       +ui-section-content()
         +ui-elements-list()
           +ui-color('black', '$color-basic', true)
-          +ui-color('blue', '$color-main', true)
+          +ui-color('#2252d8', '$color-main', true)
           +ui-color('#777', '$color-placeholder', true)
           +ui-color('black', '$color-input', true)
           +ui-color('#ccc', '$color-border')
@@ -93,7 +93,7 @@ block content
               p Текст с <a href="#">ссылкой в тексте</a>
             p Картинка в тексте (img):
             img(src="http://verstaburo.com/patterns/pattern.jpg")
-            p Маркированный список ul. Стили взяты из блока lists
+            p Маркированный список ul. Стили взяты из styles/helpers/_list-styles.scss
             ul
               li Элемент списка
               li Другой элемент
@@ -102,7 +102,7 @@ block content
                   li Другой элемент
                   li Элемент списка
               li Элемент списка
-            p Нумерованный список ol. Стили взяты из блока lists
+            p Нумерованный список ol. Стили взяты из styles/helpers/_list-styles.scss
             ol
               li Элемент списка
               li Другой элемент
@@ -188,11 +188,13 @@ block content
             +ui-description .input
             +input(placeholder="Плейсхолдер")
           +col(6)
-            +ui-description .select
+            +ui-description .select.js-select
             +select
-              option Опция
-              option Опция
-              option Опция
+              option(value="Опция 1") Опция 1
+              option(value="Опция 2") Опция 2
+              option(value="Опция 3") Опция 3
+          +col(12)
+            +textarea(placeholder="Текстовое поле")
           +col(6)
             +ui-description .checkradio
             +checkbox('ui-checkbox', 'test', 'true') Чекбокс
@@ -200,7 +202,12 @@ block content
             +ui-description .checkradio
             +ui-elements-list
               +radio('ui-radio', 'test', 'true') Радиокнопка
-              +radio('ui-radio', 'test-2', 'false') Радиокнопка
+              +radio('ui-radio', 'test-2') Радиокнопка
+          +col(6)
+            +ui-description .range.js-range<br> Все параметры задаются дата-атрибутами
+            +range()(data-start='40', data-connect='[true, false]', data-min='0', data-max='100')
+          +col(6)
+            +ui-description .range
       
     //- Табы
     +ui-section
@@ -208,6 +215,17 @@ block content
         h2 Табы
         p Блок: blocks/tabs
       +ui-section-content()
+        +tabs
+          +tab()(data-tab-target="tab1").active Информация
+          +tab()(data-tab-target="tab2") Контент
+          +tab()(data-tab-target="tab3") Тексты
+        +tabs-content
+          +tab-wrapper()(data-tab="tab1" data-tab-group="testtabs").active
+            p Это таб 1
+          +tab-wrapper()(data-tab="tab2" data-tab-group="testtabs")
+            p Это таб 2
+          +tab-wrapper()(data-tab="tab3" data-tab-group="testtabs")
+            p Это таб 3
       
     //- Попапы
     +ui-section
@@ -215,22 +233,85 @@ block content
         h2 Попапы
         p Блок: blocks/popups
       +ui-section-content()
+        +ui-description .js-fancybox
+        +link()(href="#testpopup").js-fancybox Открыть попап
+        +ui-description Верстка попапов:
+        +link()(onclick="$('.popups').toggle()") Показать попапы
+        +popups.__ui-popups
+          +popup#testpopup
+            +content-zone
+              h2 Тестовый попап
+              p С тестовым контентом
         
     //- Ссылки
     +ui-section
       +ui-section-head
         h2 Ссылки
         p Блок: blocks/link
-        p Стили ссылок на всем сайте импортируются из этого блока
+        p Стили ссылок: helpers/_link-styles.scss
       +ui-section-content()
         +ui-description .link
         +link()(href="#") Обычная ссылка
-        +ui-description .link_dashed
+        +ui-description .link._dashed
         +link()(href="#")._dashed Пунктирная ссылка
+        +ui-description .link._icon
+        +link-icon('refresh')(href="#") Ссылка с иконкой
           
-    //- Табы
+    //- Скроллбар
     +ui-section
       +ui-section-head
-        h2 Фоновое видео
-        p Блок: blocks/bg-video
+        h2 Кастомный скроллбар
+        p Блок: blocks/scrollbar/scrollbar
       +ui-section-content()
+        +ui-description .js-scrollbar
+        +e.scrolldemo.js-scrollbar
+          +e.scrolldemo-block
+          
+    //- Слайдер
+    +ui-section
+      +ui-section-head
+        h2 Слайдер
+        p Блок: blocks/slider/slider
+      +ui-section-content()
+        +ui-description .js-slider
+        +slider(true, true)
+          +slide Привет
+          +slide Привет
+          +slide Привет
+          +slide Привет
+
+    //- Подсказки
+    +ui-section
+      +ui-section-head
+        h2 Подсказки
+        p Блок: blocks/tooltip/tooltip
+      +ui-section-content()
+        +ui-description .js-tooltip
+        +button()(href="#" title="Пример подсказки").js-tooltip Пример подсказки
+
+
+    //- Слайдер
+    +ui-section
+      +ui-section-head
+        h2 Подсказки
+        p Блок: blocks/tooltip/tooltip
+      +ui-section-content()
+        +ui-description .js-tooltip
+
+
+    //- Слайдер
+    +ui-section
+      +ui-section-head
+        h2 Подсказки
+        p Блок: blocks/tooltip/tooltip
+      +ui-section-content()
+        +ui-description .js-tooltip
+
+
+    //- Слайдер
+    +ui-section
+      +ui-section-head
+        h2 Подсказки
+        p Блок: blocks/tooltip/tooltip
+      +ui-section-content()
+        +ui-description .js-tooltip

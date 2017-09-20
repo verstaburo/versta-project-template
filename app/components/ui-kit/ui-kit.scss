@@ -99,6 +99,24 @@ $ui-kit-color-darkbg: #111;
     }
   }
 
+  &__ui-popups {
+    margin-top: 30px;
+
+    .popup {
+      display: block !important;
+      border: 1px solid $color-border;
+
+      &:not(:first-child) { margin-top: 30px; }
+    }
+  }
+
+  &__scrolldemo {
+    border: 1px solid $color-border;
+    max-height: 400px;
+
+    &-block { height: 1000px; }
+  }
+
   &__color {
     text-align: center;
     line-height: 20px;

@@ -1,0 +1,145 @@
+// Базовые стили (не трогать)
+
+.scroll-wrapper {
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: relative;
+}
+
+.scroll-wrapper > .scroll-content {
+  border: none !important;
+  box-sizing: content-box !important;
+  height: auto;
+  left: 0;
+  margin: 0;
+  max-height: none;
+  max-width: none !important;
+  overflow: scroll !important;
+  padding: 0;
+  position: relative !important;
+  top: 0;
+  width: auto !important;
+}
+
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+
+.scroll-wrapper.scroll--rtl {
+  direction: rtl;
+}
+
+.scroll-element {
+  box-sizing: content-box;
+  display: none;
+}
+
+.scroll-element div {
+  box-sizing: content-box;
+}
+
+.scroll-element .scroll-bar, .scroll-element .scroll-arrow {
+  cursor: default;
+}
+
+.scroll-element.scroll-x.scroll-scrollx_visible, .scroll-element.scroll-y.scroll-scrolly_visible {
+  display: block;
+}
+
+.scroll-textarea {
+  border: 1px solid #ccc;
+  border-top-color: #999;
+}
+
+.scroll-textarea > .scroll-content {
+  overflow: hidden !important;
+}
+
+.scroll-textarea > .scroll-content > textarea {
+  border: none !important;
+  box-sizing: border-box;
+  height: 100% !important;
+  margin: 0;
+  max-height: none !important;
+  max-width: none !important;
+  overflow: scroll !important;
+  outline: none;
+  padding: 2px;
+  position: relative !important;
+  top: 0;
+  width: 100% !important;
+}
+
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+
+// Кастомные стили
+
+.scroll-element, .scroll-element div {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+}
+
+.scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.scroll-element.scroll-x {
+  right: 10px;
+  left: 10px;
+  bottom: 10px;
+  height: 4px;
+}
+
+.scroll-element.scroll-y {
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+}
+
+.scroll-element .scroll-element_outer {
+  overflow: hidden;
+}
+
+.scroll-element .scroll-element_outer, .scroll-element .scroll-element_track, .scroll-element .scroll-bar {
+  border-radius: 0;
+}
+
+.scroll-element .scroll-element_track {
+  background-color: rgba($color-basic, .05);
+}
+
+.scroll-element .scroll-bar {
+  background-color: $color-border;
+  transition: background-color $ease-main;
+}
+
+.scroll-element:hover .scroll-bar {
+  background-color: $color-main;
+  cursor: pointer;
+}
+
+.scroll-element.scroll-draggable .scroll-bar {
+  background-color: #919191;
+}
+
+// Стили для случая, когда видны оба скроллбара
+
+.scroll-element.scroll-x.scroll-scrolly_visible {
+  right: 20px;
+}
+
+.scroll-element.scroll-y.scroll-scrollx_visible {
+  bottom: 20px;
+}

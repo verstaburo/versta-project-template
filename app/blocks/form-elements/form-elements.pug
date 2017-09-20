@@ -1,13 +1,18 @@
 mixin input()
   input.input&attributes(attributes)
 
+mixin textarea()
+  textarea.textarea&attributes(attributes)
+    block
+
 mixin select()
-  select.select&attributes(attributes)
+  select.select&attributes(attributes).js-select
     block
 
 mixin checkbox(name, value, checked)
   +b.LABEL.checkradio&attributes(attributes)
-    +e.INPUT.input(name=name, value=value, checked=checked, type="checkbox")
+    - var check = checked || '';
+    +e.INPUT.input(name=name, value=value, check, type="checkbox")
     +e.SPAN.box
     +e.SPAN.content
       block
@@ -18,3 +23,7 @@ mixin radio(name, value, checked)
     +e.SPAN.box
     +e.SPAN.content
       block
+
+mixin range()
+  +b.range&attributes(attributes).js-range
+    block

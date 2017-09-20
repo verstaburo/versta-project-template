@@ -1,0 +1,50 @@
+@import '../../node_modules/swiper/dist/css/swiper.css';
+
+.slider {
+  position: relative;
+
+  &__slide {
+    padding: 100px;
+    border: 1px solid $color-border;
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+  }
+
+  &__dot {
+    margin: 5px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid $color-border;
+    border-radius: 100px;
+    display: inline-block;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $color-border;
+    transition: opacity $ease-main;
+    z-index: 2;
+    cursor: pointer;
+
+    &:hover { opacity: .5; }
+
+    &_next {
+      right: 20px;
+    }
+
+    &_prev {
+      left: 20px;
+    }
+  }
+}

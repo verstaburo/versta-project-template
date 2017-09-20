@@ -1,3 +1,43 @@
 .tabs {
+  $tab-gap: 25px;
+
   display: block;
+  font-size: 0;
+  margin-top: -$tab-gap;
+
+  &__tab {
+    display: inline-block;
+    margin-right: $tab-gap;
+    margin-top: $tab-gap;
+    border-bottom: 2px solid transparent;
+    transition: border-color $ease-main, opacity $ease-main;
+    padding-bottom: 10px;
+    cursor: pointer;
+    opacity: .5;
+
+    @extend %text;
+
+    &.active {
+      border-color: $color-basic;
+      opacity: 1;
+    }
+  }
+
+  & + &-content { margin-top: 30px; }
+
+  &-content {
+
+    &__wrapper {
+      display: none;
+      opacity: 0;
+      transition: opacity $ease-main, transform $ease-main;
+      transform: translate3d(0, 10px, 0);
+
+      &.active {
+        display: block;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
 }

@@ -6,15 +6,26 @@
     padding-bottom: 5px;
   }
 
-  ul li { padding-left: 20px; }
+  li {
+    padding-left: 20px;
+    position: relative;
+  }
+}
+
+%ullist {
+
+  li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '•';
+  }
 }
 
 %ollist {
   counter-reset: list1;
 
   li {
-    position: relative;
-    padding-left: 20px;
 
     &::before {
       position: absolute;
