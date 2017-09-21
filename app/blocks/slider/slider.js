@@ -7,13 +7,16 @@ const $ = window.$;
 export default function slider() {
   const mySlider = new Swiper('.js-slider', {
     loop: true,
-    speed: 300,
-    autoplay: 1000,
+    speed: 700,
+    autoplay: 2000,
     slidesPerView: 1,
     nextButton: '.slider__button_next',
     prevButton: '.slider__button_prev',
     pagination: '.slider__dots',
+    paginationClickable: true,
+    paginationClickableClass: 'slider__dots_clickable',
     bulletClass: 'slider__dot',
+    bulletActiveClass: 'active',
     roundLengths: true,
     breakpoints: {
       320: {

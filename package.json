@@ -71,7 +71,7 @@
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "svg4everybody": "^2.1.8",
-    "swiper": "^4.0.0-beta.3",
+    "swiper": "3.4.2",
     "tooltipster": "^4.2.5",
     "vinyl-named": "^1.1.0",
     "webpack": "^2.3.2",

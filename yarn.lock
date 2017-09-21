@@ -2111,10 +2111,6 @@ dom-serializer@0, dom-serializer@~0.1.0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
-dom7@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.0.tgz#67ad454f9a7d2cdb53780fa601506dfb7933be81"
-
 domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
@@ -7038,11 +7034,9 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-swiper@^4.0.0-beta.3:
-  version "4.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.0.0-beta.3.tgz#cab6dcadc35ccbdbf8150e8bf62a8cd3146f899f"
-  dependencies:
-    dom7 "^2.0.0"
+swiper@3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-3.4.2.tgz#39d6b410b1a39833e1f72d3b72999df5f5e38392"
 
 symbol-observable@^1.0.3:
   version "1.0.4"

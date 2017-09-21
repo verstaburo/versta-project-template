@@ -254,11 +254,21 @@
   font-size: 14px;
   width: 250px;
   background: white;
-  border-color: $color-border;
+  border: 1px solid $color-border;
   box-shadow: 0 2px 4px rgba($color-basic, .15);
   border-radius: 0;
   transition: opacity $ease-main, transform $ease-main, left 0s $ease-main;
   font-family: $font-main;
+
+  &.-from-bottom- {
+    transform: translateY(8px);
+  }
+
+  &.active {
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity $ease-main, transform $ease-main, left 0 0;
+  }
 }
 
 // Стрелочка сверху над блоком
