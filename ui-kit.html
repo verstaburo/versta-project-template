@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Versta Project Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="assets/styles/app.min.css" rel="stylesheet">
+    <script src="assets/scripts/libs/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="ui-kit">
+        <section class="ui-kit__head">
+            <div class="container">
+                <div class="ui-kit__logo">Логотип</div>
+                <div class="ui-kit__name">Название проекта</div>
+            </div>
+        </section>
+        <section class="ui-kit__section ui-kit__section_grid">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Сетка</h2>
+                    <p>Отступы слева и справа от экрана: 20px ($container-padding)</p>
+                    <p>Ширина контейнера: 960px ($container-width)</p>
+                    <p>Ширина контейнера сетки: 100% ($grid-container-width)</p>
+                    <p>Колонок: 12 ($grid-cols)</p>
+                    <p>Горизонтальное расстояние между колонками: 20px ($grid-gap)</p>
+                    <p>Вертикальное расстояние между колонками: 20px ($grid-gap-vertical)</p>
+                    <p>Переменные: styles/helpers/_variables.scss</p>
+                    <p>Блок: blocks/grid/</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_one"></div>
+                        <div class="grid__col grid__col_four"></div>
+                        <div class="grid__col grid__col_four"></div>
+                        <div class="grid__col grid__col_four"></div>
+                        <div class="grid__col grid__col_six"></div>
+                        <div class="grid__col grid__col_six"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Цвета сайта</h2>
+                    <p>Переменные находятся в файле styles/helpers/_variables.scss</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="ui-kit__elements-list">
+                        <div class="ui-kit__color ui-kit__color_bg_dark" style="background-color: black;">black
+                            <br>$color-basic</div>
+                        <div class="ui-kit__color ui-kit__color_bg_dark" style="background-color: #2252d8;">#2252d8
+                            <br>$color-main</div>
+                        <div class="ui-kit__color ui-kit__color_bg_dark" style="background-color: #777;">#777
+                            <br>$color-placeholder</div>
+                        <div class="ui-kit__color ui-kit__color_bg_dark" style="background-color: black;">black
+                            <br>$color-input</div>
+                        <div class="ui-kit__color" style="background-color: #ccc;">#ccc
+                            <br>$color-border</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Градиенты</h2>
+                    <p>Цвета для градиентов находятся в файле styles/helpers/_variables.scss</p>
+                    <p>Сами градиенты в styles/helpers/_gradients.scss</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="ui-kit__elements-list">
+                        <div class="ui-kit__color ui-kit__color_bg_dark ui-kit__color_gradient_main" style="background: undefined;">%gradient-main</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section" id="ui-fonts-zone">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Шрифты и контентная зона</h2>
+                    <p>Основной шрифт: Arial ($font-main), font-weight: 400, 600</p>
+                    <p>Дополнительный шрифт: Times New Roman ($font-second), font-weight: 400, 600</p>
+                    <p>Переменные находятся в файле styles/helpers/_variables.scss</p>
+                    <p>Шрифты подключены в styles/helpers/_fonts.scss</p>
+                    <p>Контентная зона: blocks/content-zone</p>
+                    <p>Стили всех текстов лежат в файле styles/helpers/_text-styles.scss и должны импортироваться из него через директиву @extend и задаваться через "временные" классы %className</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">.content-zone</p>
+                    <div class="ui-kit__special">
+                        <div class="content-zone">
+                            <h1>Заголовок H1 (%heading-1)</h1>
+                            <h2>Заголовок H2 (%heading-2)</h2>
+                            <h3>Заголовок H3 (%heading-3)</h3>
+                            <h4>Заголовок H4 (%heading-4)</h4>
+                            <h5>Заголовок H5 (%heading-5)</h5>
+                            <h6>Заголовок H6 (%heading-6)</h6>
+                            <p>Текст p (%text)
+                                <br> Цитата внутри текста p:
+                                <q>Цитата q</q>
+                            </p>
+                            <p>
+                                <small>Тег small внутри p (%text-small)</small>
+                            </p>
+                            <blockquote>
+                                <p>Демонстрация цитаты через тег blockquote</p>
+                                <h4>Внутри могут быть заголовки</h4>
+                                <p>Текст с
+                                    <a href="#">ссылкой в тексте</a>
+                                </p>
+                            </blockquote>
+                            <p>Картинка в тексте (img):</p>
+                            <img src="http://verstaburo.com/patterns/pattern.jpg">
+                            <p>Маркированный список ul. Стили взяты из styles/helpers/_list-styles.scss</p>
+                            <ul>
+                                <li>Элемент списка</li>
+                                <li>Другой элемент
+                                    <ul>
+                                        <li>Элемент списка</li>
+                                        <li>Другой элемент</li>
+                                        <li>Элемент списка</li>
+                                    </ul>
+                                </li>
+                                <li>Элемент списка</li>
+                            </ul>
+                            <p>Нумерованный список ol. Стили взяты из styles/helpers/_list-styles.scss</p>
+                            <ol>
+                                <li>Элемент списка</li>
+                                <li>Другой элемент
+                                    <ol>
+                                        <li>Элемент списка</li>
+                                        <li>Другой элемент</li>
+                                        <li>Элемент списка</li>
+                                    </ol>
+                                </li>
+                                <li>Элемент списка</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <p class="ui-kit__description">Другие стили текстов:</p>
+                    <div class="ui-kit__custom-text ui-kit__custom-text_style-1">Пример кастомного стиля на примере стандартного (%text)</div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Таблицы</h2>
+                    <p>Блок: blocks/table</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <table class="table" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <td>Ячейка</td>
+                                <td>Ячейка</td>
+                                <td>Ячейка</td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Ячейка</td>
+                            <td>Ячейка</td>
+                            <td>Ячейка</td>
+                        </tr>
+                        <tr>
+                            <td>Ячейка</td>
+                            <td>Ячейка</td>
+                            <td>Ячейка</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Кнопки</h2>
+                    <p>Блок: blocks/button</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="ui-kit__elements-list">
+                        <a class="button" href="#">.button</a>
+                        <button class="button" href="#" disabled="disabled">.button:disabled</button>
+                    </div>
+                    <p class="ui-kit__description">При клике на .js-anchor происходит скролл к элементу из атрибута href. Блок: blocks/js-functions/anchor.js</p>
+                    <a class="button js-anchor" href="#ui-fonts-zone">.js-anchor</a>
+                    <p class="ui-kit__description">При клике на .js-freeze скролл страницы блокируется, на .js-unfreeze разблокируется. Блок: blocks/js-functions/freeze.js. Функции freeze() и unfreeze() можно импортировать и использовать в модалках, бургере или где-то еще</p>
+                    <div class="ui-kit__elements-list">
+                        <a class="button js-freeze" href="#">.js-freeze</a>
+                        <a class="button js-unfreeze" href="#">.js-unfreeze</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Списки</h2>
+                    <p>Блок: blocks/lists</p>
+                    <p>По желанию можно доработать (для каких-то сложных списков). Добавить миксин +list-item и вписать туда шаблон для li</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">ul.list</p>
+                    <ul class="list">
+                        <li>Элемент списка
+                            <ul class="list">
+                                <li>Элемент списка</li>
+                                <li>Элемент списка</li>
+                                <li>Элемент списка</li>
+                            </ul>
+                        </li>
+                        <li>Элемент списка</li>
+                        <li>Элемент списка</li>
+                    </ul>
+                    <p class="ui-kit__description">ol.list</p>
+                    <ol class="list">
+                        <li>Элемент списка </li>
+                        <li>Элемент списка
+                            <ol class="list">
+                                <li>Элемент списка </li>
+                                <li>Элемент списка</li>
+                                <li>Элемент списка</li>
+                            </ol>
+                        </li>
+                        <li>Элемент списка</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Элементы форм</h2>
+                    <p>Блок: blocks/form-elements</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col_six">
+                            <p class="ui-kit__description">.input</p>
+                            <div class="inputbox">
+                                <input class="input" placeholder="Плейсхолдер" />
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_six">
+                            <p class="ui-kit__description">.select.js-select</p>
+                            <div class="inputbox">
+                                <select class="select js-select">
+                                    <option value="Опция 1">Опция 1</option>
+                                    <option value="Опция 2">Опция 2</option>
+                                    <option value="Опция 3">Опция 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_six">
+                            <p class="ui-kit__description">.js-datepicker
+                                <br> Параметры задаются через дата-атрибуты</p>
+                            <div class="inputbox">
+                                <input class="input js-datepicker" placeholder="Выберите дату" readonly="readonly" />
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_six">
+                            <p class="ui-kit__description">Поле ввода номера телефона.
+                                <br> Маска определяется через атрибут data-type="tel"</p>
+                            <div class="inputbox">
+                                <input class="input" placeholder="+7 (___) ___-__-__" data-type="tel" />
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_six">
+                            <p class="ui-kit__description">Поле ввода e-mail.
+                                <br> Маска определяется через атрибут data-type="email"</p>
+                            <div class="inputbox">
+                                <input class="input" placeholder="E-mail" data-type="email" />
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_six">
+                            <p class="ui-kit__description">.js-number-input
+                                <br> Поле изменения количества</p>
+                            <div class="inputbox">
+                                <div class="input-numberbox">
+                                    <span class="input-numberbox__button js-numberbox-minus"></span>
+                                    <input class="input input-numberbox__input js-numberbox-input" placeholder="Количество товара" />
+                                    <span class="input-numberbox__button js-numberbox-plus"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_twelve">
+                            <textarea class="textarea" placeholder="Текстовое поле"></textarea>
+                        </div>
+                        <div class="grid__col grid__col_six">
+                            <p class="ui-kit__description">.checkradio</p>
+                            <div class="inputbox">
+                                <label class="checkradio">
+                                    <input class="checkradio__input" name="ui-checkbox" value="test" check="check" type="checkbox" />
+                                    <span class="checkradio__box"></span>
+                                    <span class="checkradio__content">Чекбокс</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_six">
+                            <p class="ui-kit__description">.checkradio</p>
+                            <div class="inputbox">
+                                <div class="ui-kit__elements-list">
+                                    <label class="checkradio">
+                                        <input class="checkradio__input" name="ui-radio" value="test" checked="true" type="radio" />
+                                        <span class="checkradio__box"></span>
+                                        <span class="checkradio__content">Радиокнопка</span>
+                                    </label>
+                                    <label class="checkradio">
+                                        <input class="checkradio__input" name="ui-radio" value="test-2" type="radio" />
+                                        <span class="checkradio__box"></span>
+                                        <span class="checkradio__content">Радиокнопка</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_six">
+                            <p class="ui-kit__description">.range.js-range
+                                <br> Все параметры задаются дата-атрибутами</p>
+                            <div class="inputbox">
+                                <div class="range js-range" data-start="40" data-connect="[true, false]" data-min="0" data-max="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Табы</h2>
+                    <p>Блок: blocks/tabs</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <ul class="tabs">
+                        <li class="tabs__tab active" data-tab-target="tab1">Информация</li>
+                        <li class="tabs__tab" data-tab-target="tab2">Контент</li>
+                        <li class="tabs__tab" data-tab-target="tab3">Тексты</li>
+                    </ul>
+                    <div class="tabs-content">
+                        <div class="tabs-content__wrapper active" data-tab="tab1" data-tab-group="testtabs">
+                            <p>Это таб 1</p>
+                        </div>
+                        <div class="tabs-content__wrapper" data-tab="tab2" data-tab-group="testtabs">
+                            <p>Это таб 2</p>
+                        </div>
+                        <div class="tabs-content__wrapper" data-tab="tab3" data-tab-group="testtabs">
+                            <p>Это таб 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Попапы</h2>
+                    <p>Блок: blocks/popups</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">.js-fancybox</p>
+                    <a class="link js-fancybox" href="#testpopup">
+                        <span class="link__text">Открыть попап</span>
+                    </a>
+                    <p class="ui-kit__description">Верстка попапов:</p>
+                    <a class="link" onclick="$('.popups').toggle()">
+                        <span class="link__text">Показать попапы</span>
+                    </a>
+                    <div class="popups ui-kit__ui-popups">
+                        <div class="popup" id="testpopup">
+                            <div class="content-zone">
+                                <h2>Тестовый попап</h2>
+                                <p>С тестовым контентом</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Ссылки</h2>
+                    <p>Блок: blocks/link</p>
+                    <p>Стили ссылок: helpers/_link-styles.scss</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">.link</p>
+                    <a class="link" href="#">
+                        <span class="link__text">Обычная ссылка</span>
+                    </a>
+                    <p class="ui-kit__description">.link._dashed</p>
+                    <a class="link link_dashed" href="#">
+                        <span class="link__text">Пунктирная ссылка</span>
+                    </a>
+                    <p class="ui-kit__description">.link._icon</p>
+                    <a class="link link_icon" href="#">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_refresh"></use></svg>
+                        <span class="link__text">Ссылка с иконкой</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Кастомный скроллбар</h2>
+                    <p>Блок: blocks/scrollbar/scrollbar</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">.js-scrollbar</p>
+                    <div class="ui-kit__scrolldemo js-scrollbar">
+                        <div class="ui-kit__scrolldemo-block"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Слайдер</h2>
+                    <p>Блок: blocks/slider/slider</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">.js-slider</p>
+                    <div class="slider swiper-container js-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slider__slide">Привет</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider__slide">Привет</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider__slide">Привет</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider__slide">Привет</div>
+                            </div>
+                        </div>
+                        <div class="slider__dots">
+                            <div class="slider__dot"></div>
+                        </div>
+                        <div class="slider__button slider__button_prev"></div>
+                        <div class="slider__button slider__button_next"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Подсказки</h2>
+                    <p>Блок: blocks/tooltip/tooltip</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">.js-tooltip</p>
+                    <a class="button js-tooltip" href="#" title="Пример подсказки">Пример подсказки</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="assets/scripts/app.min.js"></script>
+</body>
+
+</html>
