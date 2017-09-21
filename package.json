@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.1.25",
+    "air-datepicker": "^2.2.3",
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
@@ -55,6 +56,7 @@
     "gulp-stylelint": "^3.9.0",
     "gulp-svg-symbols": "^2.0.2",
     "gulp-watch": "^4.3.11",
+    "inputmask": "^3.3.8",
     "jade-get-data": "^1.0.1",
     "jquery": "^3.2.1",
     "jquery.scrollbar": "^0.2.11",

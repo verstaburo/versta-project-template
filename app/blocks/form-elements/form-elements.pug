@@ -1,5 +1,15 @@
+mixin inputbox()
+  .inputbox&attributes(attributes)
+    block
+
 mixin input()
   input.input&attributes(attributes)
+
+mixin input-number()
+  .input-numberbox
+    span.input-numberbox__button.js-numberbox-minus
+    input.input.input-numberbox__input.js-numberbox-input&attributes(attributes)
+    span.input-numberbox__button.js-numberbox-plus
 
 mixin textarea()
   textarea.textarea&attributes(attributes)

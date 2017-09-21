@@ -1,5 +1,3 @@
-@import '../../../node_modules/choices.js/assets/styles/scss/choices.scss';
-
 .input {
   padding: 0 10px;
   height: 40px;
@@ -11,6 +9,10 @@
   border-radius: 0;
   min-height: 0;
   background-color: white;
+}
+
+.inputbox {
+  display: block;
 }
 
 .textarea {
@@ -73,8 +75,45 @@
 }
 
 // #####
+// Блок выбора количества
+// #####
+
+.input-numberbox {
+  display: table;
+  width: 100%;
+
+  &__button {
+    border: 1px solid $color-border;
+    width: 40px;
+    display: table-cell;
+    font-size: 18px;
+    font-family: monospace;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover::before, &:hover::after { opacity: .5; }
+
+    &::before, &::after { transition: opacity $ease-main; }
+
+    &:first-child::before { content: '-'; }
+
+    &:last-child::before { content: '+'; }
+  }
+
+  &__input {
+    flex: 1;
+    border-left: 0;
+    border-right: 0;
+    text-align: center;
+    display: table-cell;
+  }
+}
+
+// #####
 // Кастомные селекты
 // #####
+
+@import '../../../node_modules/choices.js/assets/styles/scss/choices.scss';
 
 .select {
   appearance: none;
@@ -91,6 +130,8 @@
   }
 
   &[data-type*='select-one'] {
+
+    .choices__inner { padding-bottom: 0; }
 
     &::after {
       border-width: 5px 5px 0;
@@ -197,5 +238,157 @@
     position: absolute;
     top: 0;
     height: 100%;
+  }
+}
+
+// #####
+// Календарь
+// #####
+
+@import '../../node_modules/air-datepicker/dist/css/datepicker.css';
+
+.js-datepicker { cursor: pointer; }
+
+.datepicker {
+  color: $color-basic;
+  font-size: 14px;
+  width: 250px;
+  background: white;
+  border-color: $color-border;
+  box-shadow: 0 2px 4px rgba($color-basic, .15);
+  border-radius: 0;
+  transition: opacity $ease-main, transform $ease-main, left 0s $ease-main;
+  font-family: $font-main;
+}
+
+// Стрелочка сверху над блоком
+
+.datepicker--pointer {
+  border-top-color: $color-border;
+  border-right-color: $color-border;
+}
+
+// Цвет дней недели
+
+.datepicker--day-name {
+  color: $color-main;
+}
+
+// Ячейка со стрелкой
+
+.datepicker--nav-action {
+  border-radius: 0;
+  transition: color $ease-main, background-color $ease-main;
+
+  // Цвет стрелок
+  path { stroke: $color-basic; }
+}
+
+// Шапка календаря
+
+.datepicker--nav {
+  border-color: $color-border;
+
+  // Ячейка с заголовком месяца/года
+
+  &-title {
+    border-radius: 0;
+    transition: color $ease-main, background-color $ease-main;
+
+    // Цвет года в шапке
+
+    i { color: rgba($color-basic, .5); }
+  }
+}
+
+// Цвет ховера по ячейкам в календаре, шапке
+
+.datepicker--cell.-focus-, .datepicker--nav-action:hover, .datepicker--nav-title:hover {
+  background: rgba($color-border, .3);
+}
+
+// Стиль ячейки
+
+.datepicker--cell {
+  border-radius: 0;
+  transition: color $ease-main, background-color $ease-main;
+
+  // Цвет сегодняшнего даты/месяца
+
+  &.-current- {
+    color: $color-main;
+    background: rgba($color-main, .1);
+  }
+
+  // Ховер по активной дате
+
+  &.-selected-.-focus- {
+    background: rgba($color-main, .8);
+  }
+
+  // Неактивная ячейка
+
+  &.-disabled- {
+    color: rgba($color-basic, .3);
+  }
+
+  // Цвет фона активного месяца/дня
+
+  &.-selected-, &.-selected-.-current- {
+    background: $color-main;
+  }
+}
+
+// Цвет даты другого месяца/года
+
+.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+  color: rgba($color-basic, .2);
+
+  &:hover { color: rgba($color-basic, .5); }
+}
+
+// Стили при выборе диапазона дат
+
+.datepicker--cell.-range-to-, .datepicker--cell.-range-from- {
+  border: 0;
+  background-color: rgba($color-main, .3);
+
+  &.-selected- {
+    background-color: $color-main;
+  }
+}
+
+.datepicker--cell.-range-from- {
+  border-radius: 3px 0 0 3px;
+}
+
+.datepicker--cell.-range-to- {
+  border-radius: 0 3px 3px 0;
+}
+
+// Стили ячеек другого месяца, находящихся в диапазоне
+
+.-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
+  background-color: rgba($color-main, .1);
+  color: rgba($color-main, .3);
+
+  &.-focus- {
+    background-color: rgba($color-main, .2);
+  }
+}
+
+// Стили промежуточных ячеек в диапазоне
+
+.datepicker--cell.-in-range- {
+  background: rgba($color-main, .2);
+  color: $color-main;
+  border-radius: 0;
+
+  &.-current- {
+    color: $color-basic;
+  }
+
+  &.-focus- {
+    background: rgba($color-main, .3);
   }
 }
