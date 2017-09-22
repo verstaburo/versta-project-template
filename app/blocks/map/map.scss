@@ -3,6 +3,8 @@
 .map {
   display: block;
   height: 400px;
+  position: relative;
+  z-index: 1;
 }
 
 .leaflet-control-layers-toggle {
