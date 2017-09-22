@@ -6,6 +6,36 @@ $ui-kit-color-darkbg: #111;
   display: block;
   color: $ui-kit-color-text;
 
+  &__navigation {
+    position: fixed;
+    right: 100%;
+    top: 0;
+    height: 100vh;
+    box-shadow: 0 0 30px rgba($color-basic, .15);
+    z-index: 10;
+    padding: 20px;
+    background-color: white;
+    transform: translate3d(15%, 0, 0);
+    width: 240px;
+    opacity: .5;
+    transition: opacity $ease-main, transform $ease-main;
+    overflow: auto;
+    box-sizing: border-box;
+
+    &:hover {
+      transform: translate3d(100%, 0, 0);
+      opacity: 1;
+    }
+
+    li {
+      @extend %text;
+
+      a { @extend %link; }
+
+      &:not(:last-child) { margin-bottom: 5px; }
+    }
+  }
+
   &__head {
     padding-top: 40px;
     padding-bottom: 20px;

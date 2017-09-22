@@ -6,6 +6,9 @@ block head
 
 block content
   +ui-kit
+    +e.navigation
+      +e.UL.navigation__list
+    
     +ui-kit-head
       +e.logo Логотип
       +e.name Название проекта
@@ -66,7 +69,7 @@ block content
           +ui-gradient('%gradient-main', true)._gradient_main
 
     //- Шрифты и контентная зона
-    +ui-section#ui-fonts-zone
+    +ui-section
       +ui-section-head
         h2 Шрифты и контентная зона
         p Основной шрифт: Arial ($font-main), font-weight: 400, 600
@@ -145,7 +148,7 @@ block content
           +button()(href="#") .button
           +button('button')(href="#" disabled) .button:disabled
         +ui-description При клике на .js-anchor происходит скролл к элементу из атрибута href. Блок: blocks/js-functions/anchor.js
-        +button()(href="#ui-fonts-zone").js-anchor .js-anchor
+        +button()(href="#section0").js-anchor .js-anchor
         +ui-description При клике на .js-freeze скролл страницы блокируется, на .js-unfreeze разблокируется. Блок: blocks/js-functions/freeze.js. Функции freeze() и unfreeze() можно импортировать и использовать в модалках, бургере или где-то еще
         +ui-elements-list()
           +button()(href="#").js-freeze .js-freeze
@@ -307,3 +310,27 @@ block content
       +ui-section-content()
         +ui-description .js-tooltip
         +button()(href="#" title="Пример подсказки").js-tooltip Пример подсказки
+    
+    //- Карты
+    +ui-section
+      +ui-section-head
+        h2 Карты
+        p Блок: blocks/map/map
+      +ui-section-content()
+        +ui-description #map
+        +map()#map
+
+  script
+    |
+    | $('.ui-kit__section').each(function (i) {
+    |   var id = 'section' + i;
+    |   var name = $(this).find('.ui-kit__section-head h2').text();
+    |   var li = $('<li></li>');
+    |   var a = $('<a></a>');
+    |
+    |   a.attr('href', '#'+id).text(name).addClass('js-anchor');
+    |   li.append(a);
+    |
+    |   $('.ui-kit__navigation__list').append(li);
+    |   $(this).attr('id', id);
+    | });

@@ -1,0 +1,43 @@
+@import '../../node_modules/leaflet/dist/leaflet.css';
+
+.map {
+  display: block;
+  height: 400px;
+}
+
+.leaflet-control-layers-toggle {
+  background-image: url('../images/map/layers.png');
+  width: 36px;
+  height: 36px;
+}
+
+.leaflet-retina .leaflet-control-layers-toggle {
+  background-image: url('../images/map/layers-2x.png');
+  background-size: 26px 26px;
+}
+
+.leaflet-default-icon-path {
+  background-image: url('../images/map/marker-icon.png');
+}
+
+.leaflet-touch .leaflet-bar, .leaflet-touch .leaflet-control-layers {
+  border: none;
+  box-shadow: 0 2px 4px rgba($color-basic, .2);
+}
+
+.leaflet-bar a {
+  border-bottom: 1px solid $color-border;
+  transition: background-color $ease-main, color $ease-main;
+  color: $color-basic;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: $color-main;
+    color: white;
+  }
+}
+
+.leaflet-container .leaflet-control-attribution { display: none; }

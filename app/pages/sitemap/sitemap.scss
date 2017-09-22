@@ -1,0 +1,19 @@
+.sitemap {
+  display: block;
+  padding: 60px 0;
+
+  &__list {
+    list-style: none;
+
+    a {
+      display: block;
+      width: 100%;
+
+      @extend %text;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

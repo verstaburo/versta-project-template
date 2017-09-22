@@ -60,6 +60,7 @@
     "jade-get-data": "^1.0.1",
     "jquery": "^3.2.1",
     "jquery.scrollbar": "^0.2.11",
+    "leaflet": "^1.2.0",
     "normalize.css": "^6.0.0",
     "nouislider": "^10.1.0",
     "object-fit-images": "^3.2.3",

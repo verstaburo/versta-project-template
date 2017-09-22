@@ -1,0 +1,11 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Versta Project Template'
+
+block content
+  +b.sitemap
+    .container
+      +e.list
+        +link(href="ui-kit.html") UI-kit (ui-kit.html)
+        +link(href="index.html") Главная (index.html)
