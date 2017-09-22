@@ -15,6 +15,9 @@
 
 <body>
     <div class="ui-kit">
+        <div class="ui-kit__navigation">
+            <ul class="ui-kit__navigation__list"></ul>
+        </div>
         <section class="ui-kit__head">
             <div class="container">
                 <div class="ui-kit__logo">Логотип</div>
@@ -99,7 +102,7 @@
                 </div>
             </div>
         </section>
-        <section class="ui-kit__section" id="ui-fonts-zone">
+        <section class="ui-kit__section">
             <div class="ui-kit__section-head">
                 <div class="container">
                     <h2>Шрифты и контентная зона</h2>
@@ -214,7 +217,7 @@
                         <button class="button" href="#" disabled="disabled">.button:disabled</button>
                     </div>
                     <p class="ui-kit__description">При клике на .js-anchor происходит скролл к элементу из атрибута href. Блок: blocks/js-functions/anchor.js</p>
-                    <a class="button js-anchor" href="#ui-fonts-zone">.js-anchor</a>
+                    <a class="button js-anchor" href="#section0">.js-anchor</a>
                     <p class="ui-kit__description">При клике на .js-freeze скролл страницы блокируется, на .js-unfreeze разблокируется. Блок: blocks/js-functions/freeze.js. Функции freeze() и unfreeze() можно импортировать и использовать в модалках, бургере или где-то еще</p>
                     <div class="ui-kit__elements-list">
                         <a class="button js-freeze" href="#">.js-freeze</a>
@@ -505,7 +508,35 @@
                 </div>
             </div>
         </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Карты</h2>
+                    <p>Блок: blocks/map/map</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">#map</p>
+                    <div class="map" id="map"></div>
+                </div>
+            </div>
+        </section>
     </div>
+    <script>
+        $('.ui-kit__section').each(function(i) {
+            var id = 'section' + i;
+            var name = $(this).find('.ui-kit__section-head h2').text();
+            var li = $('<li></li>');
+            var a = $('<a></a>');
+
+            a.attr('href', '#' + id).text(name).addClass('js-anchor');
+            li.append(a);
+
+            $('.ui-kit__navigation__list').append(li);
+            $(this).attr('id', id);
+        });
+    </script>
     <script src="assets/scripts/app.min.js"></script>
 </body>
 
