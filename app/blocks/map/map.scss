@@ -40,4 +40,15 @@
   }
 }
 
+.leaflet-popup-content-wrapper {
+  border-radius: 3px;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 13px 20px;
+
+  @extend %text;
+}
+
 .leaflet-container .leaflet-control-attribution { display: none; }
