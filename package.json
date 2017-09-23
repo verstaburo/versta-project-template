@@ -69,6 +69,7 @@
     "postcss-scss": "^0.4.1",
     "require-dir": "^0.3.1",
     "run-sequence": "^1.2.2",
+    "scrollreveal": "^3.3.6",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "svg4everybody": "^2.1.8",
