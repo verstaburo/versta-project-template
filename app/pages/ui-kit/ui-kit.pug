@@ -279,6 +279,8 @@ block content
         +link()(href="#")._dashed Пунктирная ссылка
         +ui-description .link._icon
         +link-icon('refresh')(href="#") Ссылка с иконкой
+        +ui-description .link.disabled
+        +link()(href="#").disabled Отключенная ссылка
           
     //- Скроллбар
     +ui-section
@@ -331,6 +333,14 @@ block content
         +content-zone
           h3.js-sr.js-sr_1 .js-sr_1
           h4.js-sr.js-sr_2 .js-sr_2
+          
+    //- Хлебные крошки
+    +ui-section
+      +ui-section-head
+        h2 Хлебные крошки
+        p Блок: blocks/breadcrumbs/breadcrumbs
+      +ui-section-content()
+        +breadcrumbs(['Главная', 'Раздел', 'Страница'])
         
 
   script

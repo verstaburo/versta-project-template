@@ -28,4 +28,12 @@
     margin-right: 5px;
     fill: $color-main;
   }
+
+  &.disabled {
+    pointer-events: none;
+
+    .link__icon { fill: $color-border; }
+
+    .link__text { @extend %link-disabled; }
+  }
 }
