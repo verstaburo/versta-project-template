@@ -1,5 +1,5 @@
 mixin breadcrumbs(json)
-  +b.breadcrumbs&attributes(attributes)
+  +b.breadcrumbs.js-test&attributes(attributes)
     each crumb in json
       +e.LI.item
         +link(href='#')

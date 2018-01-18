@@ -1,4 +1,13 @@
 include ../../node_modules/bemto.pug/bemto
+
+-
+  set_bemto_settings({
+    prefix: {
+      'js-': true,
+      'is-': 'is-'
+    }
+  })
+
 include ../blocks/grid/grid
 include ../blocks/icon/icon
 include ../blocks/content-zone/content-zone
