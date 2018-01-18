@@ -21,5 +21,5 @@ module.exports = () => {
     middleware: [debuga()],
   });
 
-  browserSync.watch('dist/*.*').on('change', browserSync.reload);
+  browserSync.watch('dist/**/*').on('change', browserSync.reload);
 };
