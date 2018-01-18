@@ -1,8 +1,9 @@
 const gulp = require('gulp');
-const changed = require('gulp-changed');
+const newer = require('gulp-newer');
 
-gulp.task('copy', () => (
-  gulp.src('app/static/misc/**/*')
-    .pipe(changed('dist'))
+module.exports = () => (
+    gulp
+    .src('app/static/misc/**/*', { since: gulp.lastRun('copy') })
+    .pipe(newer('dist'))
     .pipe(gulp.dest('dist'))
-));
+);

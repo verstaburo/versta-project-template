@@ -1,13 +1,11 @@
-const browserSync = require('browser-sync').create;
+const browserSync = require('browser-sync').create();
 const debuga = require('debuga');
-const gulp = require('gulp');
 
-const bs = browserSync('server');
-
-gulp.task('server', () => {
-  bs.init({
+module.exports = () => {
+  browserSync.init({
     open: true,
     reloadOnRestart: true,
+    reloadDebounce: 100,
     port: 3000,
     snippetOptions: {
       rules: {
@@ -23,5 +21,5 @@ gulp.task('server', () => {
     middleware: [debuga()],
   });
 
-  bs.watch('dist/**/*.*').on('change', bs.reload);
-});
+  browserSync.watch('dist/*.*').on('change', browserSync.reload);
+};

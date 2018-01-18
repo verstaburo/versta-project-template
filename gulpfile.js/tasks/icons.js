@@ -5,8 +5,8 @@ const rename = require('gulp-rename');
 const svgSymbols = require('gulp-svg-symbols');
 const imagemin = require('gulp-imagemin');
 
-gulp.task('icons', () => (
-  gulp.src('app/static/icons/**/*.svg')
+module.exports = () => (
+    gulp.src('app/static/icons/**/*.svg')
     .pipe(plumber({ errorHandler: errorHandler('Error in icons task') }))
     .pipe(svgSymbols({
       title: false,
@@ -32,4 +32,4 @@ gulp.task('icons', () => (
     ]))
     .pipe(rename('icon.svg'))
     .pipe(gulp.dest('dist/assets/images/'))
-));
+);
