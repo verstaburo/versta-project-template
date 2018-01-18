@@ -2,13 +2,15 @@ const program = require('commander');
 const fs = require('fs');
 const path = require('path');
 
+/* eslint-disable global-require */
 const sources = {
-  block: 'mixin {name}()\n  +b.{name}&attributes(attributes)\n    block\n',
+  block: require('./templates/block'),
   component: 'mixin {name}()\n  +b.{name}&attributes(attributes)\n    block\n',
-  page: "extends ../../layouts/default\n\nblock head\n- var pageTitle = 'Versta Project Template'\n\nblock content\n  +b.{name}",
-  scss: '.{name} {\n  display: block;\n}\n',
-  js: "const $ = window.$;\n\nexport default function {name} () {\n\n}\n",
+  page: require('./templates/page'),
+  scss: require('./templates/scss'),
+  js: require('./templates/js'),
 };
+/* eslint-enable global-require */
 
 const dirPath = {
   block: path.resolve('app/blocks'),
@@ -25,7 +27,7 @@ const validateName = (name, kind) => (
     } else {
       const errMsg = (
         `ERR>>> An incorrect ${kind} name '${name}'\n` +
-        `ERR>>> A block name must include letters, numbers & the minus symbol.`
+        'ERR>>> A block name must include letters, numbers & the minus symbol.'
       );
       reject(errMsg);
     }
@@ -59,11 +61,11 @@ const createDir = blockPath => (
 
 const generateFileSources = (name, kind, js) => {
   const data = {};
-  data.pug = sources[kind].replace(/{name}/g, name);
-  data.scss = sources.scss.replace(/{name}/g, name);
+  data.pug = sources[kind](name).trim();
+  data.scss = sources.scss(name).trim();
 
   if (js) {
-    data.js = sources.js.replace(/{name}/g, name);
+    data.js = sources.js(name).trim();
   }
 
   return Promise.resolve(data);

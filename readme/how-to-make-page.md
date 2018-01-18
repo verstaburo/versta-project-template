@@ -15,7 +15,10 @@ yarn make page [pageName]
 npm run make page about
 ```
 
-#### Файл разметки 
+#### Изменить шаблон разметки можно
+`templates/page.js`
+
+#### Файл разметки
 `app/pages/about.pug`
 
 ```jade
@@ -48,7 +51,10 @@ block head
 
 [Что такое +b](https://github.com/kizu/bemto)
 
-#### Файл стилей 
+#### Изменить шаблон разметки можно
+`templates/scss.js`
+
+#### Файл стилей
 `app/pages/about/about.scss`
 
 ```scss
@@ -58,6 +64,9 @@ block head
 ```
 
 Данный файл импортируется в `app/styles/app.scss` автоматически
+
+#### Изменить шаблон разметки можно
+`templates/js.js`
 
 #### Файл скриптов
 `app/pages/about/about.js`
@@ -75,7 +84,7 @@ _если вам не нужно использовать jQuery, то може�
 import $ from 'jquery';
 
 export default function about() {
-  
+
 }
 ```
 
@@ -83,7 +92,7 @@ export default function about() {
 ```js
 export class About {
   constructor() {
-    
+
   }
 }
 ```

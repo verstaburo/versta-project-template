@@ -15,7 +15,10 @@ yarn make component [componentName]
 npm run make component button
 ```
 
-#### Файл разметки 
+#### Изменить шаблон разметки можно
+`templates/component.js`
+
+#### Файл разметки
 `app/components/button/button.pug`
 ```jade
 mixin button()
@@ -31,8 +34,10 @@ mixin button()
 
 Вызов данного блока `+button()`
 
+#### Изменить шаблон разметки можно
+`templates/scss.js`
 
-#### Файл стилей 
+#### Файл стилей
 `app/components/button/button.scss`
 
 ```scss
@@ -42,6 +47,9 @@ mixin button()
 ```
 
 Данный файл импортируется в `app/styles/app.scss` автоматически
+
+#### Изменить шаблон разметки можно
+`templates/js.js`
 
 #### Файл скриптов
 `app/components/button/button.js`
@@ -59,7 +67,7 @@ _если вам не нужно использовать jQuery, то може�
 import $ from 'jquery';
 
 export default function button() {
-  
+
 }
 ```
 
@@ -67,7 +75,7 @@ export default function button() {
 ```js
 export class Button {
   constructor() {
-    
+
   }
 }
 ```

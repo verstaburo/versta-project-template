@@ -1,15 +1,15 @@
 # Структура проекта
 
 ```
-├── app/                                  # Исходники                    
-│   ├── blocks/                           # Блоки      
-│   │   └── blockName/                    # Блок   
-│   │       ├── blockName.pug             # Разметка блока    
+├── app/                                  # Исходники
+│   ├── blocks/                           # Блоки
+│   │   └── blockName/                    # Блок
+│   │       ├── blockName.pug             # Разметка блока
 │   │       ├── blockName.scss            # Стили блока
 │   │       └── blockName.js              # Скрипты блока
-│   ├── components/                       # Компоненти      
-│   │   └── componentName/                # Компонент   
-│   │       ├── componentName.pug         # Разметка компонента    
+│   ├── components/                       # Компоненти
+│   │   └── componentName/                # Компонент
+│   │       ├── componentName.pug         # Разметка компонента
 │   │       ├── componentName.scss        # Стили компонента
 │   │       └── componentName.js          # Скрипты компонента
 │   ├── data/                             # Данные для шаблонов в формате JSON
@@ -17,8 +17,8 @@
 │   │   ├── default.pug                   # Разметка документа
 │   │   └── head.pug                      # Разметка head части документа
 │   ├── pages/                            # Страницы
-│   │   └── pageName/                     # Страница   
-│   │       ├── pageName.pug              # Разметка страницы    
+│   │   └── pageName/                     # Страница
+│   │       ├── pageName.pug              # Разметка страницы
 │   │       ├── pageName.scss             # Стили страницы
 │   │       └── pageName.js               # Скрипты страницы
 │   ├── scripts/                          # Скрипты
