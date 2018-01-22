@@ -2,11 +2,11 @@
   display: inline-block;
 
   &__text {
-    @extend %link;
+    @include link;
   }
 
   &_dashed &__text {
-    @extend %link-dashed;
+    @include link-dashed;
   }
 
   &_icon {
@@ -34,6 +34,6 @@
 
     .link__icon { fill: $color-border; }
 
-    .link__text { @extend %link-disabled; }
+    .link__text { @include link-disabled; }
   }
 }

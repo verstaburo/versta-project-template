@@ -70,7 +70,7 @@
   }
 
   &__content {
-    @extend %text;
+    @include text;
   }
 }
 

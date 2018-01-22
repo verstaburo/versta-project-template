@@ -1,7 +1,7 @@
 .table {
   display: table;
 
-  @extend %text;
+  @include text;
 
   tr {
     padding: 0;

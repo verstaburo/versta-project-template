@@ -1,11 +1,11 @@
 .list {
-  @extend %list;
+  @include list;
 }
 
 ul.list {
-  @extend %ullist;
+  @include ullist;
 }
 
 ol.list {
-  @extend %ollist;
+  @include ollist;
 }

@@ -55,9 +55,9 @@ $ui-kit-color-darkbg: #111;
     }
 
     li {
-      @extend %text;
+      @include text;
 
-      a { @extend %link; }
+      a { @include link; }
 
       &:not(:last-child) { margin-bottom: 5px; }
     }
@@ -186,12 +186,12 @@ $ui-kit-color-darkbg: #111;
     &_bg_dark { color: white; }
 
     &_gradient {
-      &_main { @extend %gradient-main; }
+      &_main { @include gradient-main; }
     }
   }
 
   &__custom-text {
-    &_style-1 { @extend %text; }
+    &_style-1 { @include text; }
 
     &:not(:last-child) { margin-bottom: 10px; }
   }

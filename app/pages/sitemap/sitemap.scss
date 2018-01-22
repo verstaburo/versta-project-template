@@ -9,7 +9,7 @@
       display: block;
       width: 100%;
 
-      @extend %text;
+      @include text;
 
       &:not(:last-child) {
         margin-bottom: 10px;

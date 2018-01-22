@@ -50,7 +50,7 @@
   margin: 0;
   padding: 13px 20px;
 
-  @extend %text;
+  @include text;
 }
 
 .leaflet-container .leaflet-control-attribution { display: none; }
