@@ -342,6 +342,16 @@ block content
       +ui-section-content()
         +breadcrumbs(['Главная', 'Раздел', 'Страница'])
 
+    //- Рейтинг
+    +ui-section
+      +ui-section-head
+        h2 Рейтинг
+        p Блок: blocks/rating/rating
+      +ui-section-content()
+        +ui-description Интерактивный
+        +rating-interactive
+        +ui-description Статичный
+        +rating(3)
 
   script
     |
