@@ -1,5 +1,5 @@
-%list {
-  @extend %text;
+@mixin list {
+  @include text;
 
   ul, ol {
     padding-top: 5px;
@@ -12,7 +12,7 @@
   }
 }
 
-%ullist {
+@mixin ullist {
 
   li::before {
     position: absolute;
@@ -22,7 +22,7 @@
   }
 }
 
-%ollist {
+@mixin ollist {
   counter-reset: list1;
 
   li {

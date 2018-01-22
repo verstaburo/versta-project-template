@@ -31,7 +31,7 @@ $breadpadding: 35px;
       pointer-events: none;
 
       &__text {
-        @extend %link-disabled;
+        @include link-disabled;
       }
     }
   }

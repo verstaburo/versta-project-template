@@ -9,7 +9,7 @@
   transition: opacity $ease-main;
   cursor: pointer;
 
-  @extend %text;
+  @include text;
 
   &:disabled {
     opacity: .5;

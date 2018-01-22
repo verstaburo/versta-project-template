@@ -6,7 +6,7 @@
       margin-bottom: 10px;
     }
 
-    @extend %heading-1;
+    @include heading-1;
   }
 
   h2 {
@@ -15,7 +15,7 @@
       margin-bottom: 10px;
     }
 
-    @extend %heading-2;
+    @include heading-2;
   }
 
   h3 {
@@ -24,7 +24,7 @@
       margin-bottom: 10px;
     }
 
-    @extend %heading-3;
+    @include heading-3;
   }
 
   h4 {
@@ -33,7 +33,7 @@
       margin-bottom: 10px;
     }
 
-    @extend %heading-4;
+    @include heading-4;
   }
 
   h5 {
@@ -42,7 +42,7 @@
       margin-bottom: 10px;
     }
 
-    @extend %heading-5;
+    @include heading-5;
   }
 
   h6 {
@@ -51,7 +51,7 @@
       margin-bottom: 10px;
     }
 
-    @extend %heading-6;
+    @include heading-6;
   }
 
   p {
@@ -63,10 +63,10 @@
     small {
       display: block;
 
-      @extend %text-small;
+      @include text-small;
     }
 
-    @extend %text;
+    @include text;
   }
 
   blockquote {
@@ -103,11 +103,11 @@
     }
   }
 
-  ul, ol { @extend %list; }
+  ul, ol { @include list; }
 
-  ul { @extend %ullist; }
+  ul { @include ullist; }
 
-  ol { @extend %ollist; }
+  ol { @include ollist; }
 
-  a { @extend %link; }
+  a { @include link; }
 }
