@@ -16,11 +16,15 @@ export default function scrollanimation() {
     duration: 600,
   });
 
-  sr.reveal('.js-sr_1');
+  if ($('.js-sr_1').length) {
+    sr.reveal('.js-sr_1');
+  }
 
-  sr.reveal('.js-sr_2', {
-    delay: 100,
-  });
+  if ($('.js-sr_2').length) {
+    sr.reveal('.js-sr_2', {
+      delay: 100,
+    });
+  }
 
   // Показываем элементы, если ScrollReveal не поддерживается
   if (!sr.isSupported()) {
