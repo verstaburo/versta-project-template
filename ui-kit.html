@@ -251,10 +251,10 @@
                     </ul>
                     <p class="ui-kit__description">ol.list</p>
                     <ol class="list">
-                        <li>Элемент списка </li>
+                        <li>Элемент списка</li>
                         <li>Элемент списка
                             <ol class="list">
-                                <li>Элемент списка </li>
+                                <li>Элемент списка</li>
                                 <li>Элемент списка</li>
                                 <li>Элемент списка</li>
                             </ol>
@@ -442,6 +442,10 @@
                         <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_refresh"></use></svg>
                         <span class="link__text">Ссылка с иконкой</span>
                     </a>
+                    <p class="ui-kit__description">.link.disabled</p>
+                    <a class="link disabled" href="#">
+                        <span class="link__text">Отключенная ссылка</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -523,6 +527,106 @@
                 </div>
             </div>
         </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Анимации при скролле</h2>
+                    <p>Блок: blocks/js-functions/scrollanimation</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">.js-sr — общий класс для анимируемых элементов</p>
+                    <div class="content-zone">
+                        <h3 class="js-sr js-sr_1">.js-sr_1</h3>
+                        <h4 class="js-sr js-sr_2">.js-sr_2</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Хлебные крошки</h2>
+                    <p>Блок: blocks/breadcrumbs/breadcrumbs</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="breadcrumbs js-test">
+                        <ul>
+                            <li class="breadcrumbs__item">
+                                <a class="link" href="#">
+                                    <span class="link__text">Главная</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumbs__item">
+                                <a class="link" href="#">
+                                    <span class="link__text">Раздел</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumbs__item">
+                                <a class="link" href="#">
+                                    <span class="link__text">Страница</span>
+                                </a>
+                            </li>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Рейтинг</h2>
+                    <p>Блок: blocks/rating/rating</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">Интерактивный</p>
+                    <div class="rating rating_interactive">
+                        <label class="rating__box">
+                            <input class="rating__control js-rating-control" type="radio" name="name" value="4" />
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </label>
+                        <label class="rating__box">
+                            <input class="rating__control js-rating-control" type="radio" name="name" value="3" />
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </label>
+                        <label class="rating__box">
+                            <input class="rating__control js-rating-control" type="radio" name="name" value="2" />
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </label>
+                        <label class="rating__box">
+                            <input class="rating__control js-rating-control" type="radio" name="name" value="1" />
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </label>
+                        <label class="rating__box">
+                            <input class="rating__control js-rating-control" type="radio" name="name" value="0" />
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </label>
+                    </div>
+                    <p class="ui-kit__description">Статичный</p>
+                    <div class="rating">
+                        <div class="rating__box">
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </div>
+                        <div class="rating__box">
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </div>
+                        <div class="rating__box is-active">
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </div>
+                        <div class="rating__box">
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </div>
+                        <div class="rating__box">
+                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <script>
         $('.ui-kit__section').each(function(i) {
@@ -539,6 +643,7 @@
         });
     </script>
     <script src="assets/scripts/app.min.js"></script>
+    <script src="assets/scripts/main.js"></script>
 </body>
 
 </html>
