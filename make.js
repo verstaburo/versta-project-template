@@ -1,6 +1,8 @@
 const program = require('commander');
 const fs = require('fs');
 const path = require('path');
+const { promisify } = require('util');
+// TODO promiify fs and rewrite on async/await
 
 /* eslint-disable global-require */
 const sources = {
@@ -100,6 +102,26 @@ const getFiles = blockPath => (
   })
 );
 
+const appendToIncludes = (kind, blockName) => {
+  const filePath = './app/layouts/_internalIncludes.pug';
+
+  if (['component', 'block'].indexOf(kind) === -1) {
+    return;
+  }
+
+  const file = fs.readFileSync(filePath, 'utf8');
+  const includeString = `include ../${kind}s/${blockName}/${blockName}`;
+  const lines = file.split(/\n/).filter(line => !!line);
+
+  if (lines.indexOf(includeString) !== -1) {
+    return console.log(`>>> ${kind} ${blockName} already included to '${filePath}'`);
+  }
+
+  lines.push(includeString);
+  const nextFile = lines.sort().join('\n');
+  fs.writeFileSync(filePath, nextFile, 'utf8');
+};
+
 const make = (name, kind, js) => {
   const blockPath = path.join(dirPath[kind], name);
 
@@ -117,7 +139,8 @@ const make = (name, kind, js) => {
 
       // Displays a list of files created
       files.forEach(file => console.log(file));
-    });
+    })
+    .then(() => ({ kind, name }));
 };
 
 const printError = err => console.log(err);
@@ -125,31 +148,36 @@ const printError = err => console.log(err);
 program
   .command('block [blockNames...]')
   .option('--js', 'Generate script file')
-  .action((blockNames, opts) => {
+  .action(async (blockNames, opts) => {
     if (blockNames === undefined) {
       return console.log('Please enter blockName');
     }
 
     const promises = blockNames.map(name => make(name, 'block', opts.js));
-    Promise.all(promises).catch(printError);
+
+    const blocks = await Promise.all(promises).catch(printError);
+    blocks.forEach(block => appendToIncludes(block.kind, block.name));
 });
 
 program
   .command('component [componentNames...]')
   .option('--js', 'Generate script file')
-  .action((componentNames, opts) => {
+  .action(async (componentNames, opts) => {
     if (componentNames === undefined) {
       return console.log('Please enter componentName');
     }
 
     const promises = componentNames.map(name => make(name, 'component', opts.js));
     Promise.all(promises).catch(printError);
+
+    const blocks = await Promise.all(promises).catch(printError);
+    blocks.forEach(block => appendToIncludes(block.kind, block.name));
 });
 
 program
   .command('page [pageNames...]')
   .option('--js', 'Generate script file')
-  .action((pageNames, opts) => {
+  .action(async (pageNames, opts) => {
     if (pageNames === undefined) {
       return console.log('Please enter pageName');
     }

@@ -1,8 +1,8 @@
 .rating {
+  $b: &;
   font-size: 0;
   display: inline-flex;
   flex-flow: row-reverse;
-  $b: &;
   margin-left: -4px;
 
   &__box {
