@@ -1,0 +1,15 @@
+mixin accordion()
+  +b.accordion&attributes(attributes)
+    block
+
+mixin accordion-header
+  +e.header&attributes(attributes)
+    block
+
+mixin accordion-button
+  +e.button.js-accordion-button&attributes(attributes)
+    block
+
+mixin accordion-body
+  +e.body&attributes(attributes)
+    block

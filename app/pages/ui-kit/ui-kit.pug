@@ -352,6 +352,22 @@ block content
         +ui-description Статичный
         +rating(3)
 
+    //- Аккордион
+    +ui-section
+      +ui-section-head
+        h2 Аккордион
+        p Блок: blocks/accordion/accordion
+      +ui-section-content()
+        +accordion
+          +accordion-header
+            +accordion-button Аккордион
+          +accordion-body
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            | Obcaecati aliquam perferendis velit ex numquam, consequatur
+            | doloribus magnam accusantium expedita eveniet,
+            | quisquam voluptate quos maiores impedit quibusdam.
+            | Quod sit molestias sapiente.
+
   script
     |
     | $('.ui-kit__section').each(function (i) {
