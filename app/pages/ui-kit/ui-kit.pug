@@ -357,8 +357,31 @@ block content
       +ui-section-head
         h2 Аккордион
         p Блок: blocks/accordion/accordion
+
       +ui-section-content()
+        +ui-description Multiple true
         +accordions
+          +accordion.is-active
+            +accordion-header
+              +accordion-button Блок #1
+            +accordion-body
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              | Obcaecati aliquam perferendis velit ex numquam, consequatur
+              | doloribus magnam accusantium expedita eveniet,
+              | quisquam voluptate quos maiores impedit quibusdam.
+              | Quod sit molestias sapiente.
+          +accordion
+            +accordion-header
+              +accordion-button Блок #2
+            +accordion-body
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              | Obcaecati aliquam perferendis velit ex numquam, consequatur
+              | doloribus magnam accusantium expedita eveniet,
+              | quisquam voluptate quos maiores impedit quibusdam.
+              | Quod sit molestias sapiente.
+
+        +ui-description Multiple false
+        +accordions(false)
           +accordion.is-active
             +accordion-header
               +accordion-button Блок #1

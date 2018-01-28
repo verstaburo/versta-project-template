@@ -1,5 +1,7 @@
-mixin accordions
-  +b.accordions&attributes(attributes)
+mixin accordions(isMultiple)
+  - var defaultMultiple = typeof isMultiple !== undefined ? !!isMultiple : true
+
+  +b.accordions&attributes(attributes)(data-accordion-multiple=`${defaultMultiple}`)
     block
 
 mixin accordion
