@@ -1,0 +1,28 @@
+.dropdown {
+  display: block;
+  $b: &;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  margin-top: 12px;
+  padding: 12px;
+  background-color: white;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, .15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $ease-main;
+  @include text;
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &_position_top {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+}

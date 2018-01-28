@@ -400,6 +400,21 @@ block content
               | doloribus magnam accusantium expedita eveniet,
               | quisquam voluptate quos maiores impedit quibusdam.
               | Quod sit molestias sapiente.
+
+    //- Dropdown
+    +ui-section
+      +ui-section-head
+        h2 Dropdown
+        p Блок: blocks/dropdown/dropdown
+      +ui-section-content
+        +ui-description Для использования, нужно "кнопке" добавить класс .js-dropdown-toggle
+        div(style="display: inline-block; position: relative; margin-bottom: 24px;")
+          +button.js-dropdown-toggle top
+          +dropdown._position_top content
+        div(style="display: inline-block; position: relative; margin-bottom: 24px;")
+          +button.js-dropdown-toggle bottom
+          +dropdown content
+
   script
     |
     | $('.ui-kit__section').each(function (i) {
