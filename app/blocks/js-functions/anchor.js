@@ -7,7 +7,7 @@ export default function anchor() {
     e.preventDefault();
     const target = $($(this).attr('href'));
     if (target.length > 0) {
-      $('body, html').animate({
+      $('body, html').stop().animate({
         scrollTop: target.offset().top,
       }, 1000, 'swing');
     }
