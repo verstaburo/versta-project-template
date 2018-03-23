@@ -8,43 +8,24 @@
 //-     контент второй колонки
 //-   +col(5)
 //-     контент третьей колонки
+//-   +col({ xl: 12, lg: 6, md: 3, sm: 2, xl: 1 })
 
 mixin grid()
   .grid&attributes(attributes)
     block
 
-mixin col(number)
-  - var colnumber = "one";
-  - if (number === 1)
-    - colnumber = 'one';
-  - if (number === 2)
-    - colnumber = 'two';
-  - if (number === 3)
-    - colnumber = 'three';
-  - if (number === 4)
-    - colnumber = 'four';
-  - if (number === 5)
-    - colnumber = 'five';
-  - if (number === 6)
-    - colnumber = 'six';
-  - if (number === 7)
-    - colnumber = 'seven';
-  - if (number === 8)
-    - colnumber = 'eight';
-  - if (number === 9)
-    - colnumber = 'nine';
-  - if (number === 10)
-    - colnumber = 'ten';  
-  - if (number === 11)
-    - colnumber = 'eleven';
-  - if (number === 12)
-    - colnumber = 'twelve';
-  - if (number === 13)
-    - colnumber = 'thirteen';
-  - if (number === 14)
-    - colnumber = 'fourteen';
-  - if (number === 15)
-    - colnumber = 'fifteen';
+mixin col(col)
+  - var classNames = []
 
-  .grid__col(class="grid__col_" + colnumber)&attributes(attributes)
+  if typeof col === 'object'
+    - var knownKeys = ['xl', 'lg', 'md', 'sm', 'xs']
+
+    each val, key in col
+      if knownKeys.indexOf(key) !== -1
+        - classNames.push(`grid__col_${key}_${val}`)
+
+  else
+    - classNames.push(`grid__col_xl_${col}`)
+
+  .grid__col(class=classNames.join(' '))&attributes(attributes)
     block

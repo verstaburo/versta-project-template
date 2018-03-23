@@ -25,7 +25,19 @@ block content
         p Вертикальное расстояние между колонками: 20px ($grid-gap-vertical)
         p Переменные: styles/helpers/_variables.scss
         p Блок: blocks/grid/
+
       +ui-section-content()
+        +ui-special(style="margin-bottom: 20px")
+          +content-zone
+            H4 Возможные варианты использования
+            p +col(12) агалогично +col({ xl: 12 })
+            p +col({ xl: 8, lg: 6: md: 5, sm: 7, xs: 12 })
+            p
+              span Промежуточные брейкпоинты указывать не обязательно
+              br
+              span При следующей записи - блок будет занимать 6 колонок сетки, а на самом маленьком #[i xs] 12
+            p +col({ xl: 6, xs: 12 })
+
         +grid
           +col(1)
           +col(1)
