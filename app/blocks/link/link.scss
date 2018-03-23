@@ -1,39 +1,32 @@
 .link {
-  display: inline-block;
+  $b: &;
+  @include link;
 
   &__text {
-    @include link;
-  }
-
-  &_dashed &__text {
-    @include link-dashed;
+    #{$b}_dashed & {
+      @include link-dashed;
+    }
   }
 
   &_icon {
     position: relative;
     padding-left: 25px;
-
-    .link__icon {
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
   }
 
   &__icon {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 16px;
     height: 16px;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 5px;
-    fill: $color-main;
+    font-size: 0;
   }
 
-  &.disabled {
+  &.is-disabled {
     pointer-events: none;
-
-    .link__icon { fill: $color-border; }
-
-    .link__text { @include link-disabled; }
+    fill: $color-border;
+    @include link-disabled;
   }
 }

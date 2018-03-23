@@ -1,8 +1,13 @@
 @mixin link {
   color: $color-main;
   border: 0;
-  border-bottom: 1px solid;
-  transition: opacity $ease-main;
+  transition: fill $ease-main, color $ease-main, opacity $ease-main, border-color $ease-main;
+  fill: $color-main;
+
+  &__text {
+    border-bottom: 1px solid;
+    border-color: inherit;
+  }
 
   &:hover { opacity: .5; }
 }
@@ -13,5 +18,5 @@
 }
 
 @mixin link-dashed {
-  border-style: dashed;
+  border-bottom-style: dashed;
 }
