@@ -1,5 +1,6 @@
 import svg4everybody from 'svg4everybody';
 import objectFitImages from 'object-fit-images';
+import './globalOptions';
 import anchor from '../blocks/js-functions/anchor';
 import { freezebuttons } from '../blocks/js-functions/freeze';
 import scrollanimation from '../blocks/js-functions/scrollanimation';
@@ -13,6 +14,7 @@ import maps from '../blocks/map/map';
 import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
+import '../blocks/put-block-into-slot/put-block-into-slot';
 
 const $ = window.$;
 

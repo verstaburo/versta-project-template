@@ -1,0 +1,17 @@
+//-
+  Использование:
+
+  +put-block-into-slot('slotID', 'xl')
+    p lorem ipsum dolor sit amet
+  +put-block-into-slot('slotID', 'lg')
+  +put-block-into-slot('slotID', 'md')
+  +put-block-into-slot('slotID', 'sm')
+  +put-block-into-slot('slotID', 'xs')
+
+  при смене брейкпоинта app/scripts/globalOptions.js блоки будут перемещены в соответствующий слот
+
+mixin put-block-into-slot(id, res)
+  div(data-slot-id=id data-slot-res=res)&attributes(attributes)
+    if block
+      div(data-target-slot=id)
+        block

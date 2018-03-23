@@ -415,6 +415,37 @@ block content
           +button.js-dropdown-toggle bottom
           +dropdown content
 
+    //- put-block-into-slot
+    +ui-section
+      +ui-section-head
+        h2 Перемещение блока по слотам
+        p Блок: blocks/put-block-into-slot/put-block-into-slot
+
+      +ui-section-content
+        +ui-description При смене брейкпоинта app/scripts/globalOptions.js блоки будут перемещены в соответствующий слот
+        +grid
+          +col(12)
+            p(style="font-size: 12px; color: #999;")
+              | +put-block-into-slot('slotId', 'xl')
+            +put-block-into-slot('slotId', 'xl')
+              div(style="width: 100%; padding: 15px; margin-top: 15px; border: 1px black dashed; text-align: center;") Этот блок будет перемещаться в зависимости от брейпоинта
+          +col(3)
+            p(style="font-size: 12px; color: #999;")
+              | +put-block-into-slot('slotId', 'lg')
+            +put-block-into-slot('slotId', 'lg')
+          +col(3)
+            p(style="font-size: 12px; color: #999;")
+              | +put-block-into-slot('slotId', 'md')
+            +put-block-into-slot('slotId', 'md')
+          +col(3)
+            p(style="font-size: 12px; color: #999;")
+              | +put-block-into-slot('slotId', 'smxl')
+            +put-block-into-slot('slotId', 'sm')
+          +col(3)
+            p(style="font-size: 12px; color: #999;")
+              | +put-block-into-slot('slotId', 'xs')
+            +put-block-into-slot('slotId', 'xs')
+
   script
     |
     | $('.ui-kit__section').each(function (i) {
