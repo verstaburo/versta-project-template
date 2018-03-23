@@ -41,24 +41,38 @@
             </div>
             <div class="ui-kit__section-content">
                 <div class="container">
+                    <div class="ui-kit__special" style="margin-bottom: 20px;">
+                        <div class="content-zone">
+                            <H4>Возможные варианты использования</H4>
+                            <p>+col(12) агалогично +col({ xl: 12 })</p>
+                            <p>+col({ xl: 8, lg: 6: md: 5, sm: 7, xs: 12 })</p>
+                            <p>
+                                <span>Промежуточные брейкпоинты указывать не обязательно</span>
+                                <br>
+                                <span>При следующей записи - блок будет занимать 6 колонок на всех разрешениях, а на самом маленьком
+                                    <i>(xs)</i> 12</span>
+                            </p>
+                            <p>+col({ xl: 6, xs: 12 })</p>
+                        </div>
+                    </div>
                     <div class="grid">
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_one"></div>
-                        <div class="grid__col grid__col_four"></div>
-                        <div class="grid__col grid__col_four"></div>
-                        <div class="grid__col grid__col_four"></div>
-                        <div class="grid__col grid__col_six"></div>
-                        <div class="grid__col grid__col_six"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_4"></div>
+                        <div class="grid__col grid__col_xl_4"></div>
+                        <div class="grid__col grid__col_xl_4"></div>
+                        <div class="grid__col grid__col_xl_6"></div>
+                        <div class="grid__col grid__col_xl_6"></div>
                     </div>
                 </div>
             </div>
@@ -274,13 +288,13 @@
             <div class="ui-kit__section-content">
                 <div class="container">
                     <div class="grid">
-                        <div class="grid__col grid__col_six">
+                        <div class="grid__col grid__col_xl_6">
                             <p class="ui-kit__description">.input</p>
                             <div class="inputbox">
                                 <input class="input" placeholder="Плейсхолдер" />
                             </div>
                         </div>
-                        <div class="grid__col grid__col_six">
+                        <div class="grid__col grid__col_xl_6">
                             <p class="ui-kit__description">.select.js-select</p>
                             <div class="inputbox">
                                 <select class="select js-select">
@@ -290,28 +304,28 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="grid__col grid__col_six">
+                        <div class="grid__col grid__col_xl_6">
                             <p class="ui-kit__description">.js-datepicker
                                 <br> Параметры задаются через дата-атрибуты</p>
                             <div class="inputbox">
                                 <input class="input js-datepicker" placeholder="Выберите дату" readonly="readonly" />
                             </div>
                         </div>
-                        <div class="grid__col grid__col_six">
+                        <div class="grid__col grid__col_xl_6">
                             <p class="ui-kit__description">Поле ввода номера телефона.
                                 <br> Маска определяется через атрибут data-type="tel"</p>
                             <div class="inputbox">
                                 <input class="input" placeholder="+7 (___) ___-__-__" data-type="tel" />
                             </div>
                         </div>
-                        <div class="grid__col grid__col_six">
+                        <div class="grid__col grid__col_xl_6">
                             <p class="ui-kit__description">Поле ввода e-mail.
                                 <br> Маска определяется через атрибут data-type="email"</p>
                             <div class="inputbox">
                                 <input class="input" placeholder="E-mail" data-type="email" />
                             </div>
                         </div>
-                        <div class="grid__col grid__col_six">
+                        <div class="grid__col grid__col_xl_6">
                             <p class="ui-kit__description">.js-number-input
                                 <br> Поле изменения количества</p>
                             <div class="inputbox">
@@ -322,10 +336,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid__col grid__col_twelve">
+                        <div class="grid__col grid__col_xl_12">
                             <textarea class="textarea" placeholder="Текстовое поле"></textarea>
                         </div>
-                        <div class="grid__col grid__col_six">
+                        <div class="grid__col grid__col_xl_6">
                             <p class="ui-kit__description">.checkradio</p>
                             <div class="inputbox">
                                 <label class="checkradio">
@@ -335,7 +349,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="grid__col grid__col_six">
+                        <div class="grid__col grid__col_xl_6">
                             <p class="ui-kit__description">.checkradio</p>
                             <div class="inputbox">
                                 <div class="ui-kit__elements-list">
@@ -352,7 +366,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid__col grid__col_six">
+                        <div class="grid__col grid__col_xl_6">
                             <p class="ui-kit__description">.range.js-range
                                 <br> Все параметры задаются дата-атрибутами</p>
                             <div class="inputbox">
@@ -442,8 +456,8 @@
                         <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_refresh"></use></svg>
                         <span class="link__text">Ссылка с иконкой</span>
                     </a>
-                    <p class="ui-kit__description">.link.disabled</p>
-                    <a class="link disabled" href="#">
+                    <p class="ui-kit__description">.link.is-disabled</p>
+                    <a class="link is-disabled" href="#">
                         <span class="link__text">Отключенная ссылка</span>
                     </a>
                 </div>
@@ -690,6 +704,45 @@
                     <div style="display: inline-block; position: relative; margin-bottom: 24px;">
                         <a class="button js-dropdown-toggle">bottom</a>
                         <div class="js-dropdown dropdown">content</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Перемещение блока по слотам</h2>
+                    <p>Блок: blocks/put-block-into-slot/put-block-into-slot</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <p class="ui-kit__description">При смене брейкпоинта app/scripts/globalOptions.js блоки будут перемещены в соответствующий слот</p>
+                    <div class="grid">
+                        <div class="grid__col grid__col_xl_12">
+                            <p style="font-size: 12px; color: #999;">+put-block-into-slot('slotId', 'xl')</p>
+                            <div data-slot-id="slotId" data-slot-res="xl">
+                                <div data-target-slot="slotId">
+                                    <div style="width: 100%; padding: 15px; margin-top: 15px; border: 1px black dashed; text-align: center;">Этот блок будет перемещаться в зависимости от брейпоинта</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_xl_3">
+                            <p style="font-size: 12px; color: #999;">+put-block-into-slot('slotId', 'lg')</p>
+                            <div data-slot-id="slotId" data-slot-res="lg"></div>
+                        </div>
+                        <div class="grid__col grid__col_xl_3">
+                            <p style="font-size: 12px; color: #999;">+put-block-into-slot('slotId', 'md')</p>
+                            <div data-slot-id="slotId" data-slot-res="md"></div>
+                        </div>
+                        <div class="grid__col grid__col_xl_3">
+                            <p style="font-size: 12px; color: #999;">+put-block-into-slot('slotId', 'smxl')</p>
+                            <div data-slot-id="slotId" data-slot-res="sm"></div>
+                        </div>
+                        <div class="grid__col grid__col_xl_3">
+                            <p style="font-size: 12px; color: #999;">+put-block-into-slot('slotId', 'xs')</p>
+                            <div data-slot-id="slotId" data-slot-res="xs"></div>
+                        </div>
                     </div>
                 </div>
             </div>
