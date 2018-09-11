@@ -26,3 +26,5 @@ git clone git@github.com:verstaburo/versta-project-template.git project-name && 
 `git remote add origin git@github.com:verstaburo/project-name.git` - добавляем адресс созданного репозитория
 
 `git push origin master` - пушим изменения
+
+`git pull --rebase origin master` - если репа не пустая, потом снова пуш
