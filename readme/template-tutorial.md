@@ -32,3 +32,16 @@
 npm install --global windows-build-tools
 yarn global add windows-build-tools
 ```
+
+## 2. Создание проекта
+
+1. В [корпоративном аккаунте](https://github.com/verstaburo) создаем новый пустой репозиторий, придумываем имя проекта (обычно это название сайта)
+2. В терминале выполняем следующие команды, чтобы добавить шаблон в новый репозиторий (вместо `projectname` — имя созданного репозитория):
+```
+git clone --bare https://github.com/verstaburo/versta-project-template.git
+cd versta-project-template.git
+git push --mirror https://github.com/verstaburo/projectname.git
+cd ..
+rd /s /q "versta-project-template.git"
+```
+3. Командой `git clone https://github.com/verstaburo/projectname.git` клонируем проект, вместо `projectname` — имя созданного репозитория
