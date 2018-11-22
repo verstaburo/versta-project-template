@@ -27,4 +27,4 @@ git clone git@github.com:verstaburo/versta-project-template.git project-name && 
 
 `git push origin master` - пушим изменения
 
-`git pull --rebase origin master` - если репа не пустая, потом снова пуш
+`git pull --rebase origin master` - если репа не пустая, потом снова пуш.
