@@ -14,7 +14,7 @@
 
 ## Структура файлов шаблона
 
-```powershell
+```node
 ├───.publish // Папка, генерируемая модулем, осуществляющим деплой проекта на сервис GitHub Pages
 ├───dist // Папка, куда компилируется билд
 ├───app // Рабочая папка проекта
@@ -64,7 +64,7 @@ npm --add-python-to-path='true' --debug install --global windows-build-tools
 
 2. В терминале выполняем следующие команды, чтобы добавить шаблон в новый репозиторий без истории коммитов шаблона (вместо `projectname` — имя созданного репозитория):
 
-```powershell
+```node
 git clone git@github.com:verstaburo/versta-project-template.git projectname
 cd projectname
 rd /s /q ".git"
