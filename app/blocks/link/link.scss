@@ -1,8 +1,10 @@
 .link {
   $b: &;
+
   @include link;
 
   &__text {
+
     #{$b}_dashed & {
       @include link-dashed;
     }
@@ -27,6 +29,7 @@
   &.is-disabled {
     pointer-events: none;
     fill: $color-border;
+
     @include link-disabled;
   }
 }

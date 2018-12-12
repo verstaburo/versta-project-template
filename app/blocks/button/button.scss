@@ -11,12 +11,11 @@
 
   @include text;
 
-  &:disabled,
-  &.is-disabled {
+  &:disabled, &.is-disabled {
     opacity: .5;
     cursor: not-allowed;
   }
 
-  &:hover,
-  &.is-active { opacity: .5; }
+  &:hover, &.is-active { opacity: .5; }
 }
+

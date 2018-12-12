@@ -1,6 +1,5 @@
 .dropdown {
   display: block;
-  $b: &;
   position: absolute;
   top: 100%;
   left: 0;
@@ -12,7 +11,10 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity $ease-main;
+
   @include text;
+
+  $b: &;
 
   &.is-active {
     opacity: 1;

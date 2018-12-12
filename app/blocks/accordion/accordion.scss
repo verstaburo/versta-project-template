@@ -1,5 +1,6 @@
 .accordion {
   $b: &;
+
   @include text;
 
   .accordions & { margin-top: -1px; }
@@ -32,7 +33,6 @@
         margin-top: 2px;
       }
     }
-
   }
 
   &__button {
