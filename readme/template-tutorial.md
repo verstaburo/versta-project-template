@@ -69,21 +69,23 @@
 
 - [Git](https://git-scm.com/downloads) последней версии
 - Терминал [Hyper](https://hyper.is/) — не обязательно, но удобно
-- [Node.js](https://nodejs.org/en/) 8 версии
+- [Node.js](https://nodejs.org/en/) последней версии
 - Пакетный менеджер [Yarn](https://yarnpkg.com/lang/en/)
-- Любая IDE для редактирования кода ([WebStorm](https://www.jetbrains.com/webstorm/), [Brackets](http://brackets.io/), [Atom](https://atom.io/), [SublimeText](https://www.sublimetext.com/3), хоть Блокнот)
+- Любая IDE/редактор для редактирования кода ([WebStorm](https://www.jetbrains.com/webstorm/), [Brackets](http://brackets.io/), [Atom](https://atom.io/), [SublimeText](https://www.sublimetext.com/3), хоть Блокнот)
 - Для работы с макетами: [Zeplin](https://zeplin.io/), [Avocode](https://avocode.com/), Adobe Photoshop CC, Adobe Illustrator CC, [Figma](http://figma.com/)
 - [Плагин Google Chrome для Pixel-Perfect верстки](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=ru)
 - Для быстрого тестирования верстки установить браузеры Mozilla Firefox и Internet Explorer 11. Для тестирования в других браузерах, либо в более ранних версиях, используется [BrowserStack](https://www.browserstack.com/)
 - [FileZilla](https://filezilla-project.org/) для работы с FTP
-- [Monitask](https://www.monitask.com/) для отслеживания эффективности работы
-- [Slack](https://slack.com/) для обсуждения хода проектов
 - [Lightshot](https://app.prntscr.com/ru/) — чтобы быстро делать скриншоты с пометками
 
 Также необходимо после установки Node.js/Yarn запустить в командной строке (открытой от имени Администратора) следующую команду и дождаться её полного выполнения (устанавливается долго):
 ```
 npm --add-python-to-path='true' --debug install --global windows-build-tools
 ```
+
+Для работы с GitHub через SSH необходимо сгенерировать и добавить в ваш GitHub-аккаунт SSH-ключи по этим инструкциям:
+1. https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+2. https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 
 ## 2. Создание проекта
 
