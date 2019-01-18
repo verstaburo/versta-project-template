@@ -1,3 +1,4 @@
+/* eslint-disable */
 const program = require('commander');
 const fs = require('fs');
 const path = require('path');
@@ -28,8 +29,8 @@ const validateName = (name, kind) => (
       resolve(isValid);
     } else {
       const errMsg = (
-        `ERR>>> An incorrect ${kind} name '${name}'\n` +
-        'ERR>>> A block name must include letters, numbers & the minus symbol.'
+        `ERR>>> An incorrect ${kind} name '${name}'\n`
+        + 'ERR>>> A block name must include letters, numbers & the minus symbol.'
       );
       reject(errMsg);
     }
@@ -157,7 +158,7 @@ program
 
     const blocks = await Promise.all(promises).catch(printError);
     blocks.forEach(block => appendToIncludes(block.kind, block.name));
-});
+  });
 
 program
   .command('component [componentNames...]')
@@ -172,7 +173,7 @@ program
 
     const blocks = await Promise.all(promises).catch(printError);
     blocks.forEach(block => appendToIncludes(block.kind, block.name));
-});
+  });
 
 program
   .command('page [pageNames...]')
@@ -184,6 +185,7 @@ program
 
     const promises = pageNames.map(name => make(name, 'page', opts.js));
     Promise.all(promises).catch(printError);
-});
+  });
 
 program.parse(process.argv);
+/* eslint-enable */

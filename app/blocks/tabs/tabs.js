@@ -1,5 +1,5 @@
 /* eslint-disable */
-const $ = window.$;
+const { $ } = window;
 
 export default function tabs() {
   // data-tab-target - вешается на таб

@@ -1,0 +1,79 @@
+.burger {
+  $burger-size: 65px;
+  $burger-box-size: 25px;
+  $burger-inner-height: 1px;
+
+  display: block;
+  position: relative;
+  box-sizing: content-box;
+  background-color: $color-main;
+  opacity: 1;
+  transition: opacity $ease-main;
+
+  @include size($burger-size);
+
+  $b: &;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: floor(-$burger-box-size/2);
+    margin-left: floor(-$burger-box-size/2);
+
+    @include size($burger-box-size);
+  }
+
+  &__inner {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $burger-inner-height;
+    background-color: $color-light;
+    transition: transform .4s ease, opacity .4s ease;
+
+    &:first-child {
+      top: 0;
+      transform: translate3d(0, 0, 0);
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      margin-top: ceil(-$burger-inner-height/2);
+      opacity: 1;
+    }
+
+    &:last-child {
+      bottom: 0;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &.is-active {
+
+    #{$b}__inner {
+
+      &:first-child {
+        transform:
+          translate3d(0,
+          floor(($burger-box-size/2) - ($burger-inner-height/2)), 0)
+          rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform:
+          translate3d(0,
+          floor((-$burger-box-size/2) - (-$burger-inner-height/2)), 0)
+          rotate(-45deg);
+      }
+    }
+  }
+}

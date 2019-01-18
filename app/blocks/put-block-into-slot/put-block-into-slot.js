@@ -1,5 +1,6 @@
-const $ = window.$;
+const { $ } = window;
 
+/* eslint-disable */
 function putBlockIntoSlot() {
   $('[data-target-slot]').each(function () {
     const block = $(this);
@@ -39,3 +40,4 @@ function putBlockIntoSlot() {
 putBlockIntoSlot();
 
 $(window).on('resize', putBlockIntoSlot);
+/* eslint-enable */

@@ -195,4 +195,13 @@ $ui-kit-color-darkbg: #111;
 
     &:not(:last-child) { margin-bottom: 10px; }
   }
+
+  &__burger-button {
+    display: inline-block;
+    margin-top: 60px;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 }

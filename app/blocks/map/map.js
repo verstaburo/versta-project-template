@@ -3,7 +3,7 @@
 // Для кластеров использовать: https://github.com/Leaflet/Leaflet.markercluster
 import L from 'leaflet';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function maps() {
   if (!$('#map').length) {

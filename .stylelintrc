@@ -7,7 +7,7 @@
     "color-hex-length": "short",
     "selector-no-qualifying-type": true,
     "selector-max-id": 0,
-    "selector-list-comma-newline-after": "never-multi-line",
+    "selector-list-comma-newline-after": "always-multi-line",
     "selector-combinator-space-after": "always",
     "selector-attribute-quotes": "always",
     "selector-attribute-operator-space-before": "never",
@@ -34,6 +34,15 @@
     "media-feature-parentheses-space-inside": "never",
     "media-feature-name-no-vendor-prefix": true,
     "media-feature-colon-space-before": "never",
-    "media-feature-colon-space-after": "always"
+    "media-feature-colon-space-after": "always",
+    "font-family-no-missing-generic-family-keyword": null,
+    "at-rule-no-unknown": null,
+    "unit-no-unknown": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "no-eol-whitespace": null,
+    "no-missing-end-of-source-newline": null,
+    "function-parentheses-newline-inside": null,
+    "function-comma-newline-after": null
   }
 }
