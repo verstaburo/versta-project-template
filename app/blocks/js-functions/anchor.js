@@ -1,6 +1,6 @@
 // При клике на .js-anchor страница плавно скроллится к блоку, указанному в его href
 
-const $ = window.$;
+const { $ } = window;
 
 export default function anchor() {
   $(document).on('click', '.js-anchor', function (e) {

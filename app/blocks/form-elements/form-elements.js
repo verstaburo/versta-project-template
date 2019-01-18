@@ -10,7 +10,7 @@ import 'air-datepicker';
 // https://github.com/RobinHerbots/Inputmask
 import Inputmask from 'inputmask';
 
-const $ = window.$;
+const { $ } = window;
 
 export function selects() {
   /* eslint-disable no-unused-vars */

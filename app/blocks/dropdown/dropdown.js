@@ -3,7 +3,7 @@ export const SHOWN = 'dropdown/hidden';
 export const BEFORE_SHOW = 'dropdown/beforeshow';
 export const BEFORE_HIDE = 'dropdown/beforehide';
 
-const $ = window.$;
+const { $ } = window;
 
 /**
  *

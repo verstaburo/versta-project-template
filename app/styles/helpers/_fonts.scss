@@ -1,18 +1,23 @@
-/* Образец подключения шрифта
-@font-face {
-  font-family: 'MyWebFont';
-  font-style: normal;
-  font-weight: 400;
-  src: url('webfont.eot');
-  src:
-    url('webfont.eot?#iefix') format('embedded-opentype'),
-    url('webfont.woff2') format('woff2'),
-    url('webfont.woff') format('woff'),
-    url('webfont.otf')  format('opentype'),
-    url('webfont.ttf')  format('truetype'),
-    url('webfont.svg#webfont') format('svg');
+/* Миксин для подключения шрифтов */
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-family);
+    src: url($file-path + '.eot');
+    src:
+      url($file-path + '.eot?#iefix') format('embedded-opentype'),
+      url($file-path + '.woff2') format('woff2'),
+      url($file-path + '.woff') format('woff'),
+      url($file-path + '.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+  }
 }
+
+/* Образец подключения шрифта
+@include font-face('OpenSans', '../fonts/OpenSansRegular', 400, italic);
 */
+
+@include font-face('OpenSans', '../fonts/OpenSansRegular', 400);
 
 /* Соответствие письменного названия жирности числовому значению
 100 — Thin

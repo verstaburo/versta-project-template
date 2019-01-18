@@ -11,7 +11,7 @@ module.exports = () => (
     .pipe(svgSymbols({
       title: false,
       id: 'icon_%f',
-      className: '%f',
+      class: '%f',
       templates: ['default-svg'],
     }))
     .pipe(imagemin([

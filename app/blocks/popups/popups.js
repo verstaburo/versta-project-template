@@ -3,7 +3,7 @@ import '@fancyapps/fancybox';
 
 import { freeze, unfreeze } from '../js-functions/freeze';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function popups() {
   $('.js-fancybox').fancybox({

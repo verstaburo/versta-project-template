@@ -80,6 +80,19 @@ block content
         +ui-elements-list()
           +ui-gradient('gradient-main', true)._gradient_main
 
+    //- Гамбургер
+    +ui-section
+      +ui-section-head
+        h2 Гамбургер
+        p Блок: blocks/burger
+        p Размер кнопки задается через переменную $burger-size
+        p Размер внутренней обертки задается через $burger-box-size
+        p Размер внутреннего элемента через $burger-inner-size
+      +ui-section-content()
+        +ui-elements-list()
+          +burger.ui-kit__burger-button.js-burger
+          +burger.ui-kit__burger-button.js-burger.is-active
+
     //- Шрифты и контентная зона
     +ui-section
       +ui-section-head

@@ -2,7 +2,7 @@
 // http://idangero.us/swiper/#.WcIu5oy0OHs
 import * as Swiper from 'swiper/dist/js/swiper';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function slider() {
   const mySlider = new Swiper('.js-slider', {

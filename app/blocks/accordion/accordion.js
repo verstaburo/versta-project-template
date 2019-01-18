@@ -5,7 +5,7 @@ export const BEFORE_HIDE = 'accordion/beforehide';
 
 const DURATION = 250;
 
-const $ = window.$;
+const { $ } = window;
 
 $(document).on('click', '.js-accordion-button', function (e) {
   e.preventDefault();

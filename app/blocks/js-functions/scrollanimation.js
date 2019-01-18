@@ -2,7 +2,7 @@
 // https://github.com/jlmakes/scrollreveal
 import ScrollReveal from 'scrollreveal';
 
-const $ = window.$;
+const { $ } = window;
 
 export default function scrollanimation() {
   // Стандартные настройки

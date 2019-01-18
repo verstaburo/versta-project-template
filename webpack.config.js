@@ -33,7 +33,7 @@ module.exports = (watch = false) => ({
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
       },
     }),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     !isDebug ? new webpack.optimize.UglifyJsPlugin() : f => f,
   ],
 });

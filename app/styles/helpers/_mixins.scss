@@ -181,8 +181,8 @@ div {
   @include center-block;
 }
 */
-@mixin center-block {
-  position: absolute;
+@mixin center-block($position: absolute) {
+  position: $position;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -195,8 +195,8 @@ div {
   @include center-image;
 }
 */
-@mixin center-image {
-  position: absolute;
+@mixin center-image($position: absolute) {
+  position: $position;
   top: 0;
   left: 0;
   right: 0;
@@ -212,8 +212,8 @@ div {
   @include fill-img;
 }
 */
-@mixin fill-img {
-  position: absolute;
+@mixin fill-img($position: absolute) {
+  position: $position;
   top: 0;
   left: 0;
   right: 0;
@@ -224,4 +224,17 @@ div {
   width: 0;
   min-width: 100%;
   min-height: 100%;
+}
+
+/*
+Миксин для определения размеров содержимого.
+Пример использования:
+
+div {
+  @include size(5px, 5px);
+}
+*/
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
 }
