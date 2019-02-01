@@ -97,7 +97,18 @@ div {
   }
 }
 */
-@mixin screen($width, $type: max) {
+$breakpoints: (
+  'phone': 400px,
+  'phone-wide': 480px,
+  'phablet': 560px,
+  'tablet-small': 640px,
+  'tablet': 768px,
+  'tablet-wide': 1024px,
+  'desktop': 1248px,
+  'desktop-wide': 1440px
+);
+
+@mixin screen($width, $type: min) {
   @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
 
@@ -224,4 +235,26 @@ div {
   width: 0;
   min-width: 100%;
   min-height: 100%;
+}
+
+/*
+Миксин для подключения шрифтов.
+Описание в файле _fonts.scss
+*/
+@mixin font-face($name, $style, $weight, $fontname) {
+  $path: '../fonts/';
+
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    font-weight: $weight;
+    src: url($path + $fontname + '.eot');
+    src:
+      url('' + $path + $fontname + '.eot?#iefix') format('embedded-opentype'),
+      url('' + $path + $fontname + '.otf') format('opentype'),
+      url('' + $path + $fontname + '.woff2') format('woff2'),
+      url('' + $path + $fontname + '.woff') format('woff'),
+      url('' + $path + $fontname + '.ttf') format('truetype'),
+      url('' + $path + $fontname + '.svg#' + $fontname) format('svg');
+  }
 }

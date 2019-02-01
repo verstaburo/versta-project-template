@@ -1,20 +1,13 @@
-/* Образец подключения шрифта
-@font-face {
-  font-family: 'MyWebFont';
-  font-style: normal;
-  font-weight: 400;
-  src: url('webfont.eot');
-  src:
-    url('webfont.eot?#iefix') format('embedded-opentype'),
-    url('webfont.woff2') format('woff2'),
-    url('webfont.woff') format('woff'),
-    url('webfont.otf')  format('opentype'),
-    url('webfont.ttf')  format('truetype'),
-    url('webfont.svg#webfont') format('svg');
-}
-*/
+/*
+Как подключать шрифт
 
-/* Соответствие письменного названия жирности числовому значению
+Миксин:
+@mixin font-face($name, $style, $weight, $fontname)
+
+Пример использования:
+@include font-face('Corbel', normal, 700, 'CorbelBold')
+
+Соответствие письменного названия жирности числовому значению:
 100 — Thin
 200 — Extra Light, Ultra Light
 300 — Light
