@@ -1,0 +1,45 @@
+// #####
+// Range-слайдер
+// #####
+
+.range {
+  display: inline-block;
+  width: 100%;
+}
+
+.range .noUi {
+
+  &-base {
+    height: 2px;
+    background-color: $color-border;
+    position: relative;
+    margin: 8px 0; // margin нужен, чтобы handler не налезал на другие элементы
+  }
+
+  &-connect {
+    height: 100%;
+    position: absolute;
+    background-color: $color-main;
+  }
+
+  &-handle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    border: 1px solid $color-border;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: white;
+    transition: border-color $ease-main;
+    cursor: pointer;
+
+    &:hover { border-color: $color-main; }
+  }
+
+  &-origin {
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+}

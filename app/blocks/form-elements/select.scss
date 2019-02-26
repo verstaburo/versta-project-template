@@ -1,0 +1,85 @@
+// #####
+// Кастомные селекты
+// #####
+
+@import '../../../node_modules/choices.js/assets/styles/scss/choices.scss';
+
+.select {
+  appearance: none;
+
+  @extend .input;
+}
+
+.choices {
+
+  &__inner, &[data-type*='select-one'] &__inner {
+    @extend .select;
+
+    transition: border-color $ease-main;
+  }
+
+  &[data-type*='select-one'] {
+
+    .choices__inner { padding-bottom: 0; }
+
+    &::after {
+      border-width: 5px 5px 0;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      margin: auto;
+      transform: rotate(0) translate3d(0, 0, 0);
+      transition: transform $ease-main;
+      border-color: #333 transparent transparent;
+    }
+
+    &.is-open::after {
+      transform: rotate(180deg) translate3d(0, 0, 0);
+      border-color: #333 transparent transparent;
+      margin: auto;
+    }
+  }
+
+  &__list {
+    border-color: $color-border;
+
+    &--single {
+      display: table;
+      box-sizing: border-box;
+      height: 100%;
+      padding: 0;
+      padding-right: 20px;
+
+      .choices__item {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+
+    &--dropdown {
+      box-sizing: border-box;
+
+      .choices__item {
+        padding: 10px;
+
+        &--selectable {
+          transition: opacity $ease-main;
+
+          &.is-highlighted {
+            opacity: .5;
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
+
+  &.is-open & {
+
+    &__inner { border-color: $color-border; }
+
+    &__list {
+      &--dropdown { border-color: $color-border; }
+    }
+  }
+}

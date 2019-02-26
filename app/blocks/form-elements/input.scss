@@ -1,0 +1,21 @@
+.input {
+  padding: 0 10px;
+  height: 40px;
+  border: 1px solid $color-border;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 0;
+  min-height: 0;
+  background-color: white;
+}
+
+.textarea {
+  @extend .input;
+
+  padding-top: 13px;
+  padding-bottom: 13px;
+  min-height: 150px;
+  resize: vertical;
+}

@@ -5,5 +5,5 @@ block head
   - var pageTitle = 'Versta Project Template'
 
 block content
-  +b.${pageName}
+  +b.page_${pageName}
 `;
