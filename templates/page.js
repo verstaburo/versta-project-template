@@ -2,8 +2,8 @@ module.exports = pageName => `
 extends ../../layouts/default
 
 block head
-  - var pageTitle = 'Versta Project Template'
+  - var pageTitle = projectName + ' | ${pageName}'
 
 block content
-  +b.page_${pageName}
+  p Страница: ${pageName}
 `;

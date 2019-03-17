@@ -1,0 +1,13 @@
+.inputbox {
+  display: block;
+
+  &__label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+}

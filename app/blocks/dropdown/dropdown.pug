@@ -1,3 +1,25 @@
 mixin dropdown()
   +b.js-dropdown.dropdown&attributes(attributes)
     block
+
+mixin ui-kit-dropdown()
+  +ui-section
+    +ui-section-head
+      +ui-title Dropdown
+      +ui-path
+        p Блок: blocks/dropdown/dropdown
+      +ui-description
+        p Для использования, нужно "кнопке" добавить класс .js-dropdown-toggle
+
+    +ui-section-content()
+      +ui-elements-list()
+        div(style="display: inline-block; position: relative;")
+          +button.js-dropdown-toggle top
+          +dropdown._position_top content
+        div(style="display: inline-block; position: relative;")
+          +button.js-dropdown-toggle bottom
+          +dropdown content
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

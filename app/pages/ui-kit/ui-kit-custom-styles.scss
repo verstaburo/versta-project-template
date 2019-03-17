@@ -1,0 +1,29 @@
+// Настройки для конкретных секций UI-кита для демонстрации стилей
+
+.ui-kit {
+
+  &__special {
+
+    &_scroll {
+      height: 400px;
+    }
+  }
+
+  &__section {
+
+    &_grid .grid__col::after {
+      content: '';
+      display: block;
+      height: 40px;
+      background-color: $ui-kit-color-gray;
+    }
+  }
+
+  .popup {
+    border: 1px solid $color-border;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+}

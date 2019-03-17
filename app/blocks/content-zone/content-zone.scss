@@ -1,76 +1,46 @@
 .content-zone {
+  $b: &;
 
-  h1 {
+  h1, h2, h3, h4, h5, h6 {
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
 
     &:not(:last-child) {
       margin-bottom: 10px;
     }
-
-    @include heading-1;
   }
 
-  h2 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-2;
-  }
-
-  h3 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-3;
-  }
-
-  h4 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-4;
-  }
-
-  h5 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-5;
-  }
-
-  h6 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-6;
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 30px;
+    line-height: 1.5;
   }
 
   p {
+    font-size: 16px;
+    line-height: 1.5;
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
+    &:not(:first-child) {
+      margin-top: 10px;
     }
 
     small {
       display: block;
-
-      @include text-small;
+      font-size: 12px;
     }
+  }
 
-    @include text;
+  a {
+    color: $color-main;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   blockquote {
-    margin: 0;
     padding-left: 40px;
     border-left: 2px solid black;
     display: block;
@@ -103,11 +73,49 @@
     }
   }
 
-  ul, ol { @include list; }
+  ul, ol {
+    font-size: 14px;
+    line-height: 1.5;
 
-  ul { @include ullist; }
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
 
-  ol { @include ollist; }
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
 
-  a { @include link; }
+    li {
+      padding-left: 20px;
+      position: relative;
+    }
+  }
+
+  ul {
+
+    li {
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '•';
+      }
+    }
+  }
+
+  ol {
+    counter-reset: list1;
+
+    li {
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        counter-increment: list1;
+        content: counter(list1) '.';
+      }
+    }
+  }
 }

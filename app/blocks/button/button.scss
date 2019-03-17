@@ -1,21 +1,28 @@
 .button {
   display: inline-block;
-  padding: 5px 10px;
-  border: 1px solid $color-border;
+  padding: 0 15px;
+  border: 0;
   vertical-align: middle;
   box-sizing: border-box;
-  color: $color-basic;
-  background-color: transparent;
+  background-color: $color-main;
   transition: opacity $ease-main;
   cursor: pointer;
+  font-size: 14px;
+  line-height: 40px;
+  height: 40px;
+  color: white;
+  appearance: none;
+  border-radius: 3px;
 
-  @include text;
+  $b: &;
 
-  &:disabled, &.is-disabled {
+  &[disabled] {
     opacity: .5;
     cursor: not-allowed;
   }
 
-  &:hover, &.is-active { opacity: .5; }
+  &:hover {
+    opacity: .5;
+  }
 }
 

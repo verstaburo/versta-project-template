@@ -27,12 +27,14 @@ $breadpadding: 35px;
       }
     }
 
-    &:last-child .link {
+    &:last-child {
       pointer-events: none;
-
-      &__text {
-        @include link-disabled;
-      }
+      opacity: .5;
     }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 1.5;
   }
 }

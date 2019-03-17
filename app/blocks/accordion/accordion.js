@@ -1,43 +1,50 @@
-export const HIDDEN = 'accordion/shown';
-export const SHOWN = 'accordion/hidden';
-export const BEFORE_SHOW = 'accordion/beforeshow';
-export const BEFORE_HIDE = 'accordion/beforehide';
-
-const DURATION = 250;
-
+/* eslint-disable */
 const $ = window.$;
+const duration = 300;
 
-$(document).on('click', '.js-accordion-button', function (e) {
-  e.preventDefault();
-  const button = $(this);
-  const block = button.parents('.accordion');
-  const body = block.find('.accordion__body');
-  const isActive = Number(block.hasClass('is-active'));
-  const isMultiple = block.parents('.accordions').data('accordion-multiple');
+// Открытие аккордеона
+$.fn.accordionShow = function () {
+  const
+    block = this,
+    content = block.find('.js-accordion-content'),
+    isMultiple = block.data('accordion-single');
 
-  if (block.hasClass('is-disabled')) {
-    return;
+  if (block.hasClass('is-disabled')) return;
+
+  content.slideDown(duration);
+  block.addClass('is-active');
+
+  if (isMultiple) {
+    const
+      siblings = block.siblings('.js-accordion.is-active');
+
+    siblings.find('.js-accordion-button').removeClass('is-active');
+    siblings.find('.js-accordion-content').slideUp(duration);
   }
+};
 
-  const beforeEvent = [BEFORE_SHOW, BEFORE_HIDE][isActive];
-  const afterEvent = [SHOWN, HIDDEN][isActive];
+// Закрытие аккордеона
+$.fn.accordionHide = function () {
+  const
+    block = this,
+    content = block.find('.js-accordion-content');
 
-  body.trigger(beforeEvent).slideToggle(DURATION, () => {
-    block
-      .toggleClass('is-active')
-      .trigger(afterEvent);
+  content.slideUp(duration);
+  block.removeClass('is-active');
+};
+
+// Работа кнопки аккордеона
+export default function accordion () {
+  $(document).on('click', '.js-accordion-button', function (e) {
+    if (e.target.tagName === 'a') {
+      e.preventDefault();
+    }
+
+    const
+      block = $(this).parents('.js-accordion'),
+      isActive = block.hasClass('is-active');
+
+    isActive ? block.accordionHide() : block.accordionShow();
   });
-
-  if (!isMultiple) {
-    const siblings = block.siblings('.accordion.is-active');
-
-    siblings
-      .trigger(BEFORE_HIDE)
-      .find('.accordion__body')
-      .slideUp(DURATION, () => {
-        siblings
-          .removeClass('is-active')
-          .trigger(HIDDEN);
-      });
-  }
-});
+}
+/* eslint-enable */

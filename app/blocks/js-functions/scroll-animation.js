@@ -4,7 +4,7 @@ import ScrollReveal from 'scrollreveal';
 
 const $ = window.$;
 
-export default function scrollanimation() {
+export default function scrollAnimation() {
   // Стандартные настройки
   const sr = ScrollReveal({
     origin: 'bottom',

@@ -2,18 +2,18 @@
   display: block;
   padding: 60px 0;
 
-  &__list {
-    list-style: none;
+  &__link {
+    display: block;
+    transition: opacity $ease-main;
+    color: $color-main;
+    font-size: 16px;
 
-    a {
-      display: block;
-      width: 100%;
+    &:hover {
+      opacity: .5;
+    }
 
-      @include text;
-
-      &:not(:last-child) {
-        margin-bottom: 10px;
-      }
+    &:not(:first-child) {
+      margin-top: 15px;
     }
   }
 }

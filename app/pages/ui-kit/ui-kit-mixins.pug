@@ -1,0 +1,49 @@
+mixin ui-section()
+  +e.SECTION.section&attributes(attributes)
+    block
+
+//- Описание какого-то блока
+mixin ui-description()
+  +e.description&attributes(attributes)
+    block
+
+//- Путь к блоку
+mixin ui-path()
+  +e.blockpath&attributes(attributes)
+    block
+
+//- Заголовок секции с блоком
+mixin ui-title()
+  +e.H2.title&attributes(attributes)
+    block
+
+//- Рамка вокруг особой секции
+mixin ui-special()
+  +e.special&attributes(attributes)
+    block
+
+//- Блок для демонстрации шрифтов
+mixin ui-elements-list()
+  +e.elements-list&attributes(attributes)
+    block
+
+//- Демонстрация переменных цветов
+mixin ui-color(color, colorvar, dark)
+  +e.color()&attributes(attributes)
+
+//- Демонстрация переменных цветов
+mixin ui-gradient()
+  +e.gradient()&attributes(attributes)
+
+mixin ui-section-head()
+  +e.section-head&attributes(attributes)
+    .container
+      block
+
+mixin ui-section-content(container)
+  +e.section-content
+    if !container
+      .container
+        block
+    else
+      block

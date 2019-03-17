@@ -6,4 +6,5 @@ export default function ${blockName} () {
   console.log('${blockName} Works!');
 };
 /* eslint-enable */
+
 `;

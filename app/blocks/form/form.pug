@@ -1,0 +1,45 @@
+mixin form()
+  +b.FORM.form&attributes(attributes)
+    block
+
+mixin inputbox()
+  +b.inputbox&attributes(attributes)
+    block
+
+mixin label()
+  +e.P.label&attributes(attributes)
+    block
+
+mixin input-wrapper()
+  +e.wrapper&attributes(attributes)
+    block
+
+mixin input()
+  +b.INPUT.input&attributes(attributes)
+
+mixin input-number()
+  +b.input-numberbox
+    +e.SPAN.button.js-numberbox-minus
+    +input.__input.js-numberbox-input&attributes(attributes)
+    +e.SPAN.button.js-numberbox-plus
+
+mixin textarea()
+  +b.TEXTAREA.textarea&attributes(attributes)
+    block
+
+mixin select()
+  +b.SELECT.select&attributes(attributes).js-select
+    block
+
+mixin checkradio(isRadio, name, value, checked, required)
+  +b.LABEL.checkradio&attributes(attributes)
+    +e.INPUT.input(name=name, value=value, checked=checked, type=(isRadio ? "radio" : "checkbox"), required=(required || false))
+    +e.SPAN.box
+    +e.SPAN.content
+      block
+
+mixin range()
+  +b.range&attributes(attributes).js-range
+    block
+
+include ui-kit-form

@@ -1,6 +1,21 @@
-mixin button(newtag)
-  - var tag = 'a';
-  if newtag
-    - var tag = newtag;
-  +b(tag).button&attributes(attributes)
+mixin button(newTag)
+  +b(newTag || 'a').button&attributes(attributes)
     block
+
+mixin ui-kit-button()
+  +ui-section
+    +ui-section-head
+      +ui-title Кнопки
+      +ui-path
+        p Блок: blocks/button/button
+      //- +ui-description
+      //-   p Описание Блока
+
+    +ui-section-content()
+      +ui-elements-list()
+        +button Кнопка
+        +button()(disabled) Отключенная кнопка
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

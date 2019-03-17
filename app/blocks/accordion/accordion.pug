@@ -1,21 +1,36 @@
-mixin accordions(isMultiple)
-  - var defaultMultiple = typeof isMultiple !== undefined ? !!isMultiple : true
-
-  +b.accordions&attributes(attributes)(data-accordion-multiple=`${defaultMultiple}`)
-    block
-
 mixin accordion
   +b.accordion&attributes(attributes)
-    block
-
-mixin accordion-header
-  +e.header&attributes(attributes)
     block
 
 mixin accordion-button
   +e.button.js-accordion-button&attributes(attributes)
     block
 
-mixin accordion-body
-  +e.body&attributes(attributes)
+mixin accordion-content
+  +e.content&attributes(attributes)
     block
+
+mixin ui-kit-accordion()
+  +ui-section
+    +ui-section-head
+      +ui-title Аккордеон
+      +ui-path
+        p Блок: blocks/accordion/accordion
+      +ui-description
+        p Управляется тремя классами: .js-accordion, .js-accordion-button, .js-accordion-content
+        p При наличии атрибута [data-accordion-single] каждый открываемый аккордеон отключает соседние (находящиеся в одном родителе)
+        p Чтобы исходное состояние аккордеона было активным, на него надо повесить класс .is-active
+
+    +ui-section-content()
+      +accordion.js-accordion
+        +accordion-button.js-accordion-button
+          p Кнопка открытия аккордеона
+        +accordion-content.js-accordion-content
+          p Контент
+          p Контент
+          p Контент
+          p Контент
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

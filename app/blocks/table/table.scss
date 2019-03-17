@@ -1,7 +1,6 @@
 .table {
   display: table;
-
-  @include text;
+  font-size: 14px;
 
   tr {
     padding: 0;

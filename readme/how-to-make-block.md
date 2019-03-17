@@ -82,7 +82,7 @@ export class Button {
 
 Данный блок нужно импортировать в файл компонента или главный файл `app/scripts/app.js`
 ```js
-import button from 'path/to/blocks/button/button';
+import button from button111;
 
 // если блок - функция
 button();

@@ -9,7 +9,6 @@ $grid-container-width: 100%; // Ширина контейнера сетки
 $grid-cols: 12; // Количество колонок в сетке
 $grid-gap: 20px; // Расстояние между колонками
 $grid-gap-vertical: 20px; // Расстояние между строками в сетке
-$grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
 $breakpoints: (
   'xl': 1920px,
   'lg': 1280px,
@@ -28,12 +27,31 @@ $color-main: #2252d8; // Основной фирменный цвет
 $color-border: #ccc; // Основной цвет границ таблиц, секций
 
 // ##########
+// Массив цветов для UI-кита
+// ##########
+$colors: (
+  '$color-basic': black,
+  '$color-placeholder': #777,
+  '$color-input': black,
+  '$color-main': #2252d8,
+  '$color-border': #ccc,
+);
+
+// ##########
 // Transitions
 // ##########
-$ease-main: .3s ease;
+$ease-main: .2s ease;
 
 // ##########
 // Шрифты
 // ##########
 $font-main: Arial, sans-serif; // Основной шрифт сайта
 $font-second: Times New Roman, sans-serif; // Дополнительный шрифт
+
+// ##########
+// Цвета для UI-кита (удалить, если он отсутствует)
+// ##########
+$ui-kit-bg: white; // Фон кита
+$ui-kit-color-text: black; // Цвет текста
+$ui-kit-color-gray: #ccc; // Цвет границ
+$ui-kit-color-darkbg: #111; // Фон темной секции

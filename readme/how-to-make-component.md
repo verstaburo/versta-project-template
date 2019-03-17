@@ -82,7 +82,7 @@ export class Button {
 
 Данный компонент нужно импортировать в файл компонента или главный файл `app/scripts/app.js`
 ```js
-import button from 'path/to/components/button/button';
+import button from button111;
 
 // если компонент - функция
 button();

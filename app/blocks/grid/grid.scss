@@ -1,31 +1,26 @@
-$default-breakpoit-name: xl;
-$default-breakpoint-value: map_has_key($breakpoints, $default-breakpoit-name);
-$new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
+$default-breakpoint-name: xl;
+$default-breakpoint-value: map_has_key($breakpoints, $default-breakpoint-name);
+$new-breakpoints: map_remove($breakpoints, $default-breakpoint-name);
+$grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
 
 .grid {
   font-size: 0;
-  display: block; // fallback для старых браузеров
   display: flex;
   flex-wrap: wrap;
-  margin-left: -$grid-gap/2;
-  margin-right: -$grid-gap/2;
-  margin-top: -$grid-gap-vertical;
-
-  .grid {
-    margin-top: 0;
-  }
+  margin: -$grid-gap-vertical (-$grid-gap/2) 0;
 
   &__col {
-    display: inline-block; // fallback для старых браузеров
     box-sizing: border-box;
     padding: $grid-gap-vertical $grid-gap/2 0;
     margin: 0;
 
-    @include text;
+    &_grow {
+      flex-grow: 1;
+    }
 
     @for $i from 1 through 15 {
 
-      &_#{$default-breakpoit-name}_#{$i} {
+      &_#{$default-breakpoint-name}_#{$i} {
         width: $i * $grid-col-width;
       }
     }

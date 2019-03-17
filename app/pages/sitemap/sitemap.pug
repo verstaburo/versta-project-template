@@ -1,11 +1,10 @@
 extends ../../layouts/default
 
 block head
-  - var pageTitle = 'Versta Project Template'
+  - var pageTitle = projectName + ' | Карта верстки'
 
 block content
   +b.sitemap
     .container
-      +e.list
-        +link(href="ui-kit.html") UI-kit (ui-kit.html)
-        +link(href="index.html") Главная (index.html)
+      +e.A.link(href="ui-kit.html") UI-kit (ui-kit.html)
+      +e.A.link(href="index.html") Страница index (index.html)

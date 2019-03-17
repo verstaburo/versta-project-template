@@ -58,6 +58,7 @@ body {
   font-family: $font-main; // Задаем основной шрифт
   font-size: 16px; // Убираем проблему с отступами между inline-элементами
   color: $color-basic;
+  overflow: hidden;
 }
 
 img {
@@ -68,9 +69,14 @@ img {
 Сброс стандартных отступов для типографики, списков и таблиц
 ########## */
 
-h1, h2, h3, h4, h5, h6, p, span, ul, ol, li, tr, td, th, table {
+h1, h2, h3, h4, h5, h6, p, span, ul, ol, li, tr, td, th, table, blockquote {
   margin: 0;
   padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+  color: inherit;
+  font-weight: inherit;
 }
 
 ul, ol {

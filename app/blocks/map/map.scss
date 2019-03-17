@@ -49,8 +49,7 @@
 .leaflet-popup-content {
   margin: 0;
   padding: 13px 20px;
-
-  @include text;
+  font-size: 14px;
 }
 
 .leaflet-container .leaflet-control-attribution { display: none; }

@@ -1,34 +1,39 @@
-/* eslint-disable no-unused-vars */
-// http://idangero.us/swiper/#.WcIu5oy0OHs
+/* eslint-disable */
+// https://idangero.us/swiper/
 import * as Swiper from 'swiper/dist/js/swiper';
 
 const $ = window.$;
 
 export default function slider() {
-  const mySlider = new Swiper('.js-slider', {
-    loop: true,
-    speed: 700,
-    autoplay: {
-      delay: 2000,
-    },
-    slidesPerView: 1,
-    navigation: {
-      nextEl: '.slider__button_next',
-      prevEl: '.slider__button_prev',
-    },
-    pagination: {
-      el: '.slider__dots',
-      clickable: true,
-      paginationClickableClass: 'slider__dots_clickable',
-      bulletClass: 'slider__dot',
-      bulletActiveClass: 'active',
-    },
-    roundLengths: true,
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
+  $('.js-slider').each(function () {
+    const block = $(this);
+    const mySlider = new Swiper(block, {
+      loop: true,
+      speed: 700,
+      autoplay: {
+        delay: 2000,
       },
-    },
+      slidesPerView: 1,
+      spaceBetween: 0,
+      centeredSlides: false,
+      freeMode: false,
+      navigation: {
+        nextEl: block.find('.slider__button_next'),
+        prevEl: block.find('.slider__button_prev'),
+      },
+      pagination: {
+        el: block.find('.slider__dots'),
+        clickable: true,
+        bulletClass: 'slider__dot',
+        bulletActiveClass: 'is-active',
+      },
+      roundLengths: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+      },
+    });
   });
 }
-/* eslint-enable no-unused-vars */
+/* eslint-enable */

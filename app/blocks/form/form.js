@@ -1,5 +1,6 @@
+/* eslint-disable */
 // https://github.com/jshjohnson/Choices
-import Choices from 'choices.js';
+import Choices from 'choices.js/public/assets/scripts/choices.min';
 
 // https://github.com/leongersen/noUiSlider
 import noUiSlider from 'nouislider';
@@ -13,14 +14,12 @@ import Inputmask from 'inputmask';
 const $ = window.$;
 
 export function selects() {
-  /* eslint-disable no-unused-vars */
   if ($('.js-select').length) {
     const choices = new Choices('.js-select', {
       searchEnabled: false,
       itemSelectText: '',
     });
   }
-  /* eslint-enable no-unused-vars */
 }
 
 export function sliders() {
@@ -81,3 +80,4 @@ export function numberinput() {
     if ($(this).val() < 0) $(this).val(0);
   });
 }
+/* eslint-enable */

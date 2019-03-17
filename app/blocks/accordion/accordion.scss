@@ -1,57 +1,38 @@
 .accordion {
+  display: block;
+
   $b: &;
 
-  @include text;
-
-  .accordions & { margin-top: -1px; }
-
-  &__header {
+  &__button {
+    cursor: pointer;
     position: relative;
     padding-right: 28px;
-    height: 40px;
-    border: 1px solid $color-border;
-    width: 100%;
-    box-sizing: border-box;
-    line-height: 38px;
 
     &::after {
       content: '';
       position: absolute;
       top: 50%;
-      right: 10px;
-      width: 5px;
-      height: 5px;
-      border-width: 1px 1px 0 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-width: 5px 4px 0;
       border-style: solid;
-      border-color: $color-basic;
+      border-color: $color-basic transparent transparent transparent;
       transform-origin: center;
-      transform: translateY(-50%) rotate(135deg);
+      transform: translateY(-50%) rotate(0);
       transition: transform $ease-main;
 
       #{$b}.is-active & {
-        transform: translateY(-50%) rotate(-45deg);
-        margin-top: 2px;
+        transform: translateY(-50%) rotate(180deg);
       }
     }
   }
 
-  &__button {
-    padding: 0 10px;
-    cursor: pointer;
-  }
-
-  &__body {
-    padding: 10px;
-    border: 1px solid $color-border;
-    border-top: 0;
-    width: 100%;
-    box-sizing: border-box;
+  &__content {
     display: none;
 
-    #{$b}.is-active & { display: block; }
+    #{$b}.is-active & {
+      display: block;
+    }
   }
-}
-
-.accordions {
-  padding-top: 1px;
 }

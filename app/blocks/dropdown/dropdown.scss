@@ -11,8 +11,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity $ease-main;
-
-  @include text;
+  font-size: 14px;
 
   $b: &;
 

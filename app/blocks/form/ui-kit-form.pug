@@ -1,0 +1,70 @@
+mixin ui-kit-form()
+  +ui-section
+    +ui-section-head
+      +ui-title Формы
+      +ui-path
+        p Блок: blocks/form/form
+      +ui-description
+        p Форма собирается на основе сетки (блок grid)
+        p При необходимости изменения сетки от стандартной, к ней добавляется модификатор
+
+    +ui-section-content()
+      +form
+        +grid
+          +col(6)
+            +inputbox
+              +label Название поля
+              +input-wrapper
+                +input(placeholder="Плейсхолдер")
+          +col(6)
+            +inputbox
+              +label Выпадающий список
+              +input-wrapper
+                +select
+                  option(value="Опция 1") Опция 1
+                  option(value="Опция 2") Опция 2
+                  option(value="Опция 3") Опция 3
+          +col(6)
+            +inputbox()
+              +label Календарь
+              +input-wrapper
+                +input()(placeholder="Выберите дату" readonly).js-datepicker
+          +col(6)
+            +inputbox()
+              +label Маска телефона
+              +input-wrapper
+                +input()(placeholder="+7 (___) ___-__-__" data-type="tel")
+          +col(6)
+            +inputbox()
+              +label Маска e-mail
+              +input-wrapper
+                +input()(placeholder="E-mail" data-type="email")
+          +col(6)
+            +inputbox()
+              +label Выбор количества
+              +input-wrapper
+                +input-number()(placeholder="Количество товара")
+          +col(12)
+            +inputbox
+              +label Текстовое поле
+              +input-wrapper
+                +textarea(placeholder="Текстовое поле")
+          +col(6)
+            +inputbox()
+              +label Чекбокс
+              +input-wrapper
+                +checkradio(false, 'ui-checkbox', 'test', 'true') Чекбокс
+          +col(6)
+            +inputbox()
+              +label Радиокнопка
+              +input-wrapper
+                +checkradio(true, 'ui-radio', 'test', 'true') Радиокнопка
+          +col(6)
+            +inputbox()
+              +label Ползунок
+              +input-wrapper
+                +range()(data-start='40', data-connect='[true, false]', data-min='0', data-max='100')
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

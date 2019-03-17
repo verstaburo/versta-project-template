@@ -2,5 +2,4 @@ mixin breadcrumbs(json)
   +b.UL.breadcrumbs&attributes(attributes)
     each crumb in json
       +e.LI.item
-        +link(href='#')
-          =crumb
+        +e.A.link(href='#')!= crumb

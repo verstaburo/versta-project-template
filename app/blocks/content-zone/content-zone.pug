@@ -1,3 +1,52 @@
 mixin content-zone()
   .content-zone&attributes(attributes)
     block
+
+mixin ui-kit-content-zone()
+  +ui-section
+    +ui-section-head
+      +ui-title Контентная зона
+      +ui-path
+        p Блок: blocks/content-zone/content-zone
+      +ui-description
+        p Текстовая зона для WYSIWYG-редакторов
+
+    +ui-section-content()
+      +ui-special
+        +content-zone
+          h1 Заголовок H1 (heading-1)
+          h2 Заголовок H2 (heading-2)
+          h3 Заголовок H3 (heading-3)
+          h4 Заголовок H4 (heading-4)
+          h5 Заголовок H5 (heading-5)
+          h6 Заголовок H6 (heading-6)
+          p Текст p (text)<br> Цитата внутри текста p: <q>Цитата q</q>
+          p <small>Тег small внутри p (text-small)</small>
+          blockquote
+            p Демонстрация цитаты через тег blockquote
+            h4 Внутри могут быть заголовки
+            p Текст с <a href="#">ссылкой в тексте</a>
+          p Картинка в тексте (img):
+          img(src="http://verstaburo.com/NEW/patterns/pattern.jpg")
+          p Маркированный список ul. Стили взяты из styles/helpers/_list-styles.scss
+          ul
+            li Элемент списка
+            li Другой элемент
+              ul
+                li Элемент списка
+                li Другой элемент
+                li Элемент списка
+            li Элемент списка
+          p Нумерованный список ol. Стили взяты из styles/helpers/_list-styles.scss
+          ol
+            li Элемент списка
+            li Другой элемент
+              ol
+                li Элемент списка
+                li Другой элемент
+                li Элемент списка
+            li Элемент списка
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()
