@@ -1,0 +1,17 @@
+mixin ui-kit-tooltip
+  +ui-section
+    +ui-section-head
+      +ui-title Подсказки
+      +ui-path
+        p Блок: blocks/tooltip/tooltip
+      +ui-description
+        p На блок вешаем класс .js-tooltip, текст подсказки прописываем в [title].
+        p Для HTML-тултипов читаем документацию
+        p
+          a(href="#" title="Пример подсказки").js-tooltip Пример подсказки
+
+    //- +ui-section-content()
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

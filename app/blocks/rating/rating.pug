@@ -15,3 +15,21 @@ mixin rating-interactive(count, name)
       +e.LABEL.box
         +e.INPUT(type='radio' name='name' value=i-1).control.js-rating-control
         +icon('star').__icon
+
+
+mixin ui-kit-rating
+  +ui-section
+    +ui-section-head
+      +ui-title Рейтинг
+      +ui-path
+        p Блок: blocks/rating/rating
+
+    +ui-section-content()
+      +ui-description Интерактивный
+      +rating-interactive
+      +ui-description Статичный
+      +rating(3)
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

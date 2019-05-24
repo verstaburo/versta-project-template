@@ -1,12 +1,14 @@
 /* eslint-disable */
-// https://idangero.us/swiper/
+// https://idangero.us/swiper/api/
 import * as Swiper from 'swiper/dist/js/swiper';
 
 const $ = window.$;
 
-export default function slider() {
+export function slider() {
   $('.js-slider').each(function () {
-    const block = $(this);
+    const
+      block = $(this);
+
     const mySlider = new Swiper(block, {
       loop: true,
       speed: 700,
@@ -16,6 +18,7 @@ export default function slider() {
       slidesPerView: 1,
       spaceBetween: 0,
       centeredSlides: false,
+      roundLengths: true,
       freeMode: false,
       navigation: {
         nextEl: block.find('.slider__button_next'),
@@ -27,7 +30,6 @@ export default function slider() {
         bulletClass: 'slider__dot',
         bulletActiveClass: 'is-active',
       },
-      roundLengths: true,
       breakpoints: {
         768: {
           slidesPerView: 2,
@@ -36,4 +38,5 @@ export default function slider() {
     });
   });
 }
+
 /* eslint-enable */

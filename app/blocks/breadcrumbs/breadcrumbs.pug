@@ -3,3 +3,17 @@ mixin breadcrumbs(json)
     each crumb in json
       +e.LI.item
         +e.A.link(href='#')!= crumb
+
+mixin ui-kit-breadcrumbs
+  +ui-section
+    +ui-section-head
+      +ui-title Хлебные крошки
+      +ui-path
+        p Блок: blocks/breadcrumbs/breadcrumbs
+
+    +ui-section-content()
+      +breadcrumbs(['Главная', 'Раздел', 'Страница'])
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

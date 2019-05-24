@@ -1,3 +1,19 @@
 mixin map()
   +b.map&attributes(attributes)
     block
+
+mixin ui-kit-map
+  +ui-section
+    +ui-section-head
+      +ui-title Карта
+      +ui-path
+        p Блок: blocks/map/map
+      +ui-description
+        p Сделано через Leaflet.js
+
+    +ui-section-content()
+      +map()#map
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

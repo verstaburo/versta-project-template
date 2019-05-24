@@ -1,0 +1,18 @@
+mixin ui-kit-scrollbar
+  +ui-section
+    +ui-section-head
+      +ui-title Кастомный скроллбар
+      +ui-path
+        p Блок: blocks/scrollbar/scrollbar
+      +ui-description
+        p Активируется классом .js-scrollbar на скроллящемся контейнере
+        p
+          a(href="https://kingsora.github.io/OverlayScrollbars/#!documentation/options" target="_blank") Документация
+
+    +ui-section-content()
+      +ui-special._scroll.js-scrollbar
+        div(style="height: 1000px")
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

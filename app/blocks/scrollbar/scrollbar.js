@@ -1,8 +1,14 @@
+/* eslint-disable */
 import $ from 'jquery';
 
-// https://github.com/gromo/jquery.scrollbar
-import 'jquery.scrollbar';
+import OverlayScrollbars from 'overlayscrollbars';
 
 export default function scrollbar() {
-  $('.js-scrollbar').scrollbar();
+  OverlayScrollbars(document.querySelectorAll('.js-scrollbar'), {
+    className: 'os-theme-dark',
+    scrollbars: {
+      clickScrolling: true,
+    },
+  });
 }
+/* eslint-enable */

@@ -1,3 +1,32 @@
 mixin table()
   table.table&attributes(attributes)(cellspacing="0", class=addclass)
     block
+
+mixin ui-kit-table()
+  +ui-section
+    +ui-section-head
+      +ui-title Таблицы
+      +ui-path
+        p Блок: blocks/table/table
+      //- +ui-description
+      //-   p Описание Блока
+
+    +ui-section-content()
+      +table()
+        thead
+          tr
+            td Ячейка
+            td Ячейка
+            td Ячейка
+        tr
+          td Ячейка
+          td Ячейка
+          td Ячейка
+        tr
+          td Ячейка
+          td Ячейка
+          td Ячейка
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

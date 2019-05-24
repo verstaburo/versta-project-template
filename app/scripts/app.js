@@ -7,7 +7,7 @@ import scrollAnimation from '../blocks/js-functions/scroll-animation';
 import { selects, sliders, datepicker, inputmask, numberinput } from '../blocks/form/form';
 import popups from '../blocks/popups/popups';
 import scrollbar from '../blocks/scrollbar/scrollbar';
-import slider from '../blocks/slider/slider';
+import {slider} from '../blocks/slider/slider';
 import tooltips from '../blocks/tooltip/tooltip';
 import tabs from '../blocks/tabs/tabs';
 import maps from '../blocks/map/map';

@@ -3,6 +3,8 @@
   color: $ui-kit-color-text;
   background-color: $ui-kit-bg;
 
+  $b: &;
+
   &__head {
     padding-top: 60px;
     padding-bottom: 20px;
@@ -28,6 +30,18 @@
 
     &:not(:last-child) {
       margin-bottom: 8px;
+    }
+
+    #{$b}__special:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     p {

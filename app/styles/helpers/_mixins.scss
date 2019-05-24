@@ -247,3 +247,21 @@ div {
       url('' + $path + $fontname + '.svg#' + $fontname) format('svg');
   }
 }
+
+/*
+Миксин для адаптивных свойств
+Пример: @include rule(width, (xl: 100px, lg: 200px));
+*/
+@mixin rule($name, $pointsAndValues) {
+  @each $breakpoint, $value in $pointsAndValues {
+    @if $breakpoint == xl {
+      #{$name}: #{$value};
+    }
+
+    @if $breakpoint != xl {
+      @include screen('#{$breakpoint}') {
+        #{$name}: #{$value};
+      }
+    }
+  }
+}

@@ -15,3 +15,24 @@ mixin slider(pagination, buttons)
 mixin slide()
   +e.slide&attributes(attributes).swiper-slide
     block
+
+mixin ui-kit-slider
+  +ui-section
+    +ui-section-head
+      +ui-title Слайдер
+      +ui-path
+        p Блок: blocks/slider/slider
+      +ui-description
+        p
+          a(href="https://idangero.us/swiper/api/" target="_blank") Документация
+
+    +ui-section-content()
+      +slider(true, true)
+        +slide Привет
+        +slide Привет
+        +slide Привет
+        +slide Привет
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()
