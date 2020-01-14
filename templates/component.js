@@ -6,16 +6,16 @@ mixin ${blockName}()
 mixin ui-kit-${blockName}()
   +ui-section
     +ui-section-head
-      +ui-title Компонент ${blockName}
+      +ui-title Component ${blockName}
       +ui-path
-        p Компонент: components/${blockName}/${blockName}
+        p Component: components/${blockName}/${blockName}
       +ui-description
-        p Описание компонента
+        p Component description
   
     +ui-section-content()
       +${blockName}
       
-    //- При +ui-section-content(true) контейнер отсутствует
-    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
-    //- Рамка вокруг особой секции: +ui-special()
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()
 `;

@@ -109,7 +109,7 @@ const appendToIncludes = (kind, blockName) => {
   }
 
   const file = fs.readFileSync(filePath, 'utf8');
-  const includeString = kind === 'page' ? `      +e.A.link(href="${blockName}.html") Страница ${blockName} (${blockName}.html)` : `include ../${kind}s/${blockName}/${blockName}`;
+  const includeString = kind === 'page' ? `      +e.A.link(href="${blockName}.html") Page ${blockName} (${blockName}.html)` : `include ../${kind}s/${blockName}/${blockName}`;
   let lines = file.split(/\n/);
 
   if (lines.slice(-1)[0].length < 1) {
@@ -134,7 +134,7 @@ const includeToUiKit = (kind, blockName) => {
 
   const file = fs.readFileSync(filePath, 'utf8');
   const includeString = `
-    //- ${kind === 'block' ? 'Блок' : 'Компонент'} ${blockName}
+    //- ${kind === 'block' ? 'Block' : 'Component'} ${blockName}
     +ui-kit-${blockName}
   `;
   let lines = file.split(/\n/);
