@@ -1,22 +1,15 @@
 .table {
   display: table;
+  width: 100%;
+  table-layout: fixed;
   font-size: 14px;
+  line-height: 1.5;
 
-  tr {
-    padding: 0;
-    margin: 0;
-    display: block;
-    border-bottom: 1px solid $color-border;
-  }
+  $b: &;
 
-  thead tr {
-    border-width: 2px;
-  }
-
-  td {
-    padding: $grid-gap/2 $grid-gap $grid-gap/2 0;
+  &__col {
+    padding: 20px 0;
     vertical-align: top;
-
-    &:last-child { padding-right: 0; }
+    border-bottom: 1px solid #eaeaea;
   }
 }

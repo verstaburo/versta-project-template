@@ -1,42 +1,49 @@
 .tabs {
-  $tab-gap: 25px;
-
   display: block;
   font-size: 0;
-  margin-top: -$tab-gap;
+  border-bottom: 1px solid color(border);
+
+  $b: &;
 
   &__tab {
     display: inline-block;
-    margin-right: $tab-gap;
-    margin-top: $tab-gap;
     border-bottom: 2px solid transparent;
     transition: border-color $ease-main, opacity $ease-main;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     cursor: pointer;
     opacity: .5;
     font-size: 14px;
+    margin-bottom: -1px;
 
-    &.active {
-      border-color: $color-basic;
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+
+    &.is-active {
+      border-color: color(main);
       opacity: 1;
+      cursor: auto;
     }
   }
+}
 
-  & + &-content { margin-top: 30px; }
+.tabs-content {
+  display: block;
 
-  &-content {
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
 
-    &__wrapper {
-      display: none;
-      opacity: 0;
-      transition: opacity $ease-main, transform $ease-main;
-      transform: translate3d(0, 10px, 0);
+  &__wrapper {
+    display: none;
+    opacity: 0;
+    transition: opacity $ease-main, transform $ease-main;
+    transform: translate3d(0, 10px, 0);
 
-      &.active {
-        display: block;
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-      }
+    &.is-active {
+      display: block;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
     }
   }
 }

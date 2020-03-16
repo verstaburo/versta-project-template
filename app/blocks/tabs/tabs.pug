@@ -1,9 +1,9 @@
 mixin tabs()
-  +b.UL.tabs&attributes(attributes)
+  +b.tabs&attributes(attributes)
     block
 
 mixin tab()
-  +e.LI.tab&attributes(attributes)
+  +e.tab&attributes(attributes)
     block
 
 mixin tabs-content()
@@ -20,19 +20,21 @@ mixin ui-kit-tabs()
       +ui-title Табы
       +ui-path
         p Блок: blocks/tabs/tabs
+      +ui-description
+        p [data-tab-target] - вешается на кнопку, открывающую таб
+        p [data-tab] и [data-tab-group] - на таб
+        p [data-tab-group] должен быть одинаковый у всех табов одной группы (в одном контейнере, например)
 
     +ui-section-content()
       +tabs
-        +tab()(data-tab-target="tab1").active Информация
+        +tab()(data-tab-target="tab1").is-active Информация
         +tab()(data-tab-target="tab2") Контент
         +tab()(data-tab-target="tab3") Тексты
+
       +tabs-content
-        +tab-wrapper()(data-tab="tab1" data-tab-group="testtabs").active
-          p Это таб 1
-        +tab-wrapper()(data-tab="tab2" data-tab-group="testtabs")
-          p Это таб 2
-        +tab-wrapper()(data-tab="tab3" data-tab-group="testtabs")
-          p Это таб 3
+        +tab-wrapper()(data-tab="tab1" data-tab-group="testTabs").is-active Это таб 1
+        +tab-wrapper()(data-tab="tab2" data-tab-group="testTabs") Это таб 2
+        +tab-wrapper()(data-tab="tab3" data-tab-group="testTabs") Это таб 3
 
     //- При +ui-section-content(true) контейнер отсутствует
     //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()

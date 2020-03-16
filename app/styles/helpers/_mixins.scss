@@ -3,7 +3,8 @@
 Пример использования:
 div {
   @include ratio(16,9);
-} */
+}
+*/
 @mixin ratio($x,$y, $pseudo: false) {
   $padding: unquote(($y/$x) *100+'%');
 
@@ -250,18 +251,42 @@ div {
 
 /*
 Миксин для адаптивных свойств
-Пример: @include rule(width, (xl: 100px, lg: 200px));
+@include rule(width, (xl: 100px, lg: 200px));
+@include rule(width, (sm: 500px), min); (для mobile-first)
 */
-@mixin rule($name, $pointsAndValues) {
+@mixin rule($name, $pointsAndValues, $direction: max) {
   @each $breakpoint, $value in $pointsAndValues {
-    @if $breakpoint == xl {
+    @if ($breakpoint == xl) and ($direction == max) {
       #{$name}: #{$value};
-    }
-
-    @if $breakpoint != xl {
-      @include screen('#{$breakpoint}') {
+    } @else {
+      @include screen('#{$breakpoint}', $direction) {
         #{$name}: #{$value};
       }
     }
   }
 }
+
+/*
+Функция получения параметра из массива
+Пример: background: gradient(main);
+*/
+@function param($param, $subparam) {
+  @return map-get(map-get($params, $param), $subparam);
+}
+
+/*
+Функция получения цвета из массива
+Пример: background-color: color(main);
+*/
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+/*
+Функция получения градиента из массива
+Пример: background: gradient(main);
+*/
+@function gradient($gradient) {
+  @return map-get($gradients, $gradient);
+}
+

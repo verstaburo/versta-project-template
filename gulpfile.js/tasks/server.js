@@ -18,7 +18,7 @@ module.exports = () => {
       ],
     },
     directory: false,
-    middleware: [debuga()],
+    // middleware: [debuga()],
   });
 
   browserSync.watch('dist/**/*').on('change', browserSync.reload);

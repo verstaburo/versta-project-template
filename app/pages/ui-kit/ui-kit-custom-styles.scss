@@ -15,12 +15,13 @@
       content: '';
       display: block;
       height: 40px;
-      background-color: $ui-kit-color-gray;
+      background-color: rgba($ui-kit-color-text, .1);
+      border-radius: 5px;
     }
   }
 
   .popup {
-    border: 1px solid $color-border;
+    border: 1px solid color(border);
 
     &:not(:first-child) {
       margin-top: 30px;

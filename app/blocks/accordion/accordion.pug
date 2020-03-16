@@ -1,14 +1,17 @@
 mixin accordion
-  +b.accordion&attributes(attributes)
+  +b.accordion.js-accordion&attributes(attributes)
     block
 
 mixin accordion-button
   +e.button.js-accordion-button&attributes(attributes)
-    block
+    +e.button-content
+      block
+    +icon('arrow').__arrow
 
 mixin accordion-content
-  +e.content&attributes(attributes)
-    block
+  +e.content.js-accordion-content&attributes(attributes)
+    +e.wrapper
+      block
 
 mixin ui-kit-accordion()
   +ui-section
@@ -19,17 +22,23 @@ mixin ui-kit-accordion()
       +ui-description
         p Управляется тремя классами: .js-accordion, .js-accordion-button, .js-accordion-content
         p При наличии атрибута [data-accordion-single] каждый открываемый аккордеон отключает соседние (находящиеся в одном родителе)
-        p Чтобы исходное состояние аккордеона было активным, на него надо повесить класс .is-active
+        p Чтобы исходное состояние аккордеона было активным, на него надо повесить классы .is-active и .is-active-initial
 
     +ui-section-content()
-      +accordion.js-accordion
-        +accordion-button.js-accordion-button
-          p Кнопка открытия аккордеона
-        +accordion-content.js-accordion-content
-          p Контент
-          p Контент
-          p Контент
-          p Контент
+      +accordion(data-accordion-single="true").is-active.is-active-initial
+        +accordion-button Кнопка открытия аккордеона
+        +accordion-content
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet turpis ut risus gravida, id mollis felis laoreet. Mauris non neque eu justo feugiat finibus nec id nisi. Vivamus vel nulla at lorem hendrerit fermentum nec eget ligula. Aliquam fringilla euismod felis, et sollicitudin ligula molestie quis. Phasellus vel ligula sed turpis bibendum aliquam a condimentum magna. Pellentesque tempus, nibh vitae sagittis venenatis, sapien enim convallis arcu, vel tristique tortor neque id ante. Maecenas aliquet mi odio, vitae rutrum risus maximus et. Vestibulum non nibh pellentesque, dapibus lacus sed, fringilla augue. Suspendisse maximus mi sapien, quis pellentesque lectus faucibus non. Ut eu erat convallis, elementum mi sit amet, tincidunt sem. Phasellus ornare, turpis vel varius convallis, augue nibh imperdiet nibh, pharetra varius leo mi suscipit arcu.
+
+      +accordion(data-accordion-single="true")
+        +accordion-button Кнопка открытия аккордеона
+        +accordion-content
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+      +accordion(data-accordion-single="true")
+        +accordion-button Кнопка открытия аккордеона
+        +accordion-content
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
     //- При +ui-section-content(true) контейнер отсутствует
     //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()

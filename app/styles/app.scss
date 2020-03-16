@@ -1,8 +1,7 @@
 @import '../../node_modules/normalize.css/normalize.css';
-@import 'helpers/variables'; // Переменные
 @import 'helpers/mixins'; // Миксины
+@import 'helpers/variables'; // Переменные
 @import 'helpers/fonts'; // Шрифты
-@import 'helpers/gradients'; // Градиенты
 @import 'helpers/basics'; // Основные общие стили
 @import 'helpers/text-styles'; // Стили текстов
 @import '../blocks/**/*';
@@ -10,9 +9,9 @@
 @import '../pages/**/*';
 
 .container {
-  width: $container-width;
-  padding-left: $container-padding;
-  padding-right: $container-padding;
+  width: param(container, width);
+  padding-left: param(container, padding);
+  padding-right: param(container, padding);
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
@@ -21,4 +20,19 @@
 
 .js-sr {
   visibility: hidden;
+}
+
+@each $key, $val in $breakpoints {
+
+  .hide-#{$key} {
+    @include screen(#{$key}) {
+      display: none;
+    }
+  }
+
+  .show-#{$key} {
+    @include screen(#{$key}, min) {
+      display: none;
+    }
+  }
 }

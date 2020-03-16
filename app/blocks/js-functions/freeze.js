@@ -12,8 +12,6 @@ export function freeze() {
     }
 
     h.css({
-      width: '100%',
-      height: '100%',
       position: 'fixed',
       top: -top,
     });
@@ -29,8 +27,6 @@ export function unfreeze() {
     $('html, body').scrollTop(-parseInt(h.css('top'), 10));
     h.css({
       position: '',
-      width: '',
-      height: '',
       top: '',
       'overflow-y': '',
     });

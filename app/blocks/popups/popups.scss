@@ -4,6 +4,16 @@
   display: none;
 }
 
-.fancybox-close-small:focus::after { outline: none; }
+.fancybox-bg {
+  background: rgba(black, .5);
 
-.fancybox-enabled { overflow: initial; }
+  .fancybox-is-open & {
+    opacity: 1;
+  }
+}
+
+.popup {
+  display: block;
+
+  $b: &;
+}

@@ -1,1 +1,29 @@
 @import '../../node_modules/overlayscrollbars/css/OverlayScrollbars.min.css';
+
+.os-theme-dark > .os-scrollbar, .os-theme-light > .os-scrollbar {
+  padding: 5px;
+}
+
+.os-theme-dark > .os-scrollbar-vertical, .os-theme-light > .os-scrollbar-vertical {
+  width: 15px;
+}
+
+.os-theme-dark > .os-scrollbar.os-scrollbar-unusable, .os-theme-dark > .os-scrollbar > .os-scrollbar-track, .os-theme-light > .os-scrollbar.os-scrollbar-unusable, .os-theme-light > .os-scrollbar > .os-scrollbar-track {
+  background: rgba(black, .1);
+}
+
+.os-theme-dark.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle, .os-theme-light.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+  transition: background-color $ease-main;
+}
+
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+  background: rgba(black, .5);
+}
+
+.os-theme-dark > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle,.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active {
+  background: color(main);
+}
+
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track, .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle, .os-theme-light > .os-scrollbar > .os-scrollbar-track, .os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+  border-radius: 1000px;
+}

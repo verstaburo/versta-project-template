@@ -1,40 +1,40 @@
-$breadpadding: 35px;
-
 .breadcrumbs {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+
+  $b: &;
 
   &__item {
-    display: inline-block;
-    position: relative;
+    display: flex;
+    align-items: center;
 
     &:not(:last-child) {
-      padding-right: $breadpadding;
 
       &::after {
         content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        right: $breadpadding/2;
-        width: 5px;
-        height: 5px;
-        border-width: 1px 1px 0 0;
+        width: 6px;
+        height: 6px;
         border-style: solid;
-        border-color: $color-basic;
-        transform-origin: center;
-        transform: translateX(50%) rotate(45deg);
+        border-radius: 2px;
+        border-width: 2px 2px 0 0;
+        border-color: color(main);
+        transform: rotate(45deg);
+        margin: 0 20px 0 15px;
       }
-    }
-
-    &:last-child {
-      pointer-events: none;
-      opacity: .5;
     }
   }
 
   &__link {
     font-size: 14px;
     line-height: 1.5;
+    transition: color $ease-main;
+
+    &[href]:hover {
+      color: color(main);
+    }
+
+    &:not([href]) {
+      color: rgba(black, .5);
+    }
   }
 }

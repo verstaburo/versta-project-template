@@ -41,7 +41,7 @@
   }
 
   &__list {
-    border-color: $color-border;
+    border-color: color(border);
 
     &--single {
       display: table;
@@ -76,10 +76,10 @@
 
   &.is-open & {
 
-    &__inner { border-color: $color-border; }
+    &__inner { border-color: color(border); }
 
     &__list {
-      &--dropdown { border-color: $color-border; }
+      &--dropdown { border-color: color(border); }
     }
   }
 }

@@ -1,15 +1,19 @@
 /* eslint-disable */
 // https://idangero.us/swiper/api/
-import * as Swiper from 'swiper/dist/js/swiper';
+import Swiper from 'swiper';
 
 const $ = window.$;
 
 export function slider() {
-  $('.js-slider').each(function () {
+  $(document).find('.js-slider').each(function () {
     const
-      block = $(this);
+      block = $(this),
+      container = block.find('.swiper-container'),
+      arrowPrev = block.find('.slider__button_prev'),
+      arrowNext = block.find('.slider__button_next'),
+      paginationContainer = block.find('.slider__dots');
 
-    const mySlider = new Swiper(block, {
+    const mySlider = new Swiper(container, {
       loop: true,
       speed: 700,
       autoplay: {
@@ -21,22 +25,21 @@ export function slider() {
       roundLengths: true,
       freeMode: false,
       navigation: {
-        nextEl: block.find('.slider__button_next'),
-        prevEl: block.find('.slider__button_prev'),
+        nextEl: arrowNext,
+        prevEl: arrowPrev,
       },
       pagination: {
-        el: block.find('.slider__dots'),
+        el: paginationContainer,
         clickable: true,
         bulletClass: 'slider__dot',
         bulletActiveClass: 'is-active',
       },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
+      breakpoints: { // Mobile-first
+        1024: {
+          slidesPerView: 1,
         },
       },
     });
   });
 }
-
 /* eslint-enable */

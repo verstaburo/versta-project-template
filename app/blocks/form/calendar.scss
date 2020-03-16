@@ -7,12 +7,12 @@
 .js-datepicker { cursor: pointer; }
 
 .datepicker {
-  color: $color-basic;
+  color: color(basic);
   font-size: 14px;
   width: 250px;
   background: white;
-  border: 1px solid $color-border;
-  box-shadow: 0 2px 4px rgba($color-basic, .15);
+  border: 1px solid color(border);
+  box-shadow: 0 2px 4px rgba(color(basic), .15);
   border-radius: 0;
   transition: opacity $ease-main, transform $ease-main, left 0s $ease-main;
   font-family: $font-main;
@@ -31,14 +31,14 @@
 // Стрелочка сверху над блоком
 
 .datepicker--pointer {
-  border-top-color: $color-border;
-  border-right-color: $color-border;
+  border-top-color: color(border);
+  border-right-color: color(border);
 }
 
 // Цвет дней недели
 
 .datepicker--day-name {
-  color: $color-main;
+  color: color(main);
 }
 
 // Ячейка со стрелкой
@@ -48,13 +48,13 @@
   transition: color $ease-main, background-color $ease-main;
 
   // Цвет стрелок
-  path { stroke: $color-basic; }
+  path { stroke: color(basic); }
 }
 
 // Шапка календаря
 
 .datepicker--nav {
-  border-color: $color-border;
+  border-color: color(border);
 
   // Ячейка с заголовком месяца/года
 
@@ -64,14 +64,14 @@
 
     // Цвет года в шапке
 
-    i { color: rgba($color-basic, .5); }
+    i { color: rgba(color(basic), .5); }
   }
 }
 
 // Цвет ховера по ячейкам в календаре, шапке
 
 .datepicker--cell.-focus-, .datepicker--nav-action:hover, .datepicker--nav-title:hover {
-  background: rgba($color-border, .3);
+  background: rgba(color(border), .3);
 }
 
 // Стиль ячейки
@@ -83,45 +83,45 @@
   // Цвет сегодняшнего даты/месяца
 
   &.-current- {
-    color: $color-main;
-    background: rgba($color-main, .1);
+    color: color(main);
+    background: rgba(color(main), .1);
   }
 
   // Ховер по активной дате
 
   &.-selected-.-focus- {
-    background: rgba($color-main, .8);
+    background: rgba(color(main), .8);
   }
 
   // Неактивная ячейка
 
   &.-disabled- {
-    color: rgba($color-basic, .3);
+    color: rgba(color(basic), .3);
   }
 
   // Цвет фона активного месяца/дня
 
   &.-selected-, &.-selected-.-current- {
-    background: $color-main;
+    background: color(main);
   }
 }
 
 // Цвет даты другого месяца/года
 
 .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
-  color: rgba($color-basic, .2);
+  color: rgba(color(basic), .2);
 
-  &:hover { color: rgba($color-basic, .5); }
+  &:hover { color: rgba(color(basic), .5); }
 }
 
 // Стили при выборе диапазона дат
 
 .datepicker--cell.-range-to-, .datepicker--cell.-range-from- {
   border: 0;
-  background-color: rgba($color-main, .3);
+  background-color: rgba(color(main), .3);
 
   &.-selected- {
-    background-color: $color-main;
+    background-color: color(main);
   }
 }
 
@@ -136,26 +136,26 @@
 // Стили ячеек другого месяца, находящихся в диапазоне
 
 .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
-  background-color: rgba($color-main, .1);
-  color: rgba($color-main, .3);
+  background-color: rgba(color(main), .1);
+  color: rgba(color(main), .3);
 
   &.-focus- {
-    background-color: rgba($color-main, .2);
+    background-color: rgba(color(main), .2);
   }
 }
 
 // Стили промежуточных ячеек в диапазоне
 
 .datepicker--cell.-in-range- {
-  background: rgba($color-main, .2);
-  color: $color-main;
+  background: rgba(color(main), .2);
+  color: color(main);
   border-radius: 0;
 
   &.-current- {
-    color: $color-basic;
+    color: color(basic);
   }
 
   &.-focus- {
-    background: rgba($color-main, .3);
+    background: rgba(color(main), .3);
   }
 }

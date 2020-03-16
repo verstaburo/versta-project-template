@@ -1,50 +1,46 @@
 /* eslint-disable */
 const $ = window.$;
-const duration = 300;
 
-// Открытие аккордеона
-$.fn.accordionShow = function () {
+$.fn.accordionToggle = function (hide) {
   const
-    block = this,
-    content = block.find('.js-accordion-content'),
-    isMultiple = block.data('accordion-single');
+    accordion = this,
+    content = accordion.find('.js-accordion-content'),
+    isSingle = accordion.data('accordion-single'),
+    isActive = accordion.hasClass('is-active'),
+    isDisabled = accordion.hasClass('is-disabled'),
+    siblings = accordion.siblings('.js-accordion.is-active');
 
-  if (block.hasClass('is-disabled')) return;
+  if (isDisabled || hide !== isActive) return;
 
-  content.slideDown(duration);
-  block.addClass('is-active');
+  if (hide) {
+    accordion.removeClass('is-active');
+    content.slideUp(globalOptions.animationDuration);
 
-  if (isMultiple) {
-    const
-      siblings = block.siblings('.js-accordion.is-active');
+    setTimeout(() => {
+      accordion.removeClass('is-active-initial');
+    }, globalOptions.animationDuration);
+  } else {
+    accordion.addClass('is-active');
+    content.slideDown(globalOptions.animationDuration);
 
-    siblings.find('.js-accordion-button').removeClass('is-active');
-    siblings.find('.js-accordion-content').slideUp(duration);
+    if (isSingle) {
+      siblings.accordionToggle(true);
+    }
   }
 };
 
-// Закрытие аккордеона
-$.fn.accordionHide = function () {
-  const
-    block = this,
-    content = block.find('.js-accordion-content');
-
-  content.slideUp(duration);
-  block.removeClass('is-active');
-};
-
 // Работа кнопки аккордеона
-export default function accordion () {
+export function accordion () {
   $(document).on('click', '.js-accordion-button', function (e) {
     if (e.target.tagName === 'a') {
       e.preventDefault();
     }
 
     const
-      block = $(this).parents('.js-accordion'),
-      isActive = block.hasClass('is-active');
+      accordion = $(this).closest('.js-accordion'),
+      isActive = accordion.hasClass('is-active');
 
-    isActive ? block.accordionHide() : block.accordionShow();
+    isActive ? accordion.accordionToggle(true) : accordion.accordionToggle(false);
   });
 }
 /* eslint-enable */

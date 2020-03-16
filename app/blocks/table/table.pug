@@ -1,6 +1,9 @@
-mixin table()
-  table.table&attributes(attributes)(cellspacing="0", class=addclass)
-    block
+mixin table(data)
+  +b.TABLE.table(cellspacing="0", cellpadding="0")&attributes(attributes)
+    each row in data
+      +e.TR.row(class=row.rowClass)
+        each col in row.cols
+          +e.TD.col(class=col.colClass, colspan=col.colspan, rowspan=col.rowspan)!= col.text
 
 mixin ui-kit-table()
   +ui-section
@@ -8,24 +11,9 @@ mixin ui-kit-table()
       +ui-title Таблицы
       +ui-path
         p Блок: blocks/table/table
-      //- +ui-description
-      //-   p Описание Блока
 
     +ui-section-content()
-      +table()
-        thead
-          tr
-            td Ячейка
-            td Ячейка
-            td Ячейка
-        tr
-          td Ячейка
-          td Ячейка
-          td Ячейка
-        tr
-          td Ячейка
-          td Ячейка
-          td Ячейка
+      +table(getData('sample-table'))
 
     //- При +ui-section-content(true) контейнер отсутствует
     //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()

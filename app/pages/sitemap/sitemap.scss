@@ -5,15 +5,29 @@
   &__link {
     display: block;
     transition: opacity $ease-main;
-    color: $color-main;
+    color: color(main);
     font-size: 16px;
+    line-height: 1.4;
+
+    &::after {
+      content: '(' attr(href) ')';
+      margin-left: 10px;
+      font-size: 13px;
+      opacity: .5;
+      transition: transform $ease-main;
+      display: inline-block;
+    }
 
     &:hover {
       opacity: .5;
+
+      &::after {
+        transform: translate3d(5px, 0, 0);
+      }
     }
 
     &:not(:first-child) {
-      margin-top: 15px;
+      margin-top: 1em;
     }
   }
 }

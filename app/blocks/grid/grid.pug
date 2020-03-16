@@ -29,3 +29,41 @@ mixin col(col)
 
   .grid__col(class=classNames.join(' '))&attributes(attributes)
     block
+
+mixin ui-kit-grid()
+  +ui-section._grid
+    +ui-section-head
+      +ui-title Сетка
+      +ui-path
+        p Блок: blocks/grid/grid
+        p Переменные: styles/helpers/_variables.scss
+      +ui-description
+        p Колонок: 12 (param(grid, cols))
+
+        +ui-special
+          p Возможные варианты использования
+          pre +col(12) аналогично +col({ xl: 12 })
+          pre +col({ xl: 8, lg: 6: md: 5, sm: 7, xs: 12 })
+          p Промежуточные брейкпоинты указывать не обязательно
+          p При следующей записи - блок будет занимать 6 колонок на всех разрешениях, а на самом маленьком (xs) — 12
+          pre +col({ xl: 6, xs: 12 })
+
+    +ui-section-content()
+      +grid
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(1)
+        +col(4)
+        +col(4)
+        +col(4)
+        +col(6)
+        +col(6)

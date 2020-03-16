@@ -2,10 +2,10 @@
 
 .tooltipster-sidetip.tooltipster-borderless .tooltipster-box {
   border: none;
-  background: $color-basic;
+  background: color(basic);
   font-size: 12px;
   line-height: 1.4;
-  border-radius: 0;
+  border-radius: 5px;
 }
 
 .tooltipster-sidetip.tooltipster-borderless.tooltipster-bottom .tooltipster-box {
@@ -46,19 +46,19 @@
 }
 
 .tooltipster-sidetip.tooltipster-borderless.tooltipster-bottom .tooltipster-arrow-border {
-  border-bottom-color: $color-basic;
+  border-bottom-color: color(basic);
 }
 
 .tooltipster-sidetip.tooltipster-borderless.tooltipster-left .tooltipster-arrow-border {
-  border-left-color: $color-basic;
+  border-left-color: color(basic);
 }
 
 .tooltipster-sidetip.tooltipster-borderless.tooltipster-right .tooltipster-arrow-border {
-  border-right-color: $color-basic;
+  border-right-color: color(basic);
 }
 
 .tooltipster-sidetip.tooltipster-borderless.tooltipster-top .tooltipster-arrow-border {
-  border-top-color: $color-basic;
+  border-top-color: color(basic);
 }
 
 .tooltipster-sidetip.tooltipster-borderless.tooltipster-bottom .tooltipster-arrow-uncropped {
@@ -74,11 +74,11 @@
 .tooltipster-fade {
   opacity: 0;
   transition: opacity $ease-main, transform $ease-main;
-  transform: scale(.9) translate3d(0, 5px, 0);
+  transform: translate3d(0, 5px, 0);
   transform-origin: center bottom;
 }
 
 .tooltipster-fade.tooltipster-show {
   opacity: 1;
-  transform: scale(1) translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }

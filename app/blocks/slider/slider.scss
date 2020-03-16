@@ -1,13 +1,18 @@
-@import '../../node_modules/swiper/dist/css/swiper.css';
+@import '../../node_modules/swiper/css/swiper.css';
 
 .slider {
   position: relative;
+
+  .swiper-container {
+    background-color: rgba(color(main), .1);
+    border-radius: 3px;
+  }
 
   &__slide {
     padding: 100px 80px;
     box-sizing: border-box;
     text-align: center;
-    border: 1px solid $ui-kit-color-gray;
+    color: rgba(color(basic), .75);
   }
 
   &__dots {
@@ -20,23 +25,36 @@
     pointer-events: none;
     box-sizing: border-box;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   &__dot {
     margin: 5px;
     width: 10px;
     height: 10px;
-    border: 1px solid $color-border;
+    border: 1px solid rgba(black, .2);
     border-radius: 50%;
     display: inline-block;
     position: relative;
     transition: border-color $ease-main, background-color $ease-main;
     pointer-events: all;
     cursor: pointer;
+    box-sizing: border-box;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+    }
 
     &.is-active {
-      background-color: $color-main;
-      border-color: $color-main;
+      background-color: color(main);
+      border-color: color(main);
     }
   }
 
@@ -44,42 +62,55 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: -10px;
+    right: -10px;
     margin: auto;
     height: 40px;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
     box-sizing: border-box;
+    pointer-events: none;
   }
 
   &__button {
     width: 40px;
     height: 40px;
     line-height: 38px;
-    border: 1px solid $ui-kit-color-gray;
-    transition: opacity $ease-main;
     cursor: pointer;
     background-color: white;
     position: relative;
-    text-align: center;
-    font-size: 20px;
     z-index: 1;
+    pointer-events: all;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: 0 1.4px 2.2px rgba(0, 0, 0, .02), 0 3.3px 5.3px rgba(0, 0, 0, .028), 0 6.3px 10px rgba(0, 0, 0, .035), 0 11.2px 17.9px rgba(0, 0, 0, .042), 0 20.9px 33.4px rgba(0, 0, 0, .05), 0 50px 80px rgba(0, 0, 0, .07);
+    fill: color(basic);
+    transition: fill $ease-main;
 
-    &:hover { opacity: .5; }
+    svg {
+      width: 6px;
+      height: 16px;
+
+      @include center-image;
+    }
+
+    &:hover {
+      fill: color(main);
+    }
 
     &_next {
+      display: block;
 
-      &::before {
-        content: '→';
+      svg {
+        left: 2px;
       }
     }
 
     &_prev {
 
-      &::before {
-        content: '←';
+      svg {
+        transform: rotate(180deg);
+        right: 2px;
       }
     }
   }

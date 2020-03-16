@@ -1,5 +1,5 @@
 mixin map()
-  +b.map&attributes(attributes)
+  +b.map&attributes(attributes)#map
     block
 
 mixin ui-kit-map
@@ -10,9 +10,11 @@ mixin ui-kit-map
         p Блок: blocks/map/map
       +ui-description
         p Сделано через Leaflet.js
+        p
+          a(href="https://leafletjs.com/" target="_blank") Документация
 
     +ui-section-content()
-      +map()#map
+      +map()
 
     //- При +ui-section-content(true) контейнер отсутствует
     //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()

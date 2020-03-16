@@ -1,7 +1,8 @@
 mixin slider(pagination, buttons)
-  +b.slider&attributes(attributes).swiper-container.js-slider
-    .swiper-wrapper
-      block
+  +b.slider&attributes(attributes)
+    .swiper-container
+      .swiper-wrapper
+        block
 
     if pagination
       +e.dots
@@ -10,7 +11,10 @@ mixin slider(pagination, buttons)
     if buttons
       +e.navigation
         +e.button._prev
+          +icon('arrow')
+
         +e.button._next
+          +icon('arrow')
 
 mixin slide()
   +e.slide&attributes(attributes).swiper-slide
@@ -27,7 +31,7 @@ mixin ui-kit-slider
           a(href="https://idangero.us/swiper/api/" target="_blank") Документация
 
     +ui-section-content()
-      +slider(true, true)
+      +slider(true, true).js-slider
         +slide Привет
         +slide Привет
         +slide Привет

@@ -5,7 +5,7 @@
 @mixin font-face($name, $style, $weight, $fontname)
 
 Пример использования:
-@include font-face('Corbel', normal, 700, 'CorbelBold')
+@include font-face('Corbel', normal, 700, 'CorbelBold');
 
 Соответствие письменного названия жирности числовому значению:
 100 — Thin

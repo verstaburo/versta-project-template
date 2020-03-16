@@ -1,15 +1,15 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable */
+// http://iamceege.github.io/tooltipster/
+import 'tooltipster';
 import $ from 'jquery';
 
-// http://iamceege.github.io/tooltipster/
-import tooltipster from 'tooltipster';
-
-export default function tooltips() {
+export function tooltips() {
   $('.js-tooltip').tooltipster({
     animation: 'fade',
     delay: 0,
     side: 'top',
     theme: 'tooltipster-borderless',
+    animationDuration: globalOptions.animationDuration,
   });
 }
-/* eslint-enable no-unused-vars */
+/* eslint-enable */

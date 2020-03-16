@@ -1,0 +1,36 @@
+[
+  {
+    "rowClass": "",
+    "cols": [
+      {
+        "text": "Ячейка",
+        "colClass": "",
+        "colspan": "",
+        "rowspan": "2"
+      },
+      {
+        "text": "Ячейка",
+        "colClass": "",
+        "colspan": "",
+        "rowspan": ""
+      },
+      {
+        "text": "Ячейка",
+        "colClass": "",
+        "colspan": "",
+        "rowspan": ""
+      }
+    ]
+  },
+  {
+    "rowClass": "",
+    "cols": [
+      {
+        "text": "Ячейка",
+        "colClass": "",
+        "colspan": "2",
+        "rowspan": ""
+      }
+    ]
+  }
+]

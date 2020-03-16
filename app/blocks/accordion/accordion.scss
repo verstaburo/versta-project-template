@@ -3,36 +3,54 @@
 
   $b: &;
 
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
+
   &__button {
     cursor: pointer;
     position: relative;
-    padding-right: 28px;
+    display: flex;
+    align-items: center;
+    transition: color $ease-main;
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: 0;
-      height: 0;
-      border-width: 5px 4px 0;
-      border-style: solid;
-      border-color: $color-basic transparent transparent transparent;
-      transform-origin: center;
-      transform: translateY(-50%) rotate(0);
-      transition: transform $ease-main;
+    &:hover {
+      color: color(main);
+    }
+  }
 
-      #{$b}.is-active & {
-        transform: translateY(-50%) rotate(180deg);
-      }
+  &__button-content {
+    font-size: 16px;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  &__arrow {
+    margin-left: 30px;
+    width: 6px;
+    height: 12px;
+    transition: transform $ease-main;
+    transform: rotate(90deg);
+    margin-right: 3px;
+    flex-shrink: 0;
+
+    #{$b}.is-active & {
+      transform: rotate(-90deg);
     }
   }
 
   &__content {
     display: none;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(color(basic), .5);
 
-    #{$b}.is-active & {
+    #{$b}.is-active-initial & {
       display: block;
     }
+  }
+
+  &__wrapper {
+    padding-top: 20px;
   }
 }

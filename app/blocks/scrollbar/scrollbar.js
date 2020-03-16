@@ -1,9 +1,10 @@
 /* eslint-disable */
-import $ from 'jquery';
-
+// https://kingsora.github.io/OverlayScrollbars/#!documentation/options
 import OverlayScrollbars from 'overlayscrollbars';
 
-export default function scrollbar() {
+const $ = window.$;
+
+export function scrollbar() {
   OverlayScrollbars(document.querySelectorAll('.js-scrollbar'), {
     className: 'os-theme-dark',
     scrollbars: {
