@@ -59,6 +59,7 @@ body {
   font-size: 16px; // Убираем проблему с отступами между inline-элементами
   color: color(basic);
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
