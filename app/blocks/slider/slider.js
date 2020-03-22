@@ -1,6 +1,6 @@
 /* eslint-disable */
 // https://idangero.us/swiper/api/
-import Swiper from 'swiper';
+import Swiper from 'swiper/js/swiper.js';
 
 const $ = window.$;
 
