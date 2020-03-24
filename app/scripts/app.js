@@ -4,7 +4,7 @@ import objectFitImages from 'object-fit-images';
 import './globalOptions';
 import anchor from '../blocks/js-functions/anchor';
 import {scrollAnimation} from '../blocks/js-functions/scroll-animation';
-import { selects, sliders, datepicker, inputmask, numberinput } from '../blocks/form/form';
+import {selects, sliders, datepicker, inputmask, numberinput, validation} from '../blocks/form/form';
 import {popups} from '../blocks/popups/popups';
 import {scrollbar} from '../blocks/scrollbar/scrollbar';
 import {slider} from '../blocks/slider/slider';
@@ -32,6 +32,7 @@ $(() => {
   datepicker();
   inputmask();
   numberinput();
+  validation();
   maps();
   scrollAnimation();
   accordion();

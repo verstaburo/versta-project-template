@@ -7,7 +7,7 @@ $grid-col-width: param(grid, width)/param(grid, cols); // Ширина одно�
   font-size: 0;
   display: flex;
   flex-wrap: wrap;
-  margin: -(param(grid, gap-vertical)) -(param(grid, gap)/2) 0;
+  margin: (param(grid, gap-vertical))*(-1) (param(grid, gap)/2)*(-1) 0;
 
   $b: &;
 

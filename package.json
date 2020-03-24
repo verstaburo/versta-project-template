@@ -64,6 +64,7 @@
     "nouislider": "^10.1.0",
     "object-fit-images": "^3.2.3",
     "overlayscrollbars": "^1.11.0",
+    "parsleyjs": "^2.9.2",
     "postcss-discard-comments": "^2.0.4",
     "postcss-import": "^11.1.0",
     "postcss-reporter": "^3.0.0",
