@@ -19,9 +19,9 @@ mixin input()
 
 mixin input-number()
   +b.input-numberbox
-    +e.SPAN.button.js-numberbox-minus
+    +e.SPAN.button.js-numberbox-minus -
     +input.__input.js-numberbox-input&attributes(attributes)
-    +e.SPAN.button.js-numberbox-plus
+    +e.SPAN.button.js-numberbox-plus +
 
 mixin textarea()
   +b.TEXTAREA.textarea&attributes(attributes)
@@ -31,15 +31,19 @@ mixin select()
   +b.SELECT.select&attributes(attributes).js-select
     block
 
-mixin checkradio(isRadio, name, value, checked, required)
+mixin checkradio(data)
   +b.LABEL.checkradio&attributes(attributes)
-    +e.INPUT.input(name=name, value=value, checked=checked, type=(isRadio ? "radio" : "checkbox"), required=(required || false))
-    +e.SPAN.box
-    +e.SPAN.content
-      block
+    +e.INPUT.input(name=(data.name || Math.floor(Math.random()*90000) + 10000), value=(data.value || Math.floor(Math.random()*90000) + 10000), checked=(data.checked || false), type=(data.type || 'checkbox'), required=(data.required || false))
+    +e.DIV.block
+      +e.SPAN.box
+      +e.SPAN.content
+        block
 
 mixin range()
   +b.range&attributes(attributes).js-range
-    block
+    +e.slider.js-range-slider
+    +e.numbers
+      span.js-range-from
+      span.js-range-to
 
 include ui-kit-form

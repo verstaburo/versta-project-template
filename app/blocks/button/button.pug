@@ -1,6 +1,7 @@
-mixin button(newTag)
-  +b(newTag || 'a').button&attributes(attributes)
-    block
+mixin button(tag)
+  +b(tag || 'a').button&attributes(attributes)
+    div
+      block
 
 mixin ui-kit-button()
   +ui-section
@@ -12,6 +13,9 @@ mixin ui-kit-button()
     +ui-section-content()
       +ui-elements-list()
         +button Кнопка
+        +button
+          span Кнопка с иконкой
+          +icon('arrow')
         +button()(disabled) Отключенная кнопка
 
     //- При +ui-section-content(true) контейнер отсутствует

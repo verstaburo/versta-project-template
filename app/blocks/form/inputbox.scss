@@ -1,6 +1,8 @@
 .inputbox {
   display: block;
 
+  $b: &;
+
   &__label {
     margin-bottom: 10px;
     font-size: 14px;

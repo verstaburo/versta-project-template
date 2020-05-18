@@ -3,32 +3,36 @@
 // #####
 
 .input-numberbox {
-  display: table;
-  width: 100%;
+  display: flex;
+  border: 1px solid color(border);
+  border-radius: 5px;
+  height: 40px;
+  box-sizing: border-box;
+
+  $b: &;
 
   &__button {
-    border: 1px solid color(border);
     width: 40px;
-    display: table-cell;
-    font-size: 18px;
-    font-family: monospace;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity $ease-main;
+    flex-shrink: 0;
 
-    &:hover::before, &:hover::after { opacity: .5; }
-
-    &::before, &::after { transition: opacity $ease-main; }
-
-    &:first-child::before { content: '-'; }
-
-    &:last-child::before { content: '+'; }
+    &:hover {
+      opacity: .5;
+    }
   }
 
   &__input {
     flex: 1;
-    border-left: 0;
-    border-right: 0;
+    width: 100%;
+    border: 0;
     text-align: center;
-    display: table-cell;
+    height: auto;
   }
 }

@@ -8,14 +8,33 @@
   transition: opacity $ease-main;
   cursor: pointer;
   font-size: 14px;
-  line-height: 40px;
+  line-height: 1.2;
   height: 40px;
   text-align: center;
-  color: white;
   appearance: none;
   border-radius: 5px;
+  color: white;
+  fill: white;
 
   $b: &;
+
+  div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+
+    > *:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+    transition: transform $ease-main;
+  }
 
   &[disabled] {
     opacity: .5;
@@ -25,6 +44,10 @@
 
   &:hover {
     opacity: .5;
+
+    svg {
+      transform: translate3d(3px, 0, 0);
+    }
   }
 }
 

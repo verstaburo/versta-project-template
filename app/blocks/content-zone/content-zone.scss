@@ -1,4 +1,8 @@
 .content-zone {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+
   $b: &;
 
   h1, h2, h3, h4, h5, h6 {
@@ -18,16 +22,13 @@
   }
 
   p {
-    font-size: 16px;
-    line-height: 1.5;
-
     &:not(:first-child) {
       margin-top: 10px;
     }
 
     small {
       display: block;
-      font-size: 12px;
+      font-size: .75em;
     }
   }
 
@@ -74,9 +75,6 @@
   }
 
   ul, ol {
-    font-size: 14px;
-    line-height: 1.5;
-
     &:not(:first-child) {
       margin-top: 30px;
     }
@@ -105,7 +103,7 @@
   }
 
   ol {
-    counter-reset: list1;
+    counter-reset: list;
 
     li {
 
@@ -113,8 +111,8 @@
         position: absolute;
         left: 0;
         top: 0;
-        counter-increment: list1;
-        content: counter(list1) '.';
+        counter-increment: list;
+        content: counter(list) '.';
       }
     }
   }

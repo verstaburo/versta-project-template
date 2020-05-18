@@ -61,7 +61,7 @@
     "jquery": "^3.2.1",
     "leaflet": "^1.6.0",
     "normalize.css": "^6.0.0",
-    "nouislider": "^10.1.0",
+    "nouislider": "^14.5.0",
     "object-fit-images": "^3.2.3",
     "overlayscrollbars": "^1.11.0",
     "parsleyjs": "^2.9.2",

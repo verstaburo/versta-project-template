@@ -1,45 +1,40 @@
 .checkradio {
-  position: relative;
-  padding-left: 25px;
-  display: inline-block;
+  display: block;
   cursor: pointer;
 
+  $b: &;
+
   &__input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
+    display: none;
+  }
 
-    &:checked {
-
-      & + .checkradio__box {
-        &::before { opacity: 1; }
-      }
-    }
+  &__block {
+    display: flex;
   }
 
   &__box {
-    position: absolute;
     width: 15px;
     height: 15px;
     border: 1px solid color(border);
-    left: 0;
-    top: 2px;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    margin-top: 2px;
+    margin-right: 10px;
 
     &::before {
       content: '';
       width: 9px;
       height: 9px;
       background-color: color(main);
-      display: block;
       opacity: 0;
       transition: opacity $ease-main;
 
       @include center-image;
+    }
+
+    #{$b}__input:checked + #{$b}__block &::before {
+      opacity: 1;
     }
   }
 

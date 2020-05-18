@@ -28,16 +28,32 @@ export function selects() {
 export function sliders() {
   // Параметры берутся из дата-атрибутов
   $('.js-range').each(function () {
-    const el = $(this);
+    const
+      block = $(this),
+      el = block.find('.js-range-slider'),
+      from = block.find('.js-range-from') || null,
+      to = block.find('.js-range-to') || null;
 
-    noUiSlider.create(el.get(0), {
-      start: el.data('start'),
-      connect: el.data('connect'),
+    const slider = noUiSlider.create(el.get(0), {
+      start: block.data('start'),
+      connect: block.data('connect'),
       range: {
-        min: el.data('min'),
-        max: el.data('max'),
+        min: block.data('min'),
+        max: block.data('max'),
       },
+      step: block.data('step'),
     });
+
+    if (from && to) {
+      slider.on('update', function (values) {
+        const
+          newFrom = parseInt(values[0]),
+          newTo = parseInt(values[1]);
+
+        from.text(newFrom);
+        to.text(newTo);
+      });
+    }
   });
 }
 
@@ -57,28 +73,32 @@ export function inputmask() {
   Inputmask({
     alias: 'email',
   }).mask('input[data-mask="email"]');
+
+  Inputmask({
+    mask: "1.2.y",
+    placeholder: "__.__.____",
+    leapday: "29.02.",
+    separator: ".",
+    alias: "dd/mm/yyyy"
+  }).mask('input[data-mask="date"]');
 }
 
 export function numberinput() {
   $(document).on('click', '.js-numberbox-minus, .js-numberbox-plus', function (e) {
     e.preventDefault();
 
-    const input = $(this).parent().find('.js-numberbox-input');
-    let val = +input.val();
-    const minus = $(this).attr('class').includes('minus') || false;
+    const
+      input = $(this).siblings('.js-numberbox-input'),
+      minus = $(this).attr('class').includes('minus') || false;
 
-    if (!val.length) {
-      input.val(1);
-    }
+    let val = +input.val() || 0;
 
-    if (minus) {
-      input.val(val > 0 ? (val -= 1) : 0);
-    } else {
-      input.val(val += 1);
-    }
+    minus ? (val > 0 ? (val -= 1) : 0) : (val += 1);
+
+    input.val(val);
   });
 
-  $(document).on('keyup change', '.js-numberbox-input', function () {
+  $(document).on('input keyup change', '.js-numberbox-input', function () {
     this.value = this.value.replace(/[^\d]/, '');
     if ($(this).val() < 0) $(this).val(0);
   });

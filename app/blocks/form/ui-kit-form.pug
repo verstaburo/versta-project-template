@@ -16,6 +16,7 @@ mixin ui-kit-form()
               +label Название поля
               +input-wrapper
                 +input(placeholder="Плейсхолдер", required, minlength="3")
+
           +col(6)
             +inputbox
               +label Выпадающий список
@@ -24,46 +25,55 @@ mixin ui-kit-form()
                   option(value="Опция 1") Опция 1
                   option(value="Опция 2") Опция 2
                   option(value="Опция 3") Опция 3
+
           +col(6)
             +inputbox()
               +label Календарь
               +input-wrapper
                 +input()(placeholder="Выберите дату" readonly).js-datepicker
+
           +col(6)
             +inputbox()
               +label Маска телефона
               +input-wrapper
                 +input()(placeholder="+7 (___) ___-__-__" data-mask="tel", pattern="^(\\s*)?(\\+)?([- _():=+]?(\\s*)?(\\s*)?\\d[- _():=+]?(\\s*)){11,50}(\\s*)?$", required)
+
           +col(6)
             +inputbox()
               +label Маска e-mail
               +input-wrapper
                 +input()(placeholder="E-mail", data-mask="email", required, pattern="^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")
+
           +col(6)
             +inputbox()
               +label Выбор количества
               +input-wrapper
                 +input-number()(placeholder="Количество товара")
+
           +col(12)
             +inputbox
               +label Текстовое поле
               +input-wrapper
                 +textarea(placeholder="Текстовое поле")
+
           +col(6)
             +inputbox()
               +label Чекбокс
               +input-wrapper
-                +checkradio(false, 'ui-checkbox', 'test', 'true') Чекбокс
+                +checkradio({type: 'checkbox', name: 'ui-checkbox', value: 'test', checked: true, required: true}) Чекбокс
+
           +col(6)
             +inputbox()
               +label Радиокнопка
               +input-wrapper
-                +checkradio(true, 'ui-radio', 'test', 'true') Радиокнопка
+                +checkradio({type: 'radio', name: 'ui-radio', value: 'test', checked: false, required: true}) Радиокнопка
+
           +col(6)
             +inputbox()
               +label Ползунок
               +input-wrapper
-                +range()(data-start='40', data-connect='[true, false]', data-min='0', data-max='100')
+                +range(data-start=[0, 100], data-connect=[false, true, false], data-min=0, data-max=100, step=1)
+
           +col(12)
             +inputbox
               +button('button')(type="submit") Отправить форму
