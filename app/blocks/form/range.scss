@@ -43,9 +43,6 @@
       margin: 7px 0; // Margin нужен, чтобы handler не налезал на другие элементы
     }
 
-    &-connect {
-    }
-
     &-handle {
       position: absolute;
       width: 14px;
@@ -67,9 +64,6 @@
       &:hover {
         border-color: color(main);
       }
-    }
-
-    &-origin {
     }
   }
 }

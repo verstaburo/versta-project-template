@@ -1,5 +1,7 @@
 // Скрипт "замораживает" страничку, запрещая скролл
-const $ = window.$;
+const {
+  $,
+} = window;
 
 export function freeze() {
   const h = $('html');

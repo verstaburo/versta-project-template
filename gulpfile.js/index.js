@@ -16,7 +16,8 @@ gulp.task('scripts:watch', scripts(true));
 gulp.task('clean', clean);
 gulp.task('copy', copy);
 gulp.task('ghpages', ghpages);
-gulp.task('images', images);
+gulp.task('images', images.images);
+gulp.task('webp', images.webp);
 gulp.task('icons', icons);
 gulp.task('styles', styles.build);
 gulp.task('lint', styles.lint);
@@ -27,7 +28,7 @@ gulp.task('watch', watch);
 
 gulp.task('build', gulp.series(
   'clean',
-  gulp.parallel('lint', 'styles', 'scripts', 'copymain', 'images', 'icons', 'templates', 'copy'),
+  gulp.parallel('lint', 'styles', 'scripts', 'copymain', 'images', 'icons', 'templates', 'copy'), 'webp',
 ));
 
 gulp.task('default', gulp.series(

@@ -6,7 +6,7 @@ div {
 }
 */
 @mixin ratio($x,$y, $pseudo: false) {
-  $padding: unquote(($y/$x) *100+'%');
+  $padding: unquote((($y/$x) * 100) + '%');
 
   @if $pseudo {
 
@@ -258,7 +258,8 @@ div {
   @each $breakpoint, $value in $pointsAndValues {
     @if ($breakpoint == xl) and ($direction == max) {
       #{$name}: #{$value};
-    } @else {
+    }
+    @else {
       @include screen('#{$breakpoint}', $direction) {
         #{$name}: #{$value};
       }
@@ -289,4 +290,3 @@ div {
 @function gradient($gradient) {
   @return map-get($gradients, $gradient);
 }
-

@@ -13,8 +13,7 @@ module.exports = (watch = false) => ({
   watch,
   devtool: isDebug ? 'cheap-module-inline-source-map' : false,
   module: {
-    rules: [
-      {
+    rules: [{
         enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,

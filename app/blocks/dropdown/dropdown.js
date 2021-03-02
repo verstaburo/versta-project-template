@@ -3,7 +3,9 @@ export const SHOWN = 'dropdown/hidden';
 export const BEFORE_SHOW = 'dropdown/beforeshow';
 export const BEFORE_HIDE = 'dropdown/beforehide';
 
-const $ = window.$;
+const {
+  $,
+} = window;
 
 /**
  *
@@ -26,7 +28,6 @@ const toggle = (dropdown, show = true) => {
     .trigger(event)
     .toggleClass('is-active', show);
 };
-
 
 $(document).on('click', '.js-dropdown-toggle', function (e) {
   const btn = $(this);
