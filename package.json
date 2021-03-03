@@ -56,7 +56,7 @@
     "imagemin-jpegtran": "^7.0.0",
     "inputmask": "^3.3.8",
     "jade-get-data": "^1.0.1",
-    "jquery": "^3.6.0",
+    "jquery": "^3.5.0",
     "leaflet": "^1.6.0",
     "normalize.css": "^8.0.0",
     "nouislider": "^14.5.0",
